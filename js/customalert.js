@@ -131,6 +131,7 @@ function sendEmail(id)
 				alert("Email successfully sent!\nMake sure you check your email regularly for replies.");
 				$('#responseform input[type=text]').val('Enter your email..');
 				$('#responseform textarea').val('Write a message..');
+				hideAlert();
 			}
 			else alert(response);
 		},

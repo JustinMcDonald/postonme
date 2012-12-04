@@ -60,55 +60,53 @@ include('/home/postonme/hidden_scripts/session.php');
 <table id="frontpage">
 	<tr>
 		<td id='frontfill1'><div></div></td>
-		<td id='frontrelax' class='cursorhand'>
-			<div style='height:20%;'></div>
-			<img src='img/relax_icon.png' alt='' width='126px' height='127px'/>
-			<div style='height:10%;'></div>
-			<img src='img/relax_title.png' alt='' width='103px' height='29px'/>
+		<td id='frontsignup' class='cursorhand'>
+			<div style='height:60%;'></div>
+			<img src='img/signup_icon.png' alt='' width='100px' height='100px'/>
+			<img src='img/signup_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
 			<div style='height:1%;'></div>
 			<div style='height:30px'></div>
 			<div style='height:8%;'></div>
-			<img src='img/relax_description.png' alt='' width='236px' height='59px'/>
+			<img src='img/signup_description.png' alt='' width='200px' height='50px'/>
 			<div style='height:20%;'></div>
 		</td>
 		<td id='frontsearch' class='cursorhand'>
-			<div style='height:20%;'></div>
-			<img src='img/search_icon.png' alt='' width='126px' height='127px'/>
-			<div style='height:10%;'></div>
-			<img src='img/search_title.png' alt='' width='103px' height='29px'/>
+			<div style='height:60%;'></div>
+			<img src='img/search_icon.png' alt='' width='100px' height='100px'/>
+			<img src='img/search_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
 			<div style='height:1%;'></div>
 			<form action="" method="post" id="searchform" onsubmit="openWindow('searchbar'); return false;">
 				<input type="text" name="searchtext" value='' id="searchbar">
 			</form>
 			<div style='height:7%;'></div>
-			<img src='img/search_description.png' alt='' width='236px' height='59px'/>
+			<img src='img/search_description.png' alt='' width='200px' height='50px'/>
 			<div style='height:20%;'></div>
 		</td>
 		<td id='frontpost' class='cursorhand'>
-			<div style='height:20%;'></div>
-			<img src='img/post_icon.png' alt='' width='126px' height='127px'/>
-			<div style='height:10%;'></div>
-			<img src='img/post_title.png' alt='' width='103px' height='29px'/>
+			<div style='height:60%;'></div>
+			<img src='img/post_icon.png' alt='' width='100px' height='100px'/>
+			<img src='img/post_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
 			<div style='height:1%;'></div>
 			<div style='height:30px'></div>
 			<div style='height:8%;'></div>
-			<img src='img/post_description.png' alt='' width='236px' height='59px'/>
+			<img src='img/post_description.png' alt='' width='200px' height='50px'/>
 			<div style='height:20%;'></div>
 		</td>
 		<td id='frontedit' class='cursorhand'>
-			<div style='height:20%;'></div>
-			<img src='img/edit_icon.png' alt='' width='126px' height='127px'/>
-			<div style='height:10%;'></div>
-			<img src='img/edit_title.png' alt='' width='103px' height='29px'/>
+			<div style='height:60%;'></div>
+			<img src='img/edit_icon.png' alt='' width='100px' height='100px'/>
+			<img src='img/edit_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
 			<div style='height:1%;'></div>
 			<div style='height:30px'></div>
 			<div style='height:8%;'></div>
-			<img src='img/edit_description.png' alt='' width='236px' height='59px'/>
+			<img src='img/edit_description.png' alt='' width='200px' height='50px'/>
 			<div style='height:20%;'></div>
 		</td>
 		<td id='frontfill2'><div></div></td>
 	</tr>
 </table>
+
+<img src='img/front_banner.png' alt='' width='786px' height='400px' id='frontbanner'/>
 
 <?php 
 include("common/newsbox.php");

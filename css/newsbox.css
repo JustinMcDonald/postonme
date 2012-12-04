@@ -7,10 +7,8 @@ right:0;
 top:0;
 font:0.75em verdana;
 padding:5px 5px 5px 5px;
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#9F005A7B,endColorstr=#9F005A7B);
-/*background-color:rgba(0,187,254,0.3);*/
-background-color:rgba(0,90,123,0.4);
-/*background-color:#005A7B;*/
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F00BBFE,endColorstr=#7F00BBFE);
+background-color:rgba(0,187,254,0.5);
 text-align:left;
 display:block;
 }

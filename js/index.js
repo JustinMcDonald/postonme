@@ -36,6 +36,13 @@ $(document).ready(function()
 			$('#searchform').submit();
 		}
 	});
+	
+	$('#frontpage img').each(function()
+	{
+		disableDraggingFor(this);
+	});
+	
+	disableDraggingFor(document.getElementById('frontbanner'));
 });
 
 function shiftFrontColumnsRight()

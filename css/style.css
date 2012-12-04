@@ -10,8 +10,8 @@ background: url(../img/bg_icon.png);
 background-repeat:no-repeat;
 background-position: center;
 /*background-color:#0083B2;*/
-/*background-size:350px 350px;
-background-attachment:fixed;*/
+/*background-size:350px 350px;*/
+background-attachment:fixed;
 font:1em Verdana;
 }
 
@@ -71,8 +71,6 @@ background-image: linear-gradient(to bottom right, #00BCFF 0%, #00435C 100%);
 
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BCFF', endColorstr='#00435C');
 }
-
-
 
 .centerelement{
 margin-left:auto;
@@ -301,6 +299,7 @@ border-spacing:0px;
 #frontpage td
 {
 height:100%;
+min-height:545px;
 vertical-align:middle;
 width:20%;
 /*transition: background 0.5s;
@@ -309,24 +308,30 @@ width:20%;
 -o-transition: background 0.5s;*/
 }
 
+#frontpage img
+{
+position:relative;
+z-index:1000;
+}
+
 #frontfill1
 {
-/*background-color:#00BBFE;*/
+background-color:#008ABD;
 }
 
-#frontrelax
+#frontsignup
 {
-background-color:#00BBFE;
+background-color:#008ABD;
 }
 
-#frontrelax:hover
+#frontsignup:hover
 {
-background-color:#12cbFf;
+background-color:#16A7DB;
 }
 
 #frontsearch
 {
-background-color:#0083B2;
+background-color:#0077A3;
 }
 
 #frontsearch:hover
@@ -341,7 +346,7 @@ background-color:#005A7B;
 
 #frontpost:hover
 {
-background-color:#167091;
+background-color:#108AB5;
 }
 
 #frontedit
@@ -352,12 +357,12 @@ background-color:#005A7B;
 
 #frontedit:hover
 {
-background-color:#167091;
+background-color:#108AB5;
 }
 
 #frontfill2
 {
-/*background-color:#005A7B;*/
+background-color:#005A7B;
 }
 
 #searchform
@@ -380,4 +385,13 @@ text-align:left;
 .hoverunderline:hover
 {
 text-decoration:underline;
+}
+
+#frontbanner
+{
+position:fixed;
+left:50%;
+margin-left:-393px;
+top:0;
+cursor:pointer;
 }

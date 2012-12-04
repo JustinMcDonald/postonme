@@ -3,11 +3,11 @@ $(document).ready(function() {
 	var setting = getCookie('news');
 	if (setting == null)
 	{
-		if ($(window).width() < 1143)
-		{
+		/*if ($(window).width() < 1143)
+		{*/
 			$("#newsbox").hide();
 			$("#shownewsbutton").css('visibility', 'visible');
-		}
+		/*}*/
 	}
 	else
 	{

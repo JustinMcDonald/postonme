@@ -15,11 +15,11 @@ $(document).ready(function() {
 		this.src = "./img/advanced_search.png";
 	});
 	
-	$('#searchgo').bind('click', function(){
+	$('#searchgo img').bind('click', function(){
 		openWindow('navsearchbar');
 	});
 	
-	$('#searchgo').hover(function()
+	$('#searchgo img').hover(function()
 	{
 		this.src = "./img/search_go_hover.png";
 	}, function()

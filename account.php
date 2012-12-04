@@ -19,6 +19,7 @@ include("scripts/activateAccount.php");
 	<link rel="stylesheet" type="text/css" href="css/view.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newsbox.css"/>
 	<link rel="stylesheet" type="text/css" href="css/customalert.css"/>
+	<link rel="stylesheet" type="text/css" href="css/advertisement.css"/>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>
@@ -28,6 +29,7 @@ include("scripts/activateAccount.php");
 	<script src="/js/navbar.js"></script>
 	<script src="/js/gallery.js"></script>
 	<script type="text/javascript" src="/js/customalert.js"></script>
+	<script type="text/javascript" src="/js/account.js"></script>
 	<!--[if IE]>
 		<script type="text/javascript" src="/js/DD_roundies.js"></script>
 	<![endif]-->
@@ -46,8 +48,8 @@ include("scripts/activateAccount.php");
 
 <div class='contentcontainer' style='width:62%;padding-left:10px;padding-right:10px;'>
 	<h2>Review, Modify, Delete or Bump your Advertisements!</h2>
-	<div id='iframeAccountPostsContainer'>
-		<iframe id="iframeAccountPosts" name="iframeAccountPosts" src="../iframes/findAccountAdvertisements.php" allowtransparency="true" frameBorder="0"></iframe>
+	<div id='accountAdvertisementFrame'>
+		<?php include("./scripts/findAccountAdvertisements.php"); ?>
 	</div>
 </div>
 

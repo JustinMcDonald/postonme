@@ -15,10 +15,10 @@
 				</li>
 			</ul>
 			<ul id='interact'>
-				<li><a href='post.php' target='_top' id='navpost' title='Post a new Advertisement'>Post</a></li>
+				<li style='padding-top:5px;'><a href='post.php' target='_top' id='navpost' title='Post a new Advertisement'>Post</a></li>
 				<li class='cursorhand' style='padding-left:0;'><img src='img/advanced_search.png' alt='' width='28px' height='28px' id='advsearch' title='Advanced Search'/></li>
-				<li class='cursorhand' style='padding-left:0;'><img src='img/search_go.png' alt='' width='27px' height='27px' id='searchgo' title='Search'/></li>
-				<li>
+				<li class='cursorhand themeborder' id='searchgo' style='padding:0px;'><img src='img/search_go.png' alt='' width='25px' height='25px' title='Search'/></li>
+				<li style='padding-right:0'>
 					<form action='' method='post' id='navsearchform' onsubmit='openWindow("navsearchbar"); return false;'>
 						<input type='text' name='navsearchtext' value='Search' class='themeborder' id='navsearchbar'/>
 					</form>

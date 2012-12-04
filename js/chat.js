@@ -2,11 +2,11 @@ $(document).ready(function() {
 	var setting = getCookie('chat');
 	if (setting == null)
 	{
-		if ($(window).width() < 1143)
-		{
+		/*if ($(window).width() < 1143)
+		{*/
 			$("#chatbox").hide();
 			$("#showchatbutton").css('visibility', 'visible');
-		}
+		/*}*/
 	}
 	else {
 		if (setting == "true") 

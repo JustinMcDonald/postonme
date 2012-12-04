@@ -1,29 +1,6 @@
-<?php
-include('/home/postonme/hidden_scripts/session.php');
-?>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML Strict//EN"><META http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<html xmlns="http://www.w3.org/1999/xhtml" slick-uniqueid="1">
-<head>
-	<title>Post On Me! - Sell it Quicker, Buy it Cheaper</title>
-	
-	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
-	<link rel="stylesheet" type="text/css" href="../css/iframeView.css"/>
-	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
-	<script src="../js/exp.js"></script>
-	<script src="../js/gallery.js"></script>
-	<script src="../js/account.js"></script>
-	
-</head>
-<body>
-
 <div class="maincontainer">
 	
 	<?php
-	include('/home/postonme/hidden_scripts/db.php');
-	
 	$user = $_SESSION['username'];
 	
 	$query = "SELECT online, exp FROM account WHERE username='$user'";
@@ -138,5 +115,3 @@ include('/home/postonme/hidden_scripts/session.php');
 	?>
 
 </div>
-</body>
-</html>

@@ -25,6 +25,10 @@ border:0;
 #interact{
 float:right;
 -webkit-padding-start:0px;
+-webkit-margin-before:0px;
+-webkit-margin-after:0px;
+height:50px;
+margin-top:13px;
 }
 
 #interact > li{
@@ -32,31 +36,35 @@ padding:0 10px 0 10px;
 float:right;
 list-style:none;
 font-weight:bold;
+height:25px;
 /*margin-top:18px;*/
 }
 
 #navpost {
-color:#C9C9C9;
-padding:8px 15px;
+color:#FAF616;
 }
 
 #navpost:hover {
 color:#FBFBFB;
 }
 
-#navsearchbar{
+#navsearchbar
+{
 box-sizing: border-box;
 padding-left:5px;
 text-align:left;
 color:#ADADAD;
 font-weight:500;
--webkit-border-radius: 2px;
--moz-border-radius: 2px;
-border-radius: 2px;
+-webkit-border-top-left-radius: 2px;
+-webkit-border-bottom-left-radius: 2px;
+-moz-border-top-left-radius: 2px;
+-moz-border-bottom-left-radius: 2px;
+border-top-left-radius: 2px;
+border-bottom-left-radius: 2px;
 width:250px;
 height:27px;
 vertical-align:center;
-margin-top:-4px;
+border-right:0;
 }
 
 #welcomemessage {
@@ -81,12 +89,24 @@ color:#FFFF00;
 }
 
 #advsearch{
-margin-top:-4px;
+
 }
 
 #searchgo
 {
-margin-top:-3px;
+background-color:white;
+margin:0px;
+padding:0px;
+height:25px;
+width:auto;
+margin-right:10px;
+-webkit-border-top-right-radius: 2px;
+-webkit-border-bottom-right-radius: 2px;
+-moz-border-top-right-radius: 2px;
+-moz-border-bottom-right-radius: 2px;
+border-top-right-radius: 2px;
+border-bottom-right-radius: 2px;
+border-left:0;
 }
 
 #advpanel{
@@ -208,6 +228,7 @@ padding:0px;
 line-height:45px;
 -webkit-padding-start: 0;
 margin-top:3px;
+margin-left:10px;
 }
 
 #locations a
