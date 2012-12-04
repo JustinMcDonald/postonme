@@ -1,0 +1,90 @@
+#screenlock
+{
+position:absolute;
+display:none;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background-color:rgba(255,255,255,0.6);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AFffffff,endColorstr=#AFffffff);
+}
+
+#customalert
+{
+border:2px outset #a2a2a2;
+position:absolute;
+display:none;
+top:20%;
+left:50%;
+margin-left:-160px;
+width:300px;
+height:400px;
+-moz-border-radius:20px;
+-webkit-border-radius:20px;
+border-radius:20px;
+padding:20px 20px;
+background-color:rgba(255,255,255,0.96);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f8ffffff,endColorstr=#f8ffffff);
+}
+
+#customalert > img
+{
+margin-top:30px;
+margin-bottom:30px;
+}
+
+#close_alert
+{
+position:absolute;
+top:-7px;
+right:-7px;
+cursor:pointer;
+}
+
+#customalert ul
+{
+padding:0px;
+margin:0px;
+margin-top:10px;
+list-style:none;
+font-size:0.85em;
+}
+
+#customalert li
+{
+color:#0056A1;
+cursor:pointer;
+}
+
+#customalert li:hover
+{
+text-decoration:underline;
+color:#4A85D9;
+}
+
+#responseform div
+{
+text-align:left;
+}
+
+#responseform input[type=text]
+{
+width:100%;
+font:0.8em Verdana;
+color:#c9c9c9;
+margin-bottom:20px;
+}
+
+#responseform textarea
+{
+margin-top:4px;
+width:100%;
+height:80px;
+vertical-align:text-top;
+resize:none;
+margin-bottom:1px;
+font:0.8em Verdana;
+color:#c9c9c9;
+padding:0 2px 0 0;
+}

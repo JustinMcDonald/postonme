@@ -1,0 +1,182 @@
+.maincontainer
+{
+width:100%;
+height:auto;
+}
+
+.adbody
+{
+height:60px;
+width:98.5%;
+text-align:left;
+padding:5px 5px;
+border-top:2px solid #06488F;
+border-bottom:1px solid #C4C4C4;
+word-wrap:normal;
+display:table;
+transition: background 0.5s;
+-moz-transition: background 0.5s; /* Firefox 4 */
+-webkit-transition: background 0.5s; /* Safari and Chrome */
+-o-transition: background 0.5s; /* Opera */
+/*background-color:rgba(89, 223, 255, 0.4);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6F59DFFF,endColorstr=#6F59DFFF);*/
+}
+
+.addetailbody{
+display:none;
+width:auto;
+min-width:651px;
+height:auto;
+padding:10px 10px;
+text-align:left;
+padding-bottom:10px;
+}
+
+.adimagecontainer
+{
+display:table-cell;
+vertical-align:middle;
+min-width:55px;
+}
+
+.adimagecontainer > img
+{
+margin-left:5px;
+display:table-cell;
+vertical-align:middle;
+}
+
+.adcategory{
+display:table-cell;
+vertical-align:middle;
+width:100px;
+min-width:100px;
+padding-left:10px;
+}
+
+.adtitle{
+width:41%;
+max-width:350px;
+min-width:41%;
+display:table-cell;
+vertical-align:middle;
+font-weight:600;
+padding-left:10px;
+word-wrap:break-word;
+}
+
+.addate{
+width:150px;
+min-width:110px;
+display:table-cell;
+vertical-align:middle;
+text-align:right;
+}
+
+.adprice{
+width:80px;
+min-width:45px;
+display:table-cell;
+vertical-align:middle;
+text-align:right;
+}
+
+.adviews{
+width:80px;
+min-width:60px;
+display:table-cell;
+vertical-align:middle;
+text-align:right;
+}
+
+.detailcontainer{
+width:100%;
+height:100%;
+}
+
+.adtext
+{
+overflow:auto;
+height:130px;
+max-height:130px;
+word-wrap:break-word;
+text-align:justify;
+padding-right:5px;
+margin-right:10px;
+margin-bottom:5px;
+}
+
+.adflag{
+width:auto;
+float:left;
+text-align:left;
+font-size:0.75em;
+margin-top:13px;
+}
+
+.onlinebtn{
+width:16px;
+min-width:16px;
+height:16px;
+vertical-align:middle;
+background:#54E83A;
+vertical-align:middle;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
+}
+
+.offlinebtn{
+width:14px;
+min-width:14px;
+height:14px;
+vertical-align:middle;
+background:#E83A3A;
+vertical-align:middle;
+}
+
+.detailonlinemessage{
+float:left;
+margin-right:5px;
+font-size:1.25em;
+font-weight:600;
+}
+
+.contactbutton
+{
+color:white;
+float:left;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+text-align:center;
+font-size:1.25em;
+font-weight:600;
+padding:3px 10px 3px 10px;
+margin-right:5px;
+margin-bottom:5px;
+}
+
+#fieldtitles {
+width:97%;
+min-width:97%;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+padding:10px 5px 0 15px;
+font:0.95em Verdana;
+font-weight:600;
+height:25px;
+text-align:left;
+margin-left:auto;
+margin-right:auto;
+display:table;
+}
+
+.imagefiller{
+min-width:61px;
+display:table-cell;
+}

@@ -1,0 +1,38 @@
+------------------------------------------------
+BROWSER			OS				RESOLUTION
+------------------------------------------------
+safari			mac os			1280x800
+------------------------------------------------
+------------------------------------------------
+SUGGESTIONS
+------------------------------------------------
+It's got a nice aesthetic, and it's very straight-forward, which is great.
+
+When I send an email to people, the email box doesn't close itself automatically afterwards, which is what I would expect it to do.
+
+I'm used to seeing online/offline indicators as circles rather than squares. I wasn't sure what they were until I hovered over them.
+
+In the sign-up and level-up info popover, there's text that highlights itself as though it's a link, but they don't actually lead anywhere.
+
+Although the text when you hover over images says "Expand Image", clicking on it does not expand the image
+
+Oooooh, I see, I can use it to "bump" my posts. Very nice. That's a great way to keep people engaged.
+
+You may want to consider adding a "browse by category" type of thing rather than forcing someone to do an advanced query.
+
+When you expand the advanced search section, the Date Posted radio buttons have no default-selected option 
+
+The maximum and minimum sliders could be longer, and what most people do is have them as an exponential scale rather than a linear scale
+
+The max slider defaults to $10,000, but the right-most slider position resets it to $200
+
+The max and min sliders don't encompass the full possible price range; I realized that that's so that the min doesn't get set to more than the max, but you can handle those cases as the user interacts with the sliders (i.e. if the min slider goes higher than the max slider, bump the max slider up to equal with the min slider and vice-versa in the opposite situation)
+
+You could add a fifth radio button under "Date Posted" entitled "Beginning of time" or some such
+
+I tried to test for some SQL injection stuff, but I really don't have much of an idea what I'm doing. I wasn't able to find any exploits, although that's not saying much :p
+
+THIS!! ----> You're <--- PostOnMe account 'jknielse' is ready to rock!
+------------------------------------------------
+CORRECTED
+------------------------------------------------

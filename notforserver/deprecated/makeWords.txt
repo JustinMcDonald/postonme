@@ -1,0 +1,29 @@
+/*
+		$text = $ad['Title'];
+		
+		$words = array();
+		$word = "";
+		
+		for ($i=0; $i<strlen($text); $i++) { //create a list of words from advertisement title
+			if (($i + 1) == strlen($text)){
+				$word = $word . $text[$i];
+				$words[] = strtolower($word);
+			}
+			else if ($text[$i] != ' '){
+				$word = $word . $text[$i];
+			}
+			else {
+				$words[] = strtolower($word);
+				$word = "";
+			}
+		}
+		
+		$match = false;
+		
+		for ($i=0; $i<count($words); $i++){ //if any of these words match the search term, match=true
+			if ($words[$i] == $searchkey){
+				$match = true;
+				$matchnum++;
+			}
+		}
+		*/

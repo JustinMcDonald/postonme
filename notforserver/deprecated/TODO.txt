@@ -1,0 +1,49 @@
+TODO:
+	Database:
+		-visible/invisible field
+		-database email messages
+			->new table
+			->message#, adID, email, message
+		-hashtable for searching (research)
+			->ALTER TABLE tablename ADD INDEX(columnname);
+		-
+	Posting:
+		-clean form
+		-
+	Searching:
+		-advanced search
+			->by category
+			->by price
+			->by quality
+		-
+	Communication:
+		-clean live chat
+		-
+	CronJob:
+		-ad expiry
+		-flag checking
+		-reminder/notification emails
+		-frequent databse optimization
+			->ANALYZE TABLE tablename
+			->OPTIMIZE TABLE tablename
+		-
+	CustomerSupport:
+		-suggestion box
+			->send email to me
+		-about us
+		-contact us
+		-bug report
+			->send email to me
+		-
+	Security:
+		-SSL encryption?
+		-mysql injection (research, protect)
+		-
+	Other:
+		-calandar for event posting
+		-firesale category
+		-postonme professional
+		-front page lucky ads
+		-customizable advertisement (colour, background, etc) - rewards based system
+		-filesharing/dropbox
+		-

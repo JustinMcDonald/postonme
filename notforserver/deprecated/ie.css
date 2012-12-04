@@ -1,0 +1,28 @@
+.contentcontainer
+{
+margin-top:85px;
+border:1px inset #A8D2FF;
+overflow:hidden;
+margin-right:auto;
+margin-left:auto;
+width:55%;
+min-width:519px;
+height:auto;
+background-color:rgba(255,255,255,0.7);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FFFFFFF,endColorstr=#7FFFFFFF);
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+behavior: url(../css/border-radius.htc);
+-moz-box-shadow: 0 0 8px 0 black;
+-webkit-box-shadow: 0 0 8px 0 black;
+box-shadow: 0 0 8px 0 black;
+padding:20px 20px;
+text-align:justify;
+text-justify:inter-word;
+}
+
+.submitbtn
+{
+behavior: url(border-radius.htc);
+}
