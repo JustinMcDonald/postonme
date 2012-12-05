@@ -637,7 +637,7 @@ function signUp() {
 	var password1 = form.elements['signuppassword1'].value;
 	var password2 = form.elements['signuppassword2'].value;
 	var email = form.elements['signupemail'].value;
-	var reference = form.elements['signupreference'].value;
+	//var reference = form.elements['signupreference'].value;
 	
 	if (username == "") {
 		indicateError('signupusername');
@@ -682,7 +682,8 @@ function signUp() {
 		return;
 	}
 	
-	var dataString = "user="+username+"&pass="+password1+"&email="+email+"&refer="+reference;
+	//var dataString = "user="+username+"&pass="+password1+"&email="+email+"&refer="+reference;
+	var dataString = "user="+username+"&pass="+password1+"&email="+email;
 	
 	$.ajax({
 		type: "POST",
@@ -736,7 +737,7 @@ function forgotPassword()
 	
 	$.ajax({
 		type: "POST",
-		url: "./scripts/forgotPassword.php",
+		url: "./email/forgotPassword.php",
 		data: dataString,
 		success: function(data, textStatus, jqXHR)
 		{

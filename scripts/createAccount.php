@@ -5,7 +5,7 @@ include('/home/postonme/hidden_scripts/session.php');
 $newuser = $_POST["user"];
 $newpass = $_POST["pass"];
 $email = $_POST["email"];
-$reference = $_POST["refer"];
+//$reference = $_POST["refer"];
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 {
@@ -25,27 +25,28 @@ if (!(mysql_num_rows($result) > 0))
 
 	if (!(mysql_num_rows($result) > 0))
 	{
-		if ($reference != '')
+		/*if ($reference != '')
 		{
 			$query = "SELECT username FROM account WHERE username=\"$reference\"";  
 			$result = mysql_query($query); 
 		}
 
 		if (mysql_num_rows($result) > 0 || $reference == '')
-		{
+		{*/
 			$verification_code = generateRandomString(32);
-			$query = "INSERT INTO account (username, password, email, verificationcode, reference) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\", \"$reference\")";
+			//$query = "INSERT INTO account (username, password, email, verificationcode, reference) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\", \"$reference\")";
+			$query = "INSERT INTO account (username, password, email, verificationcode) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\")";
 			if (mysql_query($query))
 			{
-				include('/home/postonme/public_html/scripts/emailVerification.php');
+				include('/home/postonme/public_html/email/emailVerification.php');
 				/*$_SESSION['username'] = $newuser;
 				$_SESSION['password'] = $encrypt;
 				$_SESSION['online'] = true;*/
 				echo SUCCESS . $newuser;
 			}
 			else echo SQL_ERROR;
-		}
-		else echo INVALID_REFERENCE;
+		/*}
+		else echo INVALID_REFERENCE;*/
 	}
 	else echo EMAIL_EXISTS;
 }

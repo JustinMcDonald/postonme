@@ -19,7 +19,7 @@ $email = $_POST["emailtext"];
 $newuser = $_POST["chatname"];
 $newpass = $_POST["chatpass"];
 $newpass2 = $_POST["chatpass2"];
-$reference = $_POST["postreference"];
+//$reference = $_POST["postreference"];
 $path = "../uploads/";
 $valid_formats = array("jpg", "png", "gif", "bmp", );
 $valid_price_chars = array("0","1","2","3","4","5","6","7","8","9");
@@ -64,16 +64,17 @@ if(isset($_POST["categorytext"]))
 
 											if (!(mysql_num_rows($result) > 0))
 											{
-												if ($reference != '')
+												/*if ($reference != '')
 												{
 													$query = "SELECT username FROM account WHERE username=\"$reference\"";  
 													$result = mysql_query($query); 
 												}
 
 												if (mysql_num_rows($result) > 0 || $reference == '')
-												{
+												{*/
 													$verification_code = generateRandomString(32);
-													$query = "INSERT INTO account (username, password, email, verificationcode, reference) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\", \"$reference\")"; 
+													//$query = "INSERT INTO account (username, password, email, verificationcode, reference) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\", \"$reference\")"; 
+													$query = "INSERT INTO account (username, password, email, verificationcode) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\")"; 
 
 													if (mysql_query($query))
 													{
@@ -81,7 +82,7 @@ if(isset($_POST["categorytext"]))
 														$madeaccount = true;
 														//TODO: MERGE ACCOUNTS HERE
 														
-														include('/home/postonme/public_html/scripts/emailVerification.php');
+														include('/home/postonme/public_html/email/emailVerification.php');
 														/*
 														$_SESSION['username'] = $newuser;
 														$_SESSION['password'] = $encrypt;
@@ -94,11 +95,11 @@ if(isset($_POST["categorytext"]))
 														exit();
 													}
 												}
-												else 
+												/*else 
 												{
 													echo "<script>window.top.indicateError('postreference'); alert('The username you referenced does not exist.');</script>";
 													exit();
-												}
+												}*/
 											}
 											else
 											{
@@ -237,7 +238,7 @@ if(isset($_POST["categorytext"]))
 					if (mysql_query($sql))
 					{
 						$adid = mysql_insert_id();
-						include('../scripts/emailAdOptions.php');
+						include('../email/emailAdOptions.php');
 						
 						if ($online) echo "<script>alert('Your advertisement has been successfully posted!'); window.top.location.href = 'http://www.postonme.com/account.php'</script>";
 						else if ($madeaccount) echo "<script>alert('Your advertisement has been successfully posted!'); window.top.location.href = 'http://www.postonme.com/'</script>";

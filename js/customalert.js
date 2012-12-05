@@ -120,7 +120,7 @@ function sendEmail(id)
 		alert("Please write a message.");
 		return;
 	}
-	var to = "../scripts/sendEmail.php?email="+email+"&message="+message+"&adid="+id;
+	var to = "../email/sendEmail.php?email="+email+"&message="+message+"&adid="+id;
 	$.ajax({
 		url : to,
 		type: "get",
