@@ -1,4 +1,4 @@
-<div id='newsbox' class='themeborder'>
+<div id='newsbox' class='themeborder' style="display:<?php if ($_COOKIE['news'] == '') echo 'none'; else if ($_COOKIE['news'] == 'true') echo 'block'; else echo 'none'; ?>">
 	<div style='height:15%'></div>
 	<div id='hidenewsbutton' class='cursorhand rightarrowbutton' onclick='hideNews(); return true;'><img src='img/expandThumb.png' class='cursorhand' alt='' width='18px' height='18px'/></div>
 	<div id='newstitle'><img src='img/news.png' alt='' width='85px' height='29px'/></div>
@@ -44,4 +44,4 @@
 		</div>
 	</div>
 </div>
-<div id='shownewsbutton' class='leftarrowbutton' onclick='showNews(); return true;'><img class='cursorhand' src='img/collapseThumb.png' alt='' width='18px' height='18px'/></div>
+<div id='shownewsbutton' class='leftarrowbutton' onclick='showNews(); return true;' style="visibility:<?php if ($_COOKIE['news'] == '') echo 'visible'; else if ($_COOKIE['news'] == 'true') echo 'hidden'; else echo 'visible'; ?>"><img class='cursorhand' src='img/collapseThumb.png' alt='' width='18px' height='18px'/></div>

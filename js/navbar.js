@@ -1,8 +1,5 @@
 $(document).ready(function() {
 	
-	var currentlocation = getCookie('location');
-	$('#currentlocation').text(currentlocation);
-	
 	$('#advsearch').bind('click', function(){
 		expandAdvancedHandler()
 	});
@@ -63,35 +60,45 @@ $(document).ready(function() {
 		}
 	});
 	
+	window.highroller = 1;
+	
 	$('#rangemin').bind('change keyup', function(){
-		$('#outputmin').text('$'+calcSliderPrice(this.value));
+		$('#outputmin').text('$'+calcSliderPrice(this.value)*window.highroller);
+		var max = $('#rangemax');
+		var m = parseInt(max.attr('value'));
+		var n = parseInt(this.value);
+		if (m <= n && n != parseInt($(this).attr('max')))
+		{
+			max.attr('value', n+1);
+			max.trigger('change');
+		}
     });
 	
 	$('#rangemax').bind('change keyup', function(){
-       $('#outputmax').text('$'+calcSliderPrice(this.value));
+		$('#outputmax').text('$'+calcSliderPrice(this.value)*window.highroller);
+		var min = $('#rangemin');
+		var n = parseInt(min.attr('value'));
+		var m = parseInt(this.value);
+		if (m <= n && n != 0)
+		{
+			min.attr('value', n-1);
+			min.trigger('change');
+		}
     });
 	
 	$('#highroller').bind('change', function()
 	{
 		var max = $('#rangemax');
-		if (max.attr('max') == 19)
+		if (window.highroller == 1)
 		{
-			$('#rangemax').unbind('change keyup');
-			$('#rangemax').bind('change keyup', function(){
-			   $('#outputmax').text('$'+calcSliderPrice(this.value)*10);
-			});
-			max.attr('value', '19');
-			max.trigger('change');
+			window.highroller = 10;
 		}
 		else
 		{
-			$('#rangemax').unbind('change keyup');
-			$('#rangemax').bind('change keyup', function(){
-			   $('#outputmax').text('$'+calcSliderPrice(this.value));
-			});
-			max.attr('value', '19');
-			max.trigger('change');
+			window.highroller = 1;
 		}
+		max.attr('value', '19');
+		max.trigger('change');
 	});
 	
 	$('#navbar').bind('click', function()
@@ -119,6 +126,13 @@ $(document).ready(function() {
 	{
 		$('#locations ul').toggle();
 	});
+	
+	disableDraggingFor(document.getElementById('brand'));
+	
+	$('#accountname, #brand, #locations, #interact li').bind('click', function(event)
+	{
+		stopEvent(event);
+	});
 });
 
 function openWindow(searchbar) {
@@ -131,7 +145,7 @@ function openWindow(searchbar) {
 	if ($('#200').is(':checked')) type += $('#200').val();
 	if ($('#201').is(':checked')) type += $('#201').val();
 	
-	var pricemin = $('#rangemin').val();
+	var pricemin = $('#outputmin').text().substring(1);
 	var pricemax = $('#outputmax').text().substring(1);
 	var price = pricemin + "-" + pricemax;
 	
@@ -301,7 +315,7 @@ function changeLocation(location)
 function calcSliderPrice(n)
 {
 	if (n < 5) return n * 5;
-	else if (n < 9) return (n - 4) * 10;
+	else if (n < 9) return (n - 2) * 10;
 	else if (n < 13) return (n - 6) * 25;
 	else if (n < 16) return (n - 9) * 50;
 	else if (n < 18) return (n - 12) * 100;

@@ -2,12 +2,12 @@ $(document).ready(function()
 {
 	$('#searchbar').bind('click', function(event)
 	{
-		event.stopPropagation();
+		stopEvent(event);
 	});
 	
 	$('#frontsignup').bind('click', function()
 	{
-		showGlassPanel("signupcontainer");
+		showSignupPanel();
 	});
 	
 	$('#frontsearch').bind('click', function(event)
@@ -100,4 +100,24 @@ function shiftFrontColumnsLeft()
 	
 	$('#frontrelax').hide();
 	$('#frontedit').show();
+}
+
+function showSignupPanel()
+{
+	showGlassPanel("signupcontainer");
+	$('#frontsignup').unbind('click');
+	$('#frontsignup').bind('click', function()
+	{
+		hideSignupPanel();
+	});
+}
+
+function hideSignupPanel()
+{
+	hideGlassPanel("signupcontainer");
+	$('#frontsignup').unbind('click');
+	$('#frontsignup').bind('click', function()
+	{
+		showSignupPanel();
+	});
 }

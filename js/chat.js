@@ -1,29 +1,4 @@
 $(document).ready(function() {	
-	var setting = getCookie('chat');
-	if (setting == null)
-	{
-		/*if ($(window).width() < 1143)
-		{*/
-			$("#chatbox").hide();
-			$("#showchatbutton").css('visibility', 'visible');
-		/*}*/
-	}
-	else {
-		if (setting == "true") 
-		{
-			$('#showchatbutton').css('visibility', 'hidden');
-			$('#chatbox').css('display', 'block');
-			$('#hidechatbutton').css('visibility', 'visible');
-			//if (e.css('visibility') == 'visible') e[0].onclick();
-		}
-		else
-		{
-			$('#chatbox').css('display', 'none');
-			$('#showchatbutton').css('visibility', 'visible');
-			//if (e.css('visibility') == 'visible') e[0].onclick();
-		}
-	}
-	
 	$(window).bind('resize', function()
 	{
 		if ($(window).width() < 1143)

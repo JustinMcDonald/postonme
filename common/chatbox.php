@@ -1,4 +1,4 @@
-<div id='chatbox' class='themeborder'>
+<div id='chatbox' class='themeborder' style="display:<?php if ($_COOKIE['chat'] == '') echo 'none'; else if ($_COOKIE['chat'] == 'true') echo 'block'; else echo 'none'; ?>">
 	<div style='height:15%'></div>
 	<div id='hidechatbutton' class='cursorhand leftarrowbutton' onclick='hideChat(); return true;'><img src='img/collapseThumb.png' class='cursorhand' alt='' width='18px' height='18px'/></div>
 	<div id='chatsignincontainer'>
@@ -25,6 +25,8 @@
 	<div id='chattextcontainer'></div>
 	<div id='outboxcontainer'></div>
 </div>
+
+<div id='showchatbutton' onclick='showChat(); return true;' style="visibility:<?php if ($_COOKIE['chat'] == '') echo 'visible'; else if ($_COOKIE['chat'] == 'true') echo 'hidden'; else echo 'visible'; ?>"><img class='cursorhand rightarrowbutton' src='img/expandThumb.png' alt='' width='18px' height='18px'/></div>
 
 <div id='forgotbox' class='themeborder'>
 	<div id='hideforgotbutton' class='cursorhand leftarrowbutton' onclick='hideGlassPanel("forgotbox"); return true;'><img src='img/collapseThumb.png' class='cursorhand' alt='' width='18px' height='18px'/></div>
@@ -66,5 +68,3 @@
 	<input type='password' name='changepasswordnew2' id='changepasswordnew2' class='themeborder' maxlength=15/>
 	<input type='submit' name='changepasswordconfirm' value='Change Password' class='themeborder cursorhand themecolor chatbutton' onclick='changePassword(); return true;' title='Confirm password change'/>
 </div>
-
-<div id='showchatbutton' onclick='showChat(); return true;'><img class='cursorhand rightarrowbutton' src='img/expandThumb.png' alt='' width='18px' height='18px'/></div>

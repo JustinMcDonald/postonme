@@ -132,7 +132,7 @@
 			<div id='welcomemessage'></div>
 			<a id='brand' href='http://www.postonme.com/' target='_top'><img src='img/written_logo.png' width='200px' height='50px'/></a>
 			<ul id='locations'>
-				<li><a href='#' id='currentlocation'></a><img src='./img/order_down_selected.png' alt='' width='10px' height='10px' style='margin-left:8px'/>
+				<li><a href='#' id='currentlocation'><?php if ($_COOKIE['location'] != '') echo $_COOKIE['location']; ?></a><img src='./img/order_down_selected.png' alt='' width='10px' height='10px' style='margin-left:8px'/>
 					<ul id='cities'>
 						<li onclick='changeLocation("Georgian College");'><a href='#'>Georgian College</a></li>
 						<li onclick='changeLocation("Western University");'><a href='#'>Western University</a></li>

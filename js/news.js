@@ -1,31 +1,4 @@
 $(document).ready(function() {
-	
-	var setting = getCookie('news');
-	if (setting == null)
-	{
-		/*if ($(window).width() < 1143)
-		{*/
-			$("#newsbox").hide();
-			$("#shownewsbutton").css('visibility', 'visible');
-		/*}*/
-	}
-	else
-	{
-		if (setting == "true") 
-		{
-			$('#shownewsbutton').css('visibility', 'hidden');
-			$('#newsbox').css('display', 'block');
-			$('#hidenewsbutton').css('visibility', 'visible');
-			//if (e.css('visibility') == 'visible') e[0].onclick();
-		}
-		else
-		{
-			$('#newsbox').css('display', 'none');
-			$('#shownewsbutton').css('visibility', 'visible');
-			//if (e.css('visibility') == 'visible') e[0].onclick();
-		}
-	}
-	
 	$(window).bind('resize', function()
 	{
 		if ($(window).width() < 1143)
