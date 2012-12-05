@@ -29,7 +29,7 @@ if ($reset)
 					<input type='password' name='resetpassword1' id='resetpassword1' class='themeborder' maxlength=15 autocomplete='off'/>
 					<div>Retype Password:</div>
 					<input type='password' name='resetpassword2' id='resetpassword2' class='themeborder' maxlength=15 autocomplete='off'/>
-					<input type='submit' name='resetsubmit' value='Reset Password' class='themeborder cursorhand themegradient chatbutton' title='Reset my passwords.'/>
+					<input type='submit' name='resetsubmit' value='Reset Password' class='themeborder cursorhand themecolor chatbutton' title='Reset my passwords.'/>
 				</form>
 			</div>";
 	}

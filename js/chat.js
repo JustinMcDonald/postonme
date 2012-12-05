@@ -871,8 +871,9 @@ function changePassword()
 				window.location.reload(true);
 			}
 		},
-		error: function (xhr, ajaxOptions, thrownError) {
+		error: function (xhr, ajaxOptions, thrownError) 
+		{
 			alert("Something went wrong, please try again later.");
-		}
+		},
 	});
 }
