@@ -1,6 +1,6 @@
 .navbar{
 width:100%;
-min-width:1114px;
+min-width:1126px;
 height:50px;
 color:white;
 -moz-box-shadow: 0 3px 4px black;
@@ -298,6 +298,100 @@ color:white;
 }
  
 #locations li ul li a:hover
+{
+color:yellow;
+}
+
+#accountops
+{
+-webkit-padding-start:0px;
+display:none;
+position:fixed;
+right:0;
+top:0;
+margin-top:20px;
+margin-right:15px;
+font:0.75em Verdana;
+color:#FBFBFB;
+}
+
+#accountops li
+{
+float:left;
+list-style:none;
+cursor:pointer;
+position:relative;
+}
+
+#accountops > li
+{
+margin-left:10px;
+}
+
+#accountops > li:hover
+{
+color:yellow;
+}
+
+#accountops li ul
+{
+position:absolute;
+right:0px;
+top:0px;
+margin-top:20px;
+line-height:16px;
+color:white;
+/* for IE */
+display:none;
+border:1px solid white;
+-webkit-padding-start: 0px;
+}
+
+#accountops li ul li
+{
+display:block;
+list-style-type:none;
+width:150px;
+padding-top:3px;
+padding-bottom:3px;
+/*background-color:#0098CF;*/
+background-color:rgba(0,152,207,0.85);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#dF0098CF,endColorstr=#dF0098CF);
+}
+
+#accountops li ul li a
+{
+display:block;
+color:white;
+}
+ 
+#accountops li ul li a:hover
+{
+color:yellow;
+}
+
+#guestops
+{
+-webkit-padding-start:0px;
+position:fixed;
+right:0;
+top:0;
+margin-top:20px;
+margin-right:15px;
+font:0.75em Verdana;
+color:#FBFBFB;
+}
+
+#guestops li
+{
+float:left;
+list-style:none;
+cursor:pointer;
+position:relative;
+margin-left:10px;
+}
+
+#guestops > li:hover
 {
 color:yellow;
 }

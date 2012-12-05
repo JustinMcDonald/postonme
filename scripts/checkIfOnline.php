@@ -3,7 +3,7 @@ if (isset($_SESSION['online']))
 {
 	if ($_SESSION['online'] == 1)
 	{
-		echo "<script>hideChatLogin(); shiftFrontColumnsLeft();</script>";
+		echo "<script>showAccountOps(); shiftFrontColumnsLeft();</script>";
 		
 		$result = mysql_query("SELECT exp FROM account WHERE username=\"" . $_SESSION['username'] . "\"");
 		if (!$result)
@@ -19,7 +19,7 @@ if (isset($_SESSION['online']))
 	}
 	else
 	{
-		echo "<script>showChatLogin(); showGuestLevelMessage();</script>";
+		echo "<script>showGuestOps(); showGuestLevelMessage();</script>";
 	}
 	
 	echo "<script>showWelcomeMessage('" . $_SESSION['username'] . "'); if (document.URL.substring(24,28)=='post') formChecks();</script>";
@@ -28,7 +28,7 @@ else
 {
 	include('createGuest.php');
 	
-	echo "<script>showChatLogin(); showWelcomeMessage('" . $_SESSION['username'] . "'); if (document.URL.substring(24,28)=='post') formChecks();</script>";
+	echo "<script>showGuestOps(); showWelcomeMessage('" . $_SESSION['username'] . "'); if (document.URL.substring(24,28)=='post') formChecks();</script>";
 	echo "<script>showGuestLevelMessage();</script>";
 }
 ?>

@@ -16,6 +16,7 @@ include('/home/postonme/hidden_scripts/session.php');
 	<link rel="stylesheet" type="text/css" href="css/chat.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newsbox.css"/>
 	<link rel="stylesheet" type="text/css" href="css/customalert.css"/>
+	<link rel="stylesheet" type="text/css" href="css/accountops.css"/>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>
@@ -85,7 +86,7 @@ If a deal seems too good to be true, it probably is.</p>
 <?php
 include("common/newsbox.php");
 include("common/chatbox.php");
-include("common/signupbox.php");
+include("common/accountpanels.php");
 include("common/navbar.php");
 include("common/footer.php");
 include("common/screenlock.php");

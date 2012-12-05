@@ -1,5 +1,5 @@
-<div id='signupcontainer' class='themeborder'>
-	<div id='hidesignupbutton' class='cursorhand leftarrowbutton' onclick='hideGlassPanel("signupcontainer"); return true;'><img src='img/collapseThumb.png' class='cursorhand' alt='' width='18px' height='18px'/></div>
+<div id='signupbox' class='themeborder glasspanel'>
+	<div id='hidesignupbutton' class='cursorhand leftarrowbutton' onclick='hideGlassPanel("signupbox"); return true;'><img src='img/collapseThumb.png' class='cursorhand' alt='' width='18px' height='18px'/></div>
 	<div id='signuptitle'><img src='img/sign_up.png' alt='' width='130px' height='38px'/></div>
 	<p><b>Create an account to have all of these awesome features:</b></p>
 	<ul>

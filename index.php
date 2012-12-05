@@ -32,6 +32,7 @@ include('/home/postonme/hidden_scripts/session.php');
 	<link rel="stylesheet" type="text/css" href="css/chat.css"/>
 	<link rel="stylesheet" type="text/css" href="css/newsbox.css"/>
 	<link rel="stylesheet" type="text/css" href="css/customalert.css"/>
+	<link rel="stylesheet" type="text/css" href="css/accountops.css"/>
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>
@@ -100,9 +101,8 @@ include('/home/postonme/hidden_scripts/session.php');
 
 <?php 
 include("common/newsbox.php");
-//echo "<script>var color = $('#frontfill2').css('background-color'); $('#newsbox').css('background-color', color);</script>";
 include("common/chatbox.php");
-include("common/signupbox.php");
+include("common/accountpanels.php");
 include("common/navbar.php");
 include("common/footer.php");
 include("common/screenlock.php");

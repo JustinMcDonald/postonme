@@ -76,9 +76,10 @@ function chatLogin()
 					case 1:
 						showWelcomeMessage(json[1]);
 						styleSocialColor(json[2]);
-						hideChatLogin();
+						showAccountOps();
 						if ( typeof shiftFrontColumnsLeft == 'function' ) shiftFrontColumnsLeft();
 						loadMessages();
+						hideGlassPanel('loginbox');
 						break;
 					case 2:
 						alert("You must activate your account before logging in. Look for your account verification code in your email.");
@@ -329,18 +330,16 @@ function checkForNewMessages(cids)
 	});
 }
 
-function hideChatLogin() {
-	window.top.document.getElementById('chatsignin').style.display = "none";
-	window.top.document.getElementById('chatsignout').style.display = "inline-block";
-	window.top.document.getElementById('youraccount').style.display = "inline-block";
-	window.top.document.getElementById('accountsettings').style.display = "inline-block";
+function showAccountOps()
+{
+	$('#guestops').hide();
+	$('#accountops').show();
 }
 
-function showChatLogin() {
-	window.top.document.getElementById('chatsignin').style.display = "block";
-	window.top.document.getElementById('chatsignout').style.display = "none";
-	window.top.document.getElementById('youraccount').style.display = "none";
-	window.top.document.getElementById('accountsettings').style.display = "none";
+function showGuestOps()
+{
+	$('#accountops').hide();
+	$('#guestops').show();
 }
 
 /*	createLiveChat()

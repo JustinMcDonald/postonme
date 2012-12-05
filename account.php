@@ -20,6 +20,7 @@ include("scripts/activateAccount.php");
 	<link rel="stylesheet" type="text/css" href="css/newsbox.css"/>
 	<link rel="stylesheet" type="text/css" href="css/customalert.css"/>
 	<link rel="stylesheet" type="text/css" href="css/advertisement.css"/>
+	<link rel="stylesheet" type="text/css" href="css/accountops.css"/>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>
@@ -58,7 +59,7 @@ include("scripts/activateAccount.php");
 <?php
 include("common/newsbox.php");
 include("common/chatbox.php");
-include("common/signupbox.php");
+include("common/accountpanels.php");
 include("scripts/createResetPasswordForm.php");
 include("scripts/backupDeleteAdvertisement.php");
 include("common/navbar.php");

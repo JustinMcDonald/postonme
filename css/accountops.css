@@ -1,0 +1,66 @@
+#forgotbox
+{
+height:200px;
+}
+
+#resetpassbox
+{
+height:200px;
+}
+
+#settingsbox
+{
+height:300px;
+}
+
+#changeemailbox
+{
+height:300px;
+}
+
+#changepasswordbox
+{
+height:300px;
+}
+
+#signupbox
+{
+height:460px;
+}
+
+#loginbox
+{
+padding-top:20px;
+height:120px;
+}
+
+#signupcontainer p
+{
+text-align:justify;
+}
+
+#signupcontainer ul
+{
+-webkit-padding-start:20px;
+font:10px Verdana;
+}
+
+#signuptitle{
+padding:5px 0 3px 0;
+}
+
+.glasspanel
+{
+visibility:hidden;
+position:fixed;
+left:0;
+top:13%;
+width:200px;
+padding:5px 5px 5px 5px;
+/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fa00BBFE,endColorstr=#fa00BBFE);
+background-color:rgba(0,187,254,0.97);*/
+background-color:#B0EAFF;
+text-align:left;
+display:block;
+font:0.75em verdana;
+}

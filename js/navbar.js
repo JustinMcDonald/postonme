@@ -127,9 +127,14 @@ $(document).ready(function() {
 		$('#locations ul').toggle();
 	});
 	
+	$('#accountops').bind('click', function()
+	{
+		$('#accountsubops').toggle();
+	});
+	
 	disableDraggingFor(document.getElementById('brand'));
 	
-	$('#accountname, #brand, #locations, #interact li').bind('click', function(event)
+	$('#accountname, #brand, #locations, #interact li, #accountops, #guestops').bind('click', function(event)
 	{
 		stopEvent(event);
 	});
