@@ -328,6 +328,17 @@ background-color:#008ABD;
 background-color:#16A7DB;
 }
 
+#frontedit
+{
+display:none;
+background-color:#008ABD;
+}
+
+#frontedit:hover
+{
+background-color:#16A7DB;
+}
+
 #frontsearch
 {
 background-color:#0077A3;
@@ -344,17 +355,6 @@ background-color:#005A7B;
 }
 
 #frontpost:hover
-{
-background-color:#108AB5;
-}
-
-#frontedit
-{
-display:none;
-background-color:#005A7B;
-}
-
-#frontedit:hover
 {
 background-color:#108AB5;
 }
