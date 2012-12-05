@@ -47,13 +47,18 @@ function chatLogout()
 function chatLogin()
 {
 	var form = window.top.document.getElementById('chatsigninform');
+	removeFormErrors(form);
 	var username = form.elements['signinusername'].value;
 	var password = form.elements['signinpassword'].value;
-	if (username == "") {
+	if (username == "")
+	{
+		indicateError('signinusername');
 		alert("Please provide your username.");
 		return;
 	}
-	if (password == "") {
+	if (password == "")
+	{
+		indicateError('signinpassword');
 		alert("Please provide your password.");
 		return;
 	}
@@ -85,6 +90,8 @@ function chatLogin()
 						alert("You must activate your account before logging in. Look for your account verification code in your email.");
 						break;
 					case 3:
+						indicateError('signinusername');
+						indicateError('signinpassword');
 						alert("Password mismatch. Please retype your username and/or password.");
 						break;
 					default:
@@ -726,8 +733,11 @@ function signUp() {
 function forgotPassword()
 {
 	var form = window.top.document.getElementById('forgotform');
+	removeFormErrors(form);
 	var email = form.elements['forgotemail'].value;
-	if (email == ""){
+	if (email == "")
+	{
+		indicateError('forgotemail');
 		alert("Please provide an email address");
 		return;
 	}
@@ -743,8 +753,8 @@ function forgotPassword()
 			switch (data)
 			{
 				case "7":
+					indicateError('forgotemail');
 					alert("Please provide a valid email address.");
-					$('#forgotemail').focus();
 					break;
 				default:
 					hideGlassPanel('forgotbox');
@@ -761,18 +771,23 @@ function forgotPassword()
 function resetPassword(user, code)
 {
 	var form = window.top.document.getElementById('resetpassform');
+	removeFormErrors(form);
 	var pass1 = form.elements['resetpassword1'].value;
 	var pass2 = form.elements['resetpassword2'].value;
 	
 	if (pass1 == ""){
+		indicateError('resetpassword1');
 		alert("Please provide a password.");
 		return;
 	}
 	if (pass2 == ""){
+		indicateError('resetpassword2');
 		alert("Please retype your password.");
 		return;
 	}
 	if (pass1 != pass2){
+		indicateError('resetpassword2');
+		indicateError('resetpassword1');
 		alert("Your passwords do not match.");
 		return;
 	}
@@ -797,14 +812,20 @@ function resetPassword(user, code)
 
 function changeEmail()
 {
+	var e = $('#changeemailbox');
+	removeFormErrors(e);
 	var pass = $('#changeemailpassword').val();
 	var newemail = $('#changeemailemail').val();
 	
-	if (pass == ""){
+	if (pass == "")
+	{
+		indicateError('changeemailpassword');
 		alert("Please provide a password.");
 		return;
 	}
-	if (newemail == ""){
+	if (newemail == "")
+	{
+		indicateError('changeemailemail');
 		alert("Please provide an email.");
 		return;
 	}
@@ -833,23 +854,30 @@ function changeEmail()
 
 function changePassword()
 {
+	var e = $('#changepasswordbox');
+	removeFormErrors(e);
 	var pass = $('#changepasswordcurrent').val();
 	var newpass1 = $('#changepasswordnew').val();
 	var newpass2 = $('#changepasswordnew2').val();
 	
 	if (pass == ""){
+		indicateError('changepasswordcurrent');
 		alert("Please provide your current password.");
 		return;
 	}
 	if (newpass1 == ""){
+		indicateError('changepasswordnew');
 		alert("Please provide a new password.");
 		return;
 	}
 	if (newpass2 == ""){
+		indicateError('changepasswordnew2');
 		alert("Please retype your new password.");
 		return;
 	}
 	if (newpass1 != newpass2){
+		indicateError('changepasswordnew2');
+		indicateError('changepasswordnew');
 		alert("Your passwords do not match.");
 		return;
 	}

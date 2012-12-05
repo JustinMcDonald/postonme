@@ -127,7 +127,7 @@ $(document).ready(function() {
 		$('#locations ul').toggle();
 	});
 	
-	$('#accountops').bind('click', function()
+	$('#accountsettings').bind('click', function()
 	{
 		$('#accountsubops').toggle();
 	});

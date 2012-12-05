@@ -261,14 +261,14 @@ display:inline;
 #locations li ul
 {
 position:absolute;
-left:-30px;
+left:0px;
 top:0px;
-margin-top:30px;
-width:230px;
+margin-top:32px;
 line-height:16px;
 color:white;
 /* for IE */
 display:none;
+-webkit-padding-start:0px;
 }
 
 /*#locations li:hover ul
@@ -282,8 +282,9 @@ display:block;
 -webkit-border-radius:5px;
 border-radius:5px;
 display:block;
-margin:5px 25px;
-padding:7px 0px;
+width:100%;
+margin-top:2px;
+padding:7px 5px;
 list-style-type:none;
 /*background-color:#0098CF;*/
 border:1px solid white;
