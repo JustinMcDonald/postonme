@@ -35,9 +35,9 @@ function deletePost(adid){
 
 function bumpPost(adid){
 
-	var answer = confirm("Are you sure you want to bump this advertisement?\n(Cost = 1 Experience)");
+	/*var answer = confirm("Are you sure you want to bump this advertisement?\n(Cost = 1 Experience)");
 	if (answer)
-	{
+	{*/
 		var dataString = "adid="+adid;
 		
 		$.ajax({
@@ -46,13 +46,14 @@ function bumpPost(adid){
 			data: dataString,
 			success: function(response, textStatus, jqXHR)
 			{
-				(response == '1') ? window.top.location.reload() : alert('Your experience cannot go below 0');
+				//(response == '1') ? window.top.location.reload() : alert('Your experience cannot go below 0');
+				(response == '1') ? window.top.location.reload() : alert('Something went wrong, please try again later.');
 			},
 			error: function (xhr, ajaxOptions, thrownError) {
 				alert("Something went wrong. Please try again later.");
 			}
 		});
-	}
+	//}
 }
 
 function editMode(adid){

@@ -15,6 +15,7 @@ if (isset($_SESSION['online']))
 
 $user = $_SESSION['username'];
 
+/*
 $result = mysql_query("SELECT exp FROM account WHERE username='$user'");
 if ($result) 
 {
@@ -28,19 +29,18 @@ else
 }
 
 if ($exp > 0)
-{
-	if (!mysql_query("UPDATE advertisement SET date='$currentTime' WHERE adid='$adid';"))
+{*/
+	if (mysql_query("UPDATE advertisement SET date='$currentTime' WHERE adid='$adid';"))
 	{
-		echo GENERAL_FAIL;
-		exit();
+		echo SUCCESS;
 	}
 
-	if (!mysql_query("UPDATE account SET exp=exp-1 WHERE username='$user'"))
+	/*if (!mysql_query("UPDATE account SET exp=exp-1 WHERE username='$user'"))
 	{
 		echo GENERAL_FAIL;
 		exit();
 	}
 	else echo SUCCESS;
-}
+}*/
 else echo GENERAL_FAIL;
 ?>
