@@ -64,8 +64,8 @@ for($i = $lowlimit; $i < $highlimit; $i++)
 			
 			echo "<div id='adbody" . $ad['adid'] . "' class='adbody cursorhand' title='Click to Expand' onclick='expand(" . $ad['adid'] . ");'>";
 			
-			if ($online) echo "<div style='display:table-cell;vertical-align:middle;'><div class='onlinebtn themeborder' title='Online'></div></div>"; 
-			else echo "<div style='display:table-cell;vertical-align:middle;'><div class='offlinebtn themeborder' title='Offline'></div></div>";
+			if ($online) echo "<div class='adstatuscontainer'><img src='../img/online_status.png' alt='' width='16px' height='16px' title='Online'/></div>"; 
+			else echo "<div class='adstatuscontainer'><img src='../img/offline_status.png' alt='' width='16px' height='16px' title='Offline'/></div>";
 			
 			if (strlen($ad['image_thumb']) > 0 && strlen($ad['image']) > 0) echo "<div class='adimagecontainer'><img src='../uploads/" . $ad['image_thumb'] . "' alt='' title='Expand Image' onClick='var event = arguments[0] || window.event; openGallery(\"../uploads/" . $ad['image'] . "\", event);' class='themeborder'/></div>";
 			else echo "<div class='adimagecontainer'><img src='../img/iconThumb.png' alt='' title='Expand Image' onClick='var event = arguments[0] || window.event; openGallery(\"../img/icon.png\", event);' class='themeborder'/></div>";
@@ -172,10 +172,11 @@ function assembleQuery($search='',$type='',$price='0-10000',$date='',$category='
 	$yesterday = $currentTime - 259200;
 	$weekago = $currentTime - 604800;
 	$monthago = $currentTime - 2592000;
-	if ($date == '0') $query = $query . " AND date > $dayago";
-	else if ($date == '1') $query = $query . " AND date > $yesterday";
-	else if ($date == '2') $query = $query . " AND date > $weekago";
-	else if ($date == '3') $query = $query . " AND date > $monthago";
+	if ($date == '0') $query .= " AND date > $dayago";
+	else if ($date == '1') $query .= " AND date > $yesterday";
+	else if ($date == '2') $query .= " AND date > $weekago";
+	else if ($date == '3') $query .= " AND date > $monthago";
+	else if ($date == '4') $query .= " AND date > 0";
 		
 	/*CATEGORY*/
 	$categories = explode("-", $category);

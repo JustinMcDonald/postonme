@@ -5,6 +5,11 @@ $(document).ready(function()
 		event.stopPropagation();
 	});
 	
+	$('#frontsignup').bind('click', function()
+	{
+		showGlassPanel("signupcontainer");
+	});
+	
 	$('#frontsearch').bind('click', function(event)
 	{
 		/*event.stopPropagation();

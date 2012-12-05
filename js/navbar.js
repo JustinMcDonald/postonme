@@ -64,30 +64,32 @@ $(document).ready(function() {
 	});
 	
 	$('#rangemin').bind('change keyup', function(){
-       $('#outputmin').text('$' + this.value);
+		$('#outputmin').text('$'+calcSliderPrice(this.value));
     });
 	
 	$('#rangemax').bind('change keyup', function(){
-       $('#outputmax').text('$' + this.value);
+       $('#outputmax').text('$'+calcSliderPrice(this.value));
     });
 	
 	$('#highroller').bind('change', function()
 	{
 		var max = $('#rangemax');
-		if (max.attr('max') == 200)
+		if (max.attr('max') == 19)
 		{
-			max.attr('max', '10000');
-			max.attr('min', '500');
-			max.attr('step', '500');
-			max.attr('value', '10000');
+			$('#rangemax').unbind('change keyup');
+			$('#rangemax').bind('change keyup', function(){
+			   $('#outputmax').text('$'+calcSliderPrice(this.value)*10);
+			});
+			max.attr('value', '19');
 			max.trigger('change');
 		}
 		else
 		{
-			max.attr('max', '200');
-			max.attr('min', '10');
-			max.attr('step', '10');
-			max.attr('value', '200');
+			$('#rangemax').unbind('change keyup');
+			$('#rangemax').bind('change keyup', function(){
+			   $('#outputmax').text('$'+calcSliderPrice(this.value));
+			});
+			max.attr('value', '19');
 			max.trigger('change');
 		}
 	});
@@ -293,4 +295,16 @@ function changeLocation(location)
 {
 	setCookie('location',location,365);
 	$('#currentlocation').text(location);
+	if (window.location.href.match(/view/)) openWindow("navsearchbar");
+}
+
+function calcSliderPrice(n)
+{
+	if (n < 5) return n * 5;
+	else if (n < 9) return (n - 4) * 10;
+	else if (n < 13) return (n - 6) * 25;
+	else if (n < 16) return (n - 9) * 50;
+	else if (n < 18) return (n - 12) * 100;
+	else if (n < 20) return (n - 15) * 250;
+	else return 10;
 }

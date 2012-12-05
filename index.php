@@ -61,46 +61,36 @@ include('/home/postonme/hidden_scripts/session.php');
 	<tr>
 		<td id='frontfill1'><div></div></td>
 		<td id='frontsignup' class='cursorhand'>
-			<div style='height:60%;'></div>
+			<div style='height:300px;'></div>
 			<img src='img/signup_icon.png' alt='' width='100px' height='100px'/>
 			<img src='img/signup_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
-			<div style='height:1%;'></div>
-			<div style='height:30px'></div>
-			<div style='height:8%;'></div>
+			<div style='height:80px;'></div>
 			<img src='img/signup_description.png' alt='' width='200px' height='50px'/>
-			<div style='height:20%;'></div>
 		</td>
 		<td id='frontsearch' class='cursorhand'>
-			<div style='height:60%;'></div>
+			<div style='height:300px;'></div>
 			<img src='img/search_icon.png' alt='' width='100px' height='100px'/>
 			<img src='img/search_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
-			<div style='height:1%;'></div>
+			<div style='height:10px;'></div>
 			<form action="" method="post" id="searchform" onsubmit="openWindow('searchbar'); return false;">
 				<input type="text" name="searchtext" value='' id="searchbar">
 			</form>
-			<div style='height:7%;'></div>
+			<div style='height:34px;'></div>
 			<img src='img/search_description.png' alt='' width='200px' height='50px'/>
-			<div style='height:20%;'></div>
 		</td>
 		<td id='frontpost' class='cursorhand'>
-			<div style='height:60%;'></div>
+			<div style='height:300px;'></div>
 			<img src='img/post_icon.png' alt='' width='100px' height='100px'/>
 			<img src='img/post_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
-			<div style='height:1%;'></div>
-			<div style='height:30px'></div>
-			<div style='height:8%;'></div>
+			<div style='height:80px;'></div>
 			<img src='img/post_description.png' alt='' width='200px' height='50px'/>
-			<div style='height:20%;'></div>
 		</td>
 		<td id='frontedit' class='cursorhand'>
-			<div style='height:60%;'></div>
+			<div style='height:300px;'></div>
 			<img src='img/edit_icon.png' alt='' width='100px' height='100px'/>
 			<img src='img/edit_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
-			<div style='height:1%;'></div>
-			<div style='height:30px'></div>
-			<div style='height:8%;'></div>
+			<div style='height:80px;'></div>
 			<img src='img/edit_description.png' alt='' width='200px' height='50px'/>
-			<div style='height:20%;'></div>
 		</td>
 		<td id='frontfill2'><div></div></td>
 	</tr>

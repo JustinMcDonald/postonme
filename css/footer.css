@@ -8,24 +8,18 @@ background:#E3F4FF;
 font:0.6em verdana;
 }
 
-#bottombanner > div {
-position:absolute;
-width:100%;
-}
-
-#bottombanner > div > ul {
-position:relative;
+#bottombanner > ul {
+width:auto;
 margin-left:auto;
 margin-right:auto;
 -webkit-margin-start: auto;
 -webkit-margin-end: auto;
 -webkit-padding-start: 0;
- display:block;
- width:600px;
+display:block;
 }
 
-#bottombanner > div > ul > li {
-float:left;
+#bottombanner > ul > li {
+display:inline-block;
 list-style:none;
 padding-left:10px;
 padding-right:10px;

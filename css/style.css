@@ -298,10 +298,9 @@ border-spacing:0px;
 
 #frontpage td
 {
-height:100%;
-min-height:545px;
 vertical-align:middle;
 width:20%;
+min-width:210px;
 /*transition: background 0.5s;
 -moz-transition: background 0.5s;
 -webkit-transition: background 0.5s;
@@ -389,7 +388,7 @@ text-decoration:underline;
 
 #frontbanner
 {
-position:fixed;
+position:absolute;
 left:50%;
 margin-left:-393px;
 top:0;

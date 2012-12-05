@@ -32,6 +32,13 @@ text-align:left;
 padding-bottom:10px;
 }
 
+.adstatuscontainer
+{
+display:table-cell;
+vertical-align:middle;
+min-width:16px;
+}
+
 .adimagecontainer
 {
 display:table-cell;
