@@ -94,8 +94,8 @@ if(isset($_POST["categorytext"]))
 														echo "<script>alert('Account creation failed.');</script>";
 														exit();
 													}
-												}
-												/*else 
+												/*}
+												else 
 												{
 													echo "<script>window.top.indicateError('postreference'); alert('The username you referenced does not exist.');</script>";
 													exit();
@@ -257,7 +257,7 @@ if(isset($_POST["categorytext"]))
 		else echo "<script>window.top.indicateError('postprice'); alert('Price must only contain numbers (0-9).');</script>";
 	} 
 	else echo "<script>window.top.indicateError('posttitle'); alert('Title must be between 5 and 75 characters.');</script>";
-} 
+}
 else echo "<script>window.top.indicateError('postcategory'); alert('Please select a category.');</script>";
 
 function generateRandomString($length)

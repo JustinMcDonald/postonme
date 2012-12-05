@@ -490,12 +490,13 @@ function addToChatText(cid, message)
 }
 
 function cleanTextSizes() {
-	var childNodeArray = window.top.document.getElementById('chattextcontainer').childNodes;
+	/*var childNodeArray = window.top.document.getElementById('chattextcontainer').childNodes;
 	var newH = window.top.document.getElementById('chatbox').clientHeight;
 	newH -= 200;
 	newH -= window.top.document.getElementById('chatsignincontainer').clientHeight;
 	newH -= window.top.document.getElementById('chattitlecontainer').clientHeight;
-	for (var j = 0; j < childNodeArray.length; j++) childNodeArray[j].style.height = newH + "px";
+	for (var j = 0; j < childNodeArray.length; j++) childNodeArray[j].style.height = newH + "px";*/
+	return true;
 }
 
 function closeChat(cid)
