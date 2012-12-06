@@ -5,7 +5,7 @@ $num = 0;
 while (!$unique)
 {
 	$num = rand(10, 10000);
-	$query = "SELECT username FROM account WHERE username=\"Guest" . $num . "\"";  
+	$query = "SELECT username FROM account WHERE username='Guest" . $num . "'";  
 	$result = mysql_query($query); 
 	if (!$result)
 	{

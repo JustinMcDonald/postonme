@@ -82,7 +82,7 @@ function chatLogin()
 						showWelcomeMessage(json[1]);
 						styleSocialColor(json[2]);
 						showAccountOps();
-						if ( typeof shiftFrontColumnsLeft == 'function' ) shiftFrontColumnsLeft();
+						if ( typeof showEditColumn == 'function' ) showEditColumn();
 						loadMessages();
 						hideGlassPanel('loginbox');
 						break;
@@ -598,6 +598,11 @@ function showChat()
 			document.getElementById('signinusername').focus();
 		}
 	}, 10);
+}
+
+function toggleGlassPanel(id)
+{
+	($('#'+id).css('visibility') == 'visible') ? hideGlassPanel(id) : showGlassPanel(id);
 }
 
 function showGlassPanel(id)

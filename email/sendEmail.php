@@ -23,7 +23,7 @@ $headers .= 'Reply-To: ' . $sender;
 
 include('/home/postonme/hidden_scripts/db.php');
 
-$query = "SELECT title, contact FROM advertisement WHERE adid=".$adid;
+$query = "SELECT title, contact FROM advertisement WHERE adid=".mysql_real_escape_string($adid);
 $result = mysql_query($query);
 if (!$result)
 {

@@ -61,14 +61,14 @@ include('/home/postonme/hidden_scripts/session.php');
 <table id="frontpage">
 	<tr>
 		<td id='frontfill1'><div></div></td>
-		<td id='frontedit' class='cursorhand'>
+		<td id='frontedit' class='cursorhand' style='display: <?php if (!isset($_SESSION['online'])) echo 'none'; else if ($_SESSION['online'] == 1) echo 'table-cell'; else echo 'none'; ?> '>
 			<div style='height:280px;'></div>
 			<img src='img/edit_icon.png' alt='' width='100px' height='100px'/>
 			<img src='img/edit_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
 			<div style='height:80px;'></div>
 			<img src='img/edit_description.png' alt='' width='200px' height='50px'/>
 		</td>
-		<td id='frontsignup' class='cursorhand'>
+		<td id='frontsignup' class='cursorhand'style='display: <?php if (!isset($_SESSION['online'])) echo 'table-cell'; else if ($_SESSION['online'] == 1) echo 'none'; else echo 'table-cell'; ?> '>
 			<div style='height:280px;'></div>
 			<img src='img/signup_icon.png' alt='' width='100px' height='100px'/>
 			<img src='img/signup_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>

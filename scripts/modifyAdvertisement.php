@@ -19,7 +19,7 @@ if ($validate == 1)
 		{
 			if(preg_match('/^.{1,500}$/s',$text))
 			{
-				if (mysql_query("UPDATE advertisement SET date='$currentTime', category='$category', title='$title', price='$price', text='$text' WHERE adid='$adid';")) echo "1Changes were successfully changed.";
+				if (mysql_query("UPDATE advertisement SET date='$currentTime', category='".mysql_real_escape_string($category)."', title='".mysql_real_escape_string($title)."', price='".mysql_real_escape_string($price)."', text='".mysql_real_escape_string($text)."' WHERE adid='".mysql_real_escape_string($adid)."';")) echo "1Changes were successfully changed.";
 				else echo "Something went wrong. Please try again later.";
 			}
 			else echo "Text must be between 1 and 500 characters.";

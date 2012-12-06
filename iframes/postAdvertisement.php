@@ -54,19 +54,19 @@ if(isset($_POST["categorytext"]))
 									{
 										$encrypt = md5($newpass);
 										
-										$query = "SELECT username FROM account WHERE username=\"$newuser\"";  
+										$query = "SELECT username FROM account WHERE username='".mysql_real_escape_string($newuser)."'";  
 										$result = mysql_query($query);  
 
 										if (!(mysql_num_rows($result) > 0))
 										{
-											$query = "SELECT email FROM account WHERE email=\"$email\"";  
+											$query = "SELECT email FROM account WHERE email='".mysql_real_escape_string($email)."'";  
 											$result = mysql_query($query);  
 
 											if (!(mysql_num_rows($result) > 0))
 											{
 												/*if ($reference != '')
 												{
-													$query = "SELECT username FROM account WHERE username=\"$reference\"";  
+													$query = "SELECT username FROM account WHERE username='".mysql_real_escape_string($reference)."'";  
 													$result = mysql_query($query); 
 												}
 
@@ -74,7 +74,7 @@ if(isset($_POST["categorytext"]))
 												{*/
 													$verification_code = generateRandomString(32);
 													//$query = "INSERT INTO account (username, password, email, verificationcode, reference) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\", \"$reference\")"; 
-													$query = "INSERT INTO account (username, password, email, verificationcode) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\")"; 
+													$query = "INSERT INTO account (username, password, email, verificationcode) VALUES ('".mysql_real_escape_string($newuser)."', '".mysql_real_escape_string($encrypt)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($verification_code)."')"; 
 
 													if (mysql_query($query))
 													{
@@ -223,7 +223,7 @@ if(isset($_POST["categorytext"]))
 					if ($madeaccount) $user = $newuser;
 					else if ($online)
 					{
-						$result = mysql_query("SELECT email FROM account WHERE username='$user'");
+						$result = mysql_query("SELECT email FROM account WHERE username='".mysql_real_escape_string($user)."'");
 						$account = mysql_fetch_array($result);
 						$email = $account['email'];
 					}
@@ -233,7 +233,7 @@ if(isset($_POST["categorytext"]))
 					$owner_code = generateRandomString(32);
 					
 					if ($uploaded) $sql = "INSERT INTO advertisement (title, date, category, location, type, price, text, contact, username, image, image_thumb, online, owner_code) VALUES ('$title', '$currentTime', '$category', '$location', '$type', '$price', '$detail', '$email', '$user', '$actual_image_name"."."."$ext', '$actual_image_name"."_thumb."."$ext', $online, '$owner_code')";
-					else $sql = "INSERT INTO advertisement (title, date, category, location, type, price, text, contact, username, online, owner_code) VALUES ('$title', '$currentTime', '$category', '$location', '$type', '$price', '$detail', '$email', '$user', $online, '$owner_code')";
+					else $sql = "INSERT INTO advertisement (title, date, category, location, type, price, text, contact, username, online, owner_code) VALUES ('".mysql_real_escape_string($title)."', '".mysql_real_escape_string($currentTime)."', '".mysql_real_escape_string($category)."', '".mysql_real_escape_string($location)."', '".mysql_real_escape_string($type)."', '".mysql_real_escape_string($price)."', '".mysql_real_escape_string($detail)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($user)."', $online, '".mysql_real_escape_string($owner_code)."')";
 					
 					if (mysql_query($sql))
 					{

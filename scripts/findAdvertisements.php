@@ -46,7 +46,7 @@ for($i = $lowlimit; $i < $highlimit; $i++)
 	{	
 		
 		$user = $ad['username'];			
-		$query = "SELECT online, exp FROM account WHERE username='$user'";
+		$query = "SELECT online, exp FROM account WHERE username='".mysql_real_escape_string($user)."'";
 		$result = mysql_query($query);
 		
 		$online = false;
@@ -152,8 +152,8 @@ function assembleQuery($search='',$type='',$price='0-10000',$date='',$category='
 	for ($i = 0; $i < count($terms); $i++)
 	{
 		if ($i > 0) $query .= " OR";
-		$query .= " title LIKE '%" . $terms[$i] . "%' OR text LIKE '%" . $terms[$i] . "%'";
-		if (substr($terms[$i], -1) == 's' and strlen($terms[$i]) > 3) $query .= " OR title LIKE '%" . substr($terms[$i], 0, -1) . "%' OR text LIKE '%" . substr($terms[$i], 0, -1) . "%'";
+		$query .= " title LIKE '%" . mysql_real_escape_string($terms[$i]) . "%' OR text LIKE '%" . mysql_real_escape_string($terms[$i]) . "%'";
+		if (substr($terms[$i], -1) == 's' and strlen($terms[$i]) > 3) $query .= " OR title LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%' OR text LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%'";
 	}
 	$query .= ") ";
 
@@ -183,14 +183,14 @@ function assembleQuery($search='',$type='',$price='0-10000',$date='',$category='
 	if (count($categories) > 1) {
 		$query = $query . " AND (";
 		for ($i = 0; $i < count($categories) - 1; $i++) {
-			$query = $query . "category='" . $categories[$i] . "'";
+			$query = $query . "category='" . mysql_real_escape_string($categories[$i]) . "'";
 			if ($i != count($categories) - 2) $query = $query . " OR ";
 		}
 		$query = $query . ")";
 	}
 		
 	/*LOCATION*/
-	$query .= " AND location='$location'";
+	$query .= " AND location='".mysql_real_escape_string($location)."'";
 
 	/*IMAGES*/
 	if ($images == 1) $query .= " AND image!=''";

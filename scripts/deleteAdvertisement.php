@@ -11,6 +11,6 @@ if (isset($_SESSION['online']))
 	}
 }
 
-if (!mysql_query("DELETE FROM advertisement WHERE adid='$adid';")) return false;
+if (!mysql_query("DELETE FROM advertisement WHERE adid='".mysql_real_escape_string($adid)."';")) return false;
 else return true;
 ?>

@@ -5,7 +5,7 @@ $code = $_GET['code'];
 
 if ($reset)
 {
-	$response = mysql_query("SELECT verificationcode, active FROM account WHERE username='$user'");
+	$response = mysql_query("SELECT verificationcode, active FROM account WHERE username='".mysql_real_escape_string($user)."'");
 	if ($response)
 	{
 		$activateaccount = mysql_fetch_array($response);

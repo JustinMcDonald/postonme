@@ -3,7 +3,7 @@
 	<?php
 	$user = $_SESSION['username'];
 	
-	$query = "SELECT online, exp FROM account WHERE username='$user'";
+	$query = "SELECT online, exp FROM account WHERE username='".mysql_real_escape_string($user)."'";
 	$result = mysql_query($query);
 		
 	$online = false;
@@ -20,7 +20,7 @@
 		
 		$count = 0;
 	
-		$query = "SELECT * FROM advertisement WHERE username='$user' ORDER BY date DESC";
+		$query = "SELECT * FROM advertisement WHERE username='".mysql_real_escape_string($user)."' ORDER BY date DESC";
 		
 		$ads = mysql_query($query);
 

@@ -22,11 +22,11 @@ for ($i = 0; $i < count($cids) - 1; $i++)
 {
 	$conversation_object = array("$cids[$i]");
 	$message_array = array();
-	$messages = mysql_query("SELECT id, written_by, message FROM messages WHERE conv_id='$cids[$i]' AND written_by!='$user' AND read_message=false");
+	$messages = mysql_query("SELECT id, written_by, message FROM messages WHERE conv_id='".mysql_real_escape_string($cids[$i])."' AND written_by!='".mysql_real_escape_string($user)."' AND read_message=false");
 	while($message = mysql_fetch_array($messages))
 	{
 		$message_id = $message['id'];
-		mysql_query("UPDATE messages SET read_message=true WHERE id=$message_id");
+		mysql_query("UPDATE messages SET read_message=true WHERE id='".mysql_real_escape_string($message_id)."'");
 		$message_written_by = $message['written_by'];
 		$message_text = $message['message'];
 		$message_object = array("$message_written_by", "$message_text");

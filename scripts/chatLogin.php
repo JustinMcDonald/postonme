@@ -17,7 +17,7 @@ if  ($validation == 1)
 	$currentuser = $_SESSION['username'];
 	if (substr($currentuser, 0, 5) == "Guest")
 	{
-		$response = mysql_query("UPDATE account SET tmponline=false WHERE username='$currentuser'");
+		$response = mysql_query("UPDATE account SET tmponline=false WHERE username='".mysql_real_escape_string($currentuser)."'");
 		if (!$response)
 		{
 			error_log(mysql_error, 0);
@@ -29,10 +29,10 @@ if  ($validation == 1)
 	$_SESSION['password'] = $encrypt;
 	$_SESSION['online'] = true;
 
-	$response = mysql_query("UPDATE account SET online=true WHERE username='$user'");
+	$response = mysql_query("UPDATE account SET online=true WHERE username='".mysql_real_escape_string($user)."'");
 	if ($response)
 	{
-		$response = mysql_query("SELECT exp FROM account WHERE username='$user'");
+		$response = mysql_query("SELECT exp FROM account WHERE username='".mysql_real_escape_string($user)."'");
 		if ($response)
 		{
 			$account = mysql_fetch_array($response);

@@ -62,7 +62,7 @@ include('/home/postonme/hidden_scripts/session.php');
 			</div>
 		</div>-->
 		
-		<div class="postentity" id="signupspot">
+		<div class="postentity" id="signupspot" style='display: <?php if (!isset($_SESSION['online'])) echo 'block'; else if ($_SESSION['online'] == 1) echo 'none'; else echo 'block'; ?> '>
 			<div class="postdescription">LiveChat<br><div>The fastest way online to buy & sell your stuff!</div></div>
 			<div class="postform">
 				<div class="newline">

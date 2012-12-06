@@ -15,19 +15,19 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 
 $encrypt = md5($newpass);
 
-$query = "SELECT username FROM account WHERE username=\"$newuser\"";  
+$query = "SELECT username FROM account WHERE username='".mysql_real_escape_string($newuser)."'";  
 $result = mysql_query($query);  
 
 if (!(mysql_num_rows($result) > 0))
 {
-	$query = "SELECT email FROM account WHERE email=\"$email\"";  
+	$query = "SELECT email FROM account WHERE email='".mysql_real_escape_string($email)."'";  
 	$result = mysql_query($query);  
 
 	if (!(mysql_num_rows($result) > 0))
 	{
 		/*if ($reference != '')
 		{
-			$query = "SELECT username FROM account WHERE username=\"$reference\"";  
+			$query = "SELECT username FROM account WHERE username='".mysql_real_escape_string($reference)."'";  
 			$result = mysql_query($query); 
 		}
 
@@ -35,7 +35,7 @@ if (!(mysql_num_rows($result) > 0))
 		{*/
 			$verification_code = generateRandomString(32);
 			//$query = "INSERT INTO account (username, password, email, verificationcode, reference) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\", \"$reference\")";
-			$query = "INSERT INTO account (username, password, email, verificationcode) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\")";
+			$query = "INSERT INTO account (username, password, email, verificationcode) VALUES ('".mysql_real_escape_string($newuser)."', '".mysql_real_escape_string($encrypt)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($verification_code)."')";
 			if (mysql_query($query))
 			{
 				include('/home/postonme/public_html/email/emailVerification.php');

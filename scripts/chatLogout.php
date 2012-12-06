@@ -7,7 +7,7 @@ $validation = include("/home/postonme/hidden_scripts/validate.php");
 if  ($validation == 1)
 {
 	$user = $_SESSION['username'];
-	$query = "UPDATE account SET online=false WHERE username='$user'";
+	$query = "UPDATE account SET online=false WHERE username='".mysql_real_escape_string($user)."'";
 	$result = mysql_query($query);
 	if ($result)
 	{

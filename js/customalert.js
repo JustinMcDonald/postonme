@@ -13,7 +13,7 @@ $(document).ready(function()
 		"<ul>"+
 			"<li onclick='setDefaultLocation(\"Georgian College\");'>Georgian College</li>"+
 			"<li onclick='setDefaultLocation(\"Western University\");'>Western University</li>"+
-		"</ul>");
+		"</ul>", true);
 	}
 });
 
@@ -25,10 +25,12 @@ function setDefaultLocation(location)
 	$('#screenlock').hide();
 }
 
-function showAlert(html)
+function showAlert(html, stick)
 {
 	var e = $('#customalert');
-	e.html("<div><img src='img/close_alert.png' alt='' width='24px' height='24px' onclick='hideAlert();' id='close_alert'/></div>" + html);
+	var optionhtml = "";
+	if (typeof stick == null) optionhtml += "<div><img src='img/close_alert.png' alt='' width='24px' height='24px' onclick='hideAlert();' id='close_alert'/></div>";
+	e.html(optionhtml+html);
 	$('#screenlock').show();
 	e.show();
 	

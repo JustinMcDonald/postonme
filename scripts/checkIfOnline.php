@@ -3,9 +3,9 @@ if (isset($_SESSION['online']))
 {
 	if ($_SESSION['online'] == 1)
 	{
-		echo "<script>showAccountOps(); shiftFrontColumnsLeft();</script>";
+		echo "<script>showAccountOps();</script>";
 		
-		$result = mysql_query("SELECT exp FROM account WHERE username=\"" . $_SESSION['username'] . "\"");
+		$result = mysql_query("SELECT exp FROM account WHERE username='" . mysql_real_escape_string($_SESSION['username']) . "'");
 		if (!$result)
 		{
 			echo "<script>alert('Something went wrong, please try again later.');</script>";
@@ -22,13 +22,13 @@ if (isset($_SESSION['online']))
 		echo "<script>showGuestOps(); showGuestLevelMessage();</script>";
 	}
 	
-	echo "<script>showWelcomeMessage('" . $_SESSION['username'] . "'); if (document.URL.substring(24,28)=='post') formChecks();</script>";
+	echo "<script>showWelcomeMessage('" . $_SESSION['username'] . "'); </script>";
 } 
 else
 {
 	include('createGuest.php');
 	
-	echo "<script>showGuestOps(); showWelcomeMessage('" . $_SESSION['username'] . "'); if (document.URL.substring(24,28)=='post') formChecks();</script>";
+	echo "<script>showGuestOps(); showWelcomeMessage('" . $_SESSION['username'] . "'); </script>";
 	echo "<script>showGuestLevelMessage();</script>";
 }
 ?>

@@ -14,7 +14,7 @@ if ($encrypt == $_SESSION['password'])
 		exit();
 	}
 	
-	$query = "SELECT email FROM account WHERE email=\"$newemail\"";  
+	$query = "SELECT email FROM account WHERE email='".mysql_real_escape_string($newemail)."'";  
 	$result = mysql_query($query);  
 
 	if (mysql_num_rows($result) > 0)
@@ -27,9 +27,9 @@ if ($encrypt == $_SESSION['password'])
 	
 	$user = $_SESSION['username'];
 	
-	if (!mysql_query("UPDATE account SET email='$newemail' WHERE username='$user'")) echo "Something went wrong, please try again later.";
+	if (!mysql_query("UPDATE account SET email='".mysql_real_escape_string($newemail)."' WHERE username='".mysql_real_escape_string($user)."'")) echo "Something went wrong, please try again later.";
 	
-	if (!mysql_query("UPDATE advertisement SET contact='$newemail' WHERE username='$user'")) echo "Something went wrong, please try again later.";
+	if (!mysql_query("UPDATE advertisement SET contact='".mysql_real_escape_string($newemail)."' WHERE username='".mysql_real_escape_string($user)."'")) echo "Something went wrong, please try again later.";
 	else echo SUCCESS;
 }
 else echo "Password mismatch.";

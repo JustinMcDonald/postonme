@@ -50,13 +50,13 @@ $(document).ready(function()
 	disableDraggingFor(document.getElementById('frontbanner'));
 });
 
-function shiftFrontColumnsRight()
+function showSignupColumn()
 {
 	$('#frontedit').hide();
 	$('#frontsignup').show();
 }
 
-function shiftFrontColumnsLeft()
+function showEditColumn()
 {
 	$('#frontsignup').hide();
 	$('#frontedit').show();

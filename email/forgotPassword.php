@@ -10,7 +10,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 	exit();
 }
 
-$query = "SELECT username, active FROM account WHERE email=\"$email\"";  
+$query = "SELECT username, active FROM account WHERE email='".mysql_real_escape_string($email)."'";  
 $result = mysql_query($query);  
 
 if (mysql_num_rows($result) == 1)
@@ -22,7 +22,7 @@ if (mysql_num_rows($result) == 1)
 	{
 		$verification_code = generateRandomString(32);
 		
-		$query = "UPDATE account SET verificationcode='$verification_code' WHERE username='$user'";
+		$query = "UPDATE account SET verificationcode='".mysql_real_escape_string($verification_code)."' WHERE username='".mysql_real_escape_string($user)."'";
 		$result = mysql_query($query);
 		if (!$result)
 		{

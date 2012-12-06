@@ -7,7 +7,7 @@ $pass = $_POST['pass'];
 
 $encrypt = md5($pass);
 
-$response = mysql_query("SELECT verificationcode, active FROM account WHERE username='$user'");
+$response = mysql_query("SELECT verificationcode, active FROM account WHERE username='".mysql_real_escape_string($user)."'");
 if ($response)
 {
 	$account = mysql_fetch_array($response);
@@ -22,7 +22,7 @@ else
 
 if ($code == $accountcode && $accountactive)
 {
-	if (mysql_query("UPDATE account SET password='$encrypt', verificationcode='', online=true WHERE username='$user'"))
+	if (mysql_query("UPDATE account SET password='".mysql_real_escape_string($encrypt)."', verificationcode='', online=true WHERE username='".mysql_real_escape_string($user)."'"))
 	{
 		$_SESSION['username'] = $user;
 		$_SESSION['password'] = $encrypt;

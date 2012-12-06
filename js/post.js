@@ -40,18 +40,3 @@ $(document).ready(function()
 		}
 	});
 });
-
-function formChecks(){
-	var user = document.getElementById('accountname').innerHTML;
-	if (user.substring(0,5) == "Guest")
-	{
-		document.getElementById('signupspot').style.display = "block";
-	}
-	else
-	{
-		$('#postchatname').text('');
-		$('#postchatpass').text('');
-		$('#postchatpass2').text('');
-		document.getElementById('emailfield').style.display = "none";
-	}
-}

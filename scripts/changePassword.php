@@ -14,7 +14,7 @@ if ($encrypt == $_SESSION['password'])
 	
 	$user = $_SESSION['username'];
 	
-	if (!mysql_query("UPDATE account SET password='$encryptnewpass' WHERE username='$user'")) echo "Something went wrong, please try again later.";
+	if (!mysql_query("UPDATE account SET password='".mysql_real_escape_string($encryptnewpass)."' WHERE username='".mysql_real_escape_string($user)."'")) echo "Something went wrong, please try again later.";
 	else 
 	{
 		$_SESSION['password'] = $encryptnewpass;

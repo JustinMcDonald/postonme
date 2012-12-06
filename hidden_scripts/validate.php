@@ -13,7 +13,7 @@ else
 	$validatepass = $temppass;
 }
 
-$response = mysql_query("SELECT password, active, username FROM account WHERE username='$validateuser'");
+$response = mysql_query("SELECT password, active, username FROM account WHERE username='".mysql_real_escape_string($validateuser)."'");
 
 if ($response)
 {
