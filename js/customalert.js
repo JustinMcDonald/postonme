@@ -29,7 +29,7 @@ function showAlert(html, stick)
 {
 	var e = $('#customalert');
 	var optionhtml = "";
-	if (typeof stick == null) optionhtml += "<div><img src='img/close_alert.png' alt='' width='24px' height='24px' onclick='hideAlert();' id='close_alert'/></div>";
+	if (typeof stick == 'undefined') optionhtml += "<div><img src='img/close_alert.png' alt='' width='24px' height='24px' onclick='hideAlert();' id='close_alert'/></div>";
 	e.html(optionhtml+html);
 	$('#screenlock').show();
 	e.show();
@@ -65,8 +65,7 @@ function showEmailAlert(adid)
 		"<div>Message:</div>"+
 		"<textarea class='messagefield' name='messagetext' onfocus='if(this.value==this.defaultValue) this.value=\"\";'>Write a message..</textarea>"+
 		"<input type='submit' value='Send Email' class='submitbtn cursorhand themeborder themecolor' title='Email this Message'>"+
-	"</form>"
-	);
+	"</form>");
 	
 	$('#responseform input[type=text], #responseform textarea').bind('focusin', function(){
 		if (this.value==this.defaultValue) this.style.color='#ADADAD';

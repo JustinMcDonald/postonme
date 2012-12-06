@@ -42,7 +42,8 @@ function addFlag(id, message) {
 	});
 }
 
-function initOrder(){
+function initOrder()
+{
 	if (location.search)
 	{
 		var parts = location.search.substring(1).split('&');
@@ -54,22 +55,14 @@ function initOrder(){
 	}
 }
 	
-function indicateOrder(type, direction){
-	$('#fieldtitles img[src=\"../img/order_down_selected.png\"]').attr('src', '../img/order_down.png');
-	$('#fieldtitles img[src=\"../img/order_up_selected.png\"]').attr('src', '../img/order_up.png');
-	if (direction == "down")
-	{
-		$('#select'+type+direction).attr('src', '../img/order_down_selected.png');
-		$('#field'+type).attr('onclick', 'orderResults(\"'+type+'\", \"up\");');
-	}
-	else
-	{
-		$('#select'+type+direction).attr('src', '../img/order_up_selected.png');
-		$('#field'+type).attr('onclick', 'orderResults(\"'+type+'\", \"down\");');
-	}
+function indicateOrder(type, direction)
+{
+	if (direction == "down") $('#field'+type).attr('onclick', 'orderResults(\"'+type+'\", \"up\");');
+	else $('#field'+type).attr('onclick', 'orderResults(\"'+type+'\", \"down\");');
 }
 
-function orderResults(type, direction) {
+function orderResults(type, direction)
+{
 	if (direction == "up") type = "1" + type;
 	var url = window.top.location.href;
 	for (var i = 0; i < url.length; i++) 

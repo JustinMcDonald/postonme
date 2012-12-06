@@ -1,13 +1,3 @@
-<div id="fieldtitles">
-	<div class="onlinefiller"></div>
-	<div class="imagefiller"></div>
-	<div class="adcategory cursorhand" id="fieldcategory" onclick="orderResults('category', 'down');" title='Order by Category'><img src="../img/order_up.png" alt="" width="10px" height="10px" id="selectcategoryup">Category<img src="../img/order_down.png" alt="" width="10px" height="10px" id="selectcategorydown"></div>
-	<div class="adtitle cursorhand" id="fieldtitle" onclick="orderResults('title', 'down');" title='Order by Title'><img src="../img/order_up.png" alt="" width="10px" height="10px" id="selecttitleup">Title<img src="../img/order_down.png" alt="" width="10px" height="10px" id="selecttitledown"></div>
-	<div class="adviews cursorhand" id="fieldviews" onclick="orderResults('views', 'down');" title='Order by Views'><img src="../img/order_up.png" alt="" width="10px" height="10px" id="selectviewsup">Views<img src="../img/order_down.png" alt="" width="10px" height="10px" id="selectviewsdown"></div>
-	<div class="adprice cursorhand" id="fieldprice" onclick="orderResults('price', 'down');" title='Order by Price'><img src="../img/order_up.png" alt="" width="10px" height="10px" id="selectpriceup">Price<img src="../img/order_down.png" alt="" width="10px" height="10px" id="selectpricedown"></div>
-	<div class="addate cursorhand" id="fielddate" onclick="orderResults('date', 'down');" title='Order by Date'><img src="../img/order_up.png" alt="" width="10px" height="10px" id="selectdateup">Post Date<img src="../img/order_down.png" alt="" width="10px" height="10px" id="selectdatedown"></div>
-</div>
-
 <?php
 $searchkey = strtolower($_GET['search']);
 $searchorder = $_GET['order'];
@@ -17,6 +7,30 @@ $searchdate = $_GET['date'];
 $searchcategory = $_GET['category'];
 $searchlocation = $_GET['location'];
 $searchimages = $_GET['images'];
+
+if (substr($searchorder, 0, 1) == '1')
+{
+	$direction = 'up';
+	$orderfield = substr($searchorder, 1);
+}
+else
+{
+	$direction = 'down';
+	$orderfield = $searchorder;
+}
+?>
+
+<div id="fieldtitles">
+	<div class="onlinefiller"></div>
+	<div class="imagefiller"></div>
+	<div class="adcategory cursorhand" id="fieldcategory" onclick="orderResults('category', 'down');" title='Order by Category'>Category<?php if ($orderfield == 'category') echo "<img src='../img/order_".$direction.".png' alt='' width='10px' height='10px' id='selectcategorydown'>"; ?></div>
+	<div class="adtitle cursorhand" id="fieldtitle" onclick="orderResults('title', 'down');" title='Order by Title'>Title<?php if ($orderfield == 'title') echo "<img src='../img/order_".$direction.".png' alt='' width='10px' height='10px' id='selectcategorydown'>"; ?></div>
+	<div class="adviews cursorhand" id="fieldviews" onclick="orderResults('views', 'down');" title='Order by Views'>Views<?php if ($orderfield == 'views') echo "<img src='../img/order_".$direction.".png' alt='' width='10px' height='10px' id='selectcategorydown'>"; ?></div>
+	<div class="adprice cursorhand" id="fieldprice" onclick="orderResults('price', 'down');" title='Order by Price'>Price<?php if ($orderfield == 'price') echo "<img src='../img/order_".$direction.".png' alt='' width='10px' height='10px' id='selectcategorydown'>"; ?></div>
+	<div class="addate cursorhand" id="fielddate" onclick="orderResults('date', 'down');" title='Order by Date'>Post Date<?php if ($orderfield == 'date') echo "<img src='../img/order_".$direction.".png' alt='' width='10px' height='10px' id='selectcategorydown'>"; ?></div>
+</div>
+
+<?php
 
 $query = assembleQuery($searchkey, $searchtype, $searchprice, $searchdate, $searchcategory, $searchlocation, $searchimages, $searchorder);
 

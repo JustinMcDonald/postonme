@@ -37,14 +37,16 @@ if (mysql_num_rows($result) == 1)
 		$headers .= 'Reply-To: support@postonme.com';
 
 		$subject = 'PostOnMe! Reset Password for "' . $user . '"';
-
+		
+		$html = "www.postonme.com/account.php?user=" . $user . "&reset=1&code=" . $verification_code;
+		
 		$message = "
 			<html>
 			<head><title>PostOnMe Reset Password</title></head>
 			<body>
 				<p><b>Uh-oh, you forgot your password! Do not worry, your account '" . $user . "' is safe!</b></p>
 				<p>To reset your password, just click the link below:</p>
-				<a href='www.postonme.com/account.php?user=" . $user . "&reset=1&code=" . $verification_code . "'>www.postonme.com/account</a>
+				<a href='".$html."'>$html</a>
 			</body>
 			</html>
 		";

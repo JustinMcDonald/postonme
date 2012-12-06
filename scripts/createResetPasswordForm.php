@@ -21,7 +21,7 @@ if ($reset)
 	if ($code == $accountcode && $accountactive)
 	{
 		echo "
-			<div id='resetpassbox' class='themeborder'>
+			<div id='resetpassbox' class='themeborder glasspanel'>
 				<div id='hideforgotbutton' class='cursorhand leftarrowbutton' onclick='hideGlassPanel(\"resetpassbox\"); return true;'><img src='img/collapseThumb.png' class='cursorhand' alt='' width='18px' height='18px'/></div>
 				<form id='resetpassform' action='' method='post' onsubmit='resetPassword(\"$user\", \"$code\"); return false;'>
 					<p><b>Create a new password:</b></p>
@@ -35,6 +35,6 @@ if ($reset)
 	}
 	else echo "<script>alert('bSomething went wrong, please try again later.');</script>";
 	
-	echo "<script>$('#resetpassword1').focus();</script>";
+	echo "<script>showGlassPanel('resetpassbox'); $('#resetpassword1').focus();</script>";
 }
 ?>
