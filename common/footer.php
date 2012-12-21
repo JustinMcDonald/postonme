@@ -1,5 +1,7 @@
 <div id='bottombanner'>
 	<ul>
+		<li>&copy 2012 by <a href='http://www.justingenuity.com/' style='color:#c4c4c4'>JUSTINGENUITY</a></li>
+		<li><img src="../img/signup_icon.png" /></li> 	
 		<li><a href='contact.php'>Contact Us</a></li>
 		<li><a href='about.php'>About Us</a></li>
 		<li><a href='help.php'>Help</a></li>
