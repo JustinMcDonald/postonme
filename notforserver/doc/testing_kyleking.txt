@@ -1,0 +1,32 @@
+------------------------------------------------
+BROWSER			OS				RESOLUTION
+------------------------------------------------
+chrome			pc				?
+------------------------------------------------
+------------------------------------------------
+SUGGESTIONS
+------------------------------------------------
+4) Entered a random username and password and got the appropriate error message twice.
+5) Clicking log-in with no fields pops up a message saying "Please enter a username". What about a password?
+7) Random '^' characters in the i link attached to sign up and level up.
+9) Seems to refresh the searched list even when theres no results?
+12) When you post an ad a pop-up shows up briefly (too briefly).
+13) Mis-matched colours on the left side and right (News / Live Chat areas). Doesn't seem to fit sometimes (say when theres a form between the two).
+18) Lastly, it isn't quite clear to me why your menu at the top seems to drop down only to display the "Sign up and level up". If theres other information being hidden its ok but otherwise seems
+unnecessary.
+
+------------------------------------------------
+CORRECTED
+------------------------------------------------
+1) The P logo on the top of the website seems to overlap the 'O' of post. Intentional maybe?
+2) The experience bar starts at 5 experience as a guest? When I refreshed the page it changed to' sign up and level up'.
+3) Clicking on forgot and entering random data pops up a window with the number 7. Message popped up twice randomly.
+8) The drag bars on price are too sensitive. Hard to select exactly what I want. aka moving from $0 - $5 goes to 0$ -$10 if you're not careful. (same with i'm feeling wealthy)
+10) Posted two quick ads. The description seems to show up underneath very awkwardly. I would put the description in a separate box or something. When you hide the side-bars it looks odd. (The blending white)
+11) Mousing over the tool-tips on the front pages shows the tooltips but in really badly placed areas.
+14) After hiding the left and right side bars and refreshing they still stay hidden. Intentional maybe?
+15) The Western University drop-down seems to drop too low and blend in awkwardly at times.
+16) Flag advertisement is does not stand out and seems to be mis-placed.
+17) Some forms seem rather plain with the white (e.g. the post form).
+19) Didn't really like the colouring of the 'Submit Advertisement' button from post.
+6) Tried registering with all fields as 'abcdef' and got the message "The registered username does not exist". Did not receive any email verification.

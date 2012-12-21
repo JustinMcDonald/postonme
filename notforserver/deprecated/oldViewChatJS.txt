@@ -1,0 +1,69 @@
+
+	function createLiveChat(id, title) {
+		var childNodeArray = document.getElementById('chattitlecontainer').childNodes;
+		var exists = false;
+		for (var i = 0; i < childNodeArray.length; i++) {
+			if (childNodeArray[i].innerHTML == title) exists = true;
+		}
+		if (!exists){
+			addChatTitle(id, title);
+			hideChatTexts();
+			addChatText(id);
+			cleanTextSizes();
+			readyLiveMessage(id);
+		}
+	}
+	
+	function readyLiveMessage(chatid) {
+		window.livemessageid = chatid;
+		var childNodeArray = document.getElementById('chattextcontainer').childNodes;
+		for (var i = 0; i < childNodeArray.length; i++) {
+			if (childNodeArray[i].id == "chattext" + chatid) 
+				removeClass(" hidden", childNodeArray[i]);
+		}
+	}
+	
+	function addChatTitle(id, title) {
+		var ni = document.getElementById("chattitlecontainer");
+		var newNode = document.createElement("div");
+		newNode.setAttribute('class', 'themeborder chattitle themegradient');
+		newNode.setAttribute('onClick', 'hideChatTexts(); readyLiveMessage(' + id + '); return false;');
+		newNode.innerHTML = title;
+		ni.appendChild(newNode);
+	}
+	
+	function hideChatTexts(){
+		var childNodeArray = document.getElementById('chattextcontainer').childNodes;
+		for (var i = 0; i < childNodeArray.length; i++) {
+			removeClass(" hidden", childNodeArray[i]);
+			childNodeArray[i].className += " hidden";
+		}
+	}
+	
+	function removeClass( classname, element ) {
+		var cn = element.className;
+		var rxp = new RegExp( "\\s?\\b"+classname+"\\b", "g" );
+		cn = cn.replace( rxp, '' );
+		element.className = cn;
+	}
+	
+	function addChatText(id) {
+		var ni = document.getElementById('chattextcontainer');
+		var newNode = document.createElement('textarea');
+		newNode.setAttribute('readonly', 'readonly');
+		newNode.setAttribute('class', 'chattext');
+		newNode.setAttribute('id', 'chattext' + id);
+		//newNode.innerHTML = id;
+		ni.appendChild(newNode);
+	}
+	
+	function cleanTextSizes() {
+		var childNodeArray = document.getElementById('chattextcontainer').childNodes;
+		var newH = document.getElementById('chatbox').clientHeight - 50;
+		var titleChildNodeArray = document.getElementById('chattitlecontainer').childNodes;
+		var numTitles = titleChildNodeArray.length;
+		var titleH = titleChildNodeArray[0].clientHeight;
+		for (var i = 0; i < numTitles; i++) newH = newH - titleH - 2;
+		for (var j = 0; j < childNodeArray.length; j++) childNodeArray[j].style.height = newH + "px";
+	}
+	

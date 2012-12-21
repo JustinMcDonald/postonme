@@ -1,0 +1,154 @@
+#chatbox
+{
+position:fixed;
+width:200px;
+height:672px;
+left:0;
+top:0;
+font:0.75em verdana;
+padding:5px 5px 5px 5px;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F00BBFE,endColorstr=#7F00BBFE);
+background-color:rgba(0,187,254,0.5);
+/*background-color:#00BBFE;*/
+text-align:left;
+display:block;
+/*color:#f2f2f2;*/
+color:white;
+}
+
+.chatpadding {
+position:absolute;
+}
+
+#chattitle{
+padding:5px 0 8px 0;
+}
+
+.chattitle{
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+padding:2px 2px 2px 2px;
+box-sizing: border-box;
+background-color:rgb(43,150,196);
+/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F2B96C4,endColorstr=#7F2B96C4);*/
+filter:alpha(opacity=60);
+word-wrap:break-word;
+}
+
+.chattext{
+width:190px;
+height:88%;
+margin:5px 2px 0 2px;
+word-wrap:break-word;
+resize:none;
+overflow:auto;
+font:0.8em verdana;
+padding-left:5px;
+/*border-radius:5px;
+border:1px solid #98DFF5;
+background-color:rgba(227,244,255,0.8);*/
+}
+
+.messageoutbox{
+position:fixed;
+display:block;
+width:194px;
+padding:2px 2px;
+bottom:50px;
+box-sizing: border-box;
+color:#ADADAD;
+}
+
+.chatbutton{
+display:inline-block;
+/*color:#f2f2f2;*/
+color:white;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+/*width:90px;*/
+padding-left:12px;
+padding-right:12px;
+margin-top:5px;
+cursor:hand;
+cursor:point;
+}
+
+.chatbutton::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+.leftarrowbutton{
+/*position:absolute;
+top:15%;
+right:0;*/
+float:right;
+margin-top:3px;
+margin-right:3px;
+}
+
+.leftarrowbutton:hover {
+margin-right:4px;
+}
+
+.rightarrowbutton{
+/*position:absolute;
+top:15%;
+right:0;*/
+/*float:left;*/
+margin-top:3px;
+margin-left:3px;
+}
+
+.rightarrowbutton:hover {
+margin-left:4px;
+}
+
+#showchatbutton {
+visibility:visible;
+left:0;
+top:15%;
+position:fixed;
+font-weight:600;
+}
+
+.closebtn{
+padding-top:1px;
+padding-right:1px;
+display:inline-block;
+}
+
+.chattitletext{
+width:180px;
+display:inline-block;
+}
+
+.mytext{
+padding:2px 0;
+color:#1484A6;
+}
+
+.yourtext{
+padding:2px 0;
+color:#119E21;
+}
+
+#chattitlecontainer{
+margin-top:25px;
+max-height:250px;
+overflow:auto;
+}
+
+#chatinformation
+{
+margin-top:20px;
+text-align:justify;
+}
+
+#signupinformation
+{
+display:none;
+text-align:justify;
+}

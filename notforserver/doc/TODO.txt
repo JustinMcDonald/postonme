@@ -1,0 +1,13 @@
+------------------------------------------------------------------------------------
+PRIORITY	PROJECT							DESCRIPTION
+------------------------------------------------------------------------------------
+4			expand navigation bar			relocate account registration, login;
+											expand search bar;
+------------------------------------------------------------------------------------
+5			redesign livechat panel			inbox system; hide conversations; recall
+											past conversations;
+------------------------------------------------------------------------------------
+6			sql injection sanatization		sanitize all sql queries
+------------------------------------------------------------------------------------
+7			avoid spam filter				optimize email content
+------------------------------------------------------------------------------------

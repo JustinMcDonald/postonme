@@ -1,0 +1,5 @@
+
+$sql = "CREATE TABLE advertisement (adid INT NOT NULL AUTO_INCREMENT PRIMARY KEY, title CHAR(50), date TIMESTAMP DEFAULT NOW(), category CHAR(20), type TINYINT, price CHAR(10), text TINYTEXT, contact CHAR(30), views INT, rating TINYINT, flag TINYINT)";
+if (mysql_query($sql)) {
+	echo "table created";
+}

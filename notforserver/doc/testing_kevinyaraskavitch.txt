@@ -1,0 +1,15 @@
+------------------------------------------------
+BROWSER			OS				RESOLUTION
+------------------------------------------------
+safari			mac os			1280x800
+------------------------------------------------
+------------------------------------------------
+SUGGESTIONS
+------------------------------------------------
+1. refresh search on view.php when changing location
+2. i'm feeling wealthy - change min as well
+3. advanced table glitch
+4. finds the whole bug report box thing sketchy
+------------------------------------------------
+CORRECTED
+------------------------------------------------

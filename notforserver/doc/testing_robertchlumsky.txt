@@ -1,0 +1,48 @@
+------------------------------------------------
+BROWSER			OS				RESOLUTION
+------------------------------------------------
+firefox			Windows 7		1600x900
+------------------------------------------------
+------------------------------------------------
+SUGGESTIONS
+------------------------------------------------
+4. thought it will be quite easy to use ; I was not able to log in but once
+a few bugs are fixed and improved, the site seems very promising. key
+features for easy of use (imo) are the live chat to talk to people
+instantly and the expansion of ads (saving time by not having to go to a
+new page)
+
+things to fix / change:
+- users under live chat on home page could not be clicked on - would be
+cool if the user (there as recent activity or something of the like) could
+be clicked on for more info / go back to recent post
+- *** was not able to sign up for an account --> received error message
+"The referenced username does not exist.". probably a glitch in your code
+somewhere. see attached screenshot
+
+- should have "no results found" when search query is empty (optional but
+nice to have)
+- font size for advanced search is very small and hard to read
+- from home page --> clicking on relax should go somewhere or lead to a
+page with more info about or how to use or something, since the other two
+are both functional (i approve of the layout though - pretty cool)
+
+things I liked:
+- emailing the person was quite easy --> nice popup
+- "Sign up and level up" is pretty catchy --> nice to see that years of RS
+/ gaming has made its mark :P
+- ability to converse with someone instantly is really cool (could consider
+a number as well, although maybe too much info. instant chat is definitely
+nice though)
+- REALLY like being able to click on an ad to expand it without having to
+go to another page ; great step up from kijiji
+- enjoyed the sort of relaxed / informal language in popups and
+information. for example, the "forgot?" popup text starting off with "No
+problem. We'll send you an email..." rather than "an email will be sent to
+you" makes it seem more personal and cool --> probably a pretty key
+advertising feature, along with it being specifically for the western area.
+On a side note, I expect to see this expanded to other universities once it
+gets up and running :P
+------------------------------------------------
+CORRECTED
+------------------------------------------------

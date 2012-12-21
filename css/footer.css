@@ -1,0 +1,26 @@
+#bottombanner{
+position:fixed;
+width:100%;
+height:30px;
+bottom:0;
+border-top:1px solid #c9c9c9;
+background:#E3F4FF;
+font:0.6em verdana;
+}
+
+#bottombanner > ul {
+width:auto;
+margin-left:auto;
+margin-right:auto;
+-webkit-margin-start: auto;
+-webkit-margin-end: auto;
+-webkit-padding-start: 0;
+display:block;
+}
+
+#bottombanner > ul > li {
+display:inline-block;
+list-style:none;
+padding-left:10px;
+padding-right:10px;
+}

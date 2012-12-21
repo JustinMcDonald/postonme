@@ -1,0 +1,4 @@
+FUTURE BUGS:
+
+fetchMessages.php - title & usernames must not contain "." (or switch delimeter)
+fetchMessages.php - only support one inquirer per advertisement

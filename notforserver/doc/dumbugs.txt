@@ -1,0 +1,3 @@
+List of retarted bugs I got stuck on creating postonme.com:
+
+php special character &

@@ -1,0 +1,104 @@
+.postentity{
+width:100%;
+overflow:hidden;
+padding-top:10px;
+padding-bottom:10px;
+}
+
+.postentity input[type=text]{
+color:#C9C9C9;
+font:0.875em verdana;
+}
+
+.postentity input[type=textarea]{
+color:#C9C9C9;
+font:0.875em verdana;
+}
+
+.postdescription{
+width:23%;
+float:left;
+text-align:right;
+padding-right:20px;
+padding-top:3px;
+font-weight:600;
+}
+
+.postform{
+width:70%;
+float:left;
+text-align:left;
+font:0.875em verdana;
+}
+
+.postform > select {
+font:0.875em verdana;
+}
+
+#submitad{
+color:white;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+height:22px;
+font:1em verdana;
+padding:0 5px 5px 5px;
+}
+
+#postdetail{
+font:0.875em Verdana;
+color:#C9C9C9;
+width:100%;
+height:100px;
+margin-top:2px;
+margin-left:2px;
+border:1px solid #BDBDBD;
+resize:none;
+}
+
+#posttitle{
+width:100%;
+margin-left:2px;
+}
+
+#postprice{
+width:105px;
+margin-left:2px;
+}
+
+#postemail{
+width:100%;
+margin-left:2px;
+}
+
+.livechatfield{
+/*margin-left:125px;*/
+width:200px;
+float:right;
+}
+
+.subfieldtitles{
+float:left;
+margin-top:5px;
+}
+
+.newline{
+clear:both;
+}
+
+span{
+color:red;
+}
+
+.postdescription div {
+font:0.75em verdana;
+color:#A9A9A9;
+}
+
+form label {
+cursor: hand;
+}
+
+#signupspot{
+display:none;
+}
