@@ -65,6 +65,8 @@ width:250px;
 height:27px;
 vertical-align:center;
 border-right:0;
+font:13px Verdana;
+line-height:13px;
 }
 
 /* For Firefox */
@@ -149,6 +151,8 @@ width:80px;
 input[type=range]{
 width:75px;
 }
+
+
 
 legend
 {
