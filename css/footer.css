@@ -6,6 +6,7 @@ bottom:0;
 border-top:1px solid #c9c9c9;
 background:#E3F4FF;
 font:0.6em verdana;
+float:right;
 }
 
 #bottombanner > ul {
@@ -24,3 +25,17 @@ list-style:none;
 padding-left:10px;
 padding-right:10px;
 }
+
+#copy {
+	margin-right: 20px;
+	float: right;
+}
+
+#bottombanner > ul > li > img {
+	height:20px;
+	width:20px;
+	background: transparent #0083B2;
+	margin:0;
+	padding:0;
+}
+
