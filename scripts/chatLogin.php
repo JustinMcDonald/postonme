@@ -30,6 +30,7 @@ if  ($validation == 1)
 	$_SESSION['online'] = true;
 
 	$response = mysql_query("UPDATE account SET online=true WHERE username='".mysql_real_escape_string($user)."'");
+	//$response = mysql_query("UPDATE account SET online=true, chatIP=$_SERVER['REMOTE_ADDR'] WHERE username='".mysql_real_escape_string($user)."'");
 	if ($response)
 	{
 		$response = mysql_query("SELECT exp FROM account WHERE username='".mysql_real_escape_string($user)."'");

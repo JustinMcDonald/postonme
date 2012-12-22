@@ -14,6 +14,7 @@ if (!@mysql_select_db("postonme_publicDB", $dbcnx) ) {
 		
 $password = RandomString();
 
+//$sql = "INSERT INTO livechat (pass,adid) VALUES ('$password','$id',$_SERVER['REMOTE_ADDR'])";
 $sql = "INSERT INTO livechat (pass, adid) VALUES ('$password', '$id')";
 if (!mysql_query($sql)) echo "chat creation failed";
 
