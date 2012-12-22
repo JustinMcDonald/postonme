@@ -76,6 +76,10 @@ line-height:13px;
   }
 }
 
+#navsearchbar:focus {
+	outline: none;
+}
+
 #welcomemessage {
 position:fixed;
 left:0;
