@@ -67,6 +67,13 @@ vertical-align:center;
 border-right:0;
 }
 
+/* For Firefox */
+@-moz-document url-prefix() { 
+  #navsearchbar {
+     height:23px;
+  }
+}
+
 #welcomemessage {
 position:fixed;
 left:0;
