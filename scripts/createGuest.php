@@ -16,6 +16,7 @@ while (!$unique)
 	{
 		$guestname = "Guest" . $num;
 		$query = "INSERT INTO account (username, online, tmponline, email) VALUES ('$guestname', false, true, '$guestname')"; 
+		//$query = "INSERT INTO account (username, online, tmponline, email, chatIP) VALUES ('$guestname', false, true, '$guestname', $_SERVER['REMOTE_ADDR'])"; 
 		if(!mysql_query($query))
 		{
 			echo "<script>alert('Something went wrong, please try again later.');</script>";
