@@ -123,10 +123,11 @@ margin-bottom:5px;
 
 .adflag{
 width:auto;
-float:left;
+float:right;
 text-align:left;
 font-size:0.75em;
 margin-top:13px;
+margin-right:10px;
 }
 
 .onlinebtn

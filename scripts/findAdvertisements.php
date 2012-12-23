@@ -1,26 +1,3 @@
-<?php
-$searchadid = $_GET['adid'];
-$searchkey = strtolower($_GET['search']);
-$searchorder = $_GET['order'];
-$searchtype = $_GET['type'];
-$searchprice = $_GET['price'];
-$searchdate = $_GET['date'];
-$searchcategory = $_GET['category'];
-$searchlocation = $_GET['location'];
-$searchimages = $_GET['images'];
-
-if (substr($searchorder, 0, 1) == '1')
-{
-	$direction = 'up';
-	$orderfield = substr($searchorder, 1);
-}
-else
-{
-	$direction = 'down';
-	$orderfield = $searchorder;
-}
-?>
-
 <div id="fieldtitles">
 	<div class="onlinefiller"></div>
 	<div class="imagefiller"></div>
@@ -31,10 +8,16 @@ else
 	<div class="addate cursorhand" id="fielddate" onclick="orderResults('date', 'down');" title='Order by Date'>Post Date<?php if ($orderfield == 'date') echo "<img src='../img/order_".$direction.".png' alt='' width='10px' height='10px' id='selectcategorydown'>"; ?></div>
 </div>
 
-<?php
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=361597738233";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-if ($searchadid != '') $query = "SELECT * FROM advertisement WHERE adid=".mysql_real_escape_string($searchadid);
-else $query = assembleQuery($searchkey, $searchtype, $searchprice, $searchdate, $searchcategory, $searchlocation, $searchimages, $searchorder);
+<?php
 
 //ONLINE MARKER
 $searchonline = $_GET['online'];
@@ -45,14 +28,13 @@ if ($searchonline == 1) $onlineonly = true;
 $highlimit = $_GET['limit'];
 $lowlimit = $highlimit - 40;
 
-$ads = mysql_query($query);
-
 $count = 0;
-
 if ($ads) 
 {
 	$numresults = mysql_num_rows($ads);
-
+	
+	if ($numresults > 0) mysql_data_seek($ads, 0);
+	
 	for($i = 0; $i < $lowlimit; $i++)
 	{
 		$sink = mysql_fetch_array($ads);
@@ -62,7 +44,6 @@ if ($ads)
 	{
 		if ($ad = mysql_fetch_array($ads))
 		{	
-			
 			$user = $ad['username'];			
 			$query = "SELECT online, exp FROM account WHERE username='".mysql_real_escape_string($user)."'";
 			$result = mysql_query($query);
@@ -85,8 +66,14 @@ if ($ads)
 				if ($online) echo "<div class='adstatuscontainer'><img src='../img/online_status.png' alt='' width='16px' height='16px' title='Online'/></div>"; 
 				else echo "<div class='adstatuscontainer'><img src='../img/offline_status.png' alt='' width='16px' height='16px' title='Offline'/></div>";
 				
-				if (strlen($ad['image_thumb']) > 0 && strlen($ad['image']) > 0) echo "<div class='adimagecontainer'><img src='../uploads/" . $ad['image_thumb'] . "' alt='' title='Expand Image' onClick='var event = arguments[0] || window.event; openGallery(\"../uploads/" . $ad['image'] . "\", event);' class='themeborder'/></div>";
-				else echo "<div class='adimagecontainer'><img src='../img/iconThumb.png' alt='' title='Expand Image' onClick='var event = arguments[0] || window.event; openGallery(\"../img/icon.png\", event);' class='themeborder'/></div>";
+				if (strlen($ad['image_thumb']) > 0 && strlen($ad['image']) > 0)
+				{
+					echo "<div class='adimagecontainer'><img src='../uploads/" . $ad['image_thumb'] . "' alt='' title='Expand Image' onClick='var event = arguments[0] || window.event; openGallery(\"../uploads/" . $ad['image'] . "\", event);' class='themeborder'/></div>";
+				}
+				else
+				{
+					echo "<div class='adimagecontainer'><img src='../img/iconThumb.png' alt='' title='Expand Image' onClick='var event = arguments[0] || window.event; openGallery(\"../img/icon.png\", event);' class='themeborder'/></div>";
+				}
 				
 				echo "<div class='adcategory'>" . $ad['category'] . "</div>";
 				if ($ad['type'] == 1) echo "<div class='adtitle'><span style='font-size:0.75em;font-weight:400;'>(Buying) </span>" . $ad['title'] . "</div>";
@@ -117,7 +104,8 @@ if ($ads)
 				echo "<script>styleAdvertisementColor('adbody" . $ad['adid'] . "', " . $exp . ");</script>";
 				
 				//Advertisement Details, hidden by default.
-				echo "<div class='addetailbody' id='detail" . $ad['adid'] . "'>";
+				if ($singlead) echo "<div class='addetailbody' id='detail" . $ad['adid'] . "' style='display:block;'>";
+				else echo "<div class='addetailbody' id='detail" . $ad['adid'] . "'>";
 					echo "<div class='detailcontainer'>";
 						echo "<div class='adtext'>" . nl2br($ad['text']) . "</div>";
 						if ($_SESSION['username'] != $ad['username'])
@@ -133,7 +121,8 @@ if ($ads)
 								echo "<div id='chat" . $ad['adid'] . "' class='contactbutton themecolor cursorhand themeborder' title='Start a conversation with this person with LiveChat.' onClick='window.top.createConversation(" . $ad['adid'] . ", false); return true;'>Message this Person</div>";
 							}
 							echo "<div class='contactbutton themecolor cursorhand themeborder' title='Email this person' onclick='window.top.showEmailAlert(" . $ad['adid'] . ");'>Email this Person</div>";
-							echo "<div class='adflag cursorhand' onclick='flagAdvertisement(" . $ad['adid'] . ");'>Flag this Advertisement</div>";
+							echo "<fb:like href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' font='verdana' action='recommend' style='float:left;'></fb:like>";
+							echo "<div class='adflag cursorhand' onclick='flagAdvertisement(" . $ad['adid'] . ");'>Flag Ad</div>";
 						}
 					echo "</div>";
 				
@@ -158,73 +147,4 @@ if ($count == 0)
 {
 	echo "<div class='themetext'>No results found, please use another search term.</div>";
 } else echo "<div class='filler'></div>";
-?>
-
-<?php
-function assembleQuery($search='',$type='',$price='0-10000',$date='',$category='',$location='',$images='0',$order='date')
-{
-	$query = "SELECT * FROM advertisement WHERE";
-
-	/*SEARCH TERMS*/
-	$terms = explode(" ", $search);
-	$query .= " (";
-	for ($i = 0; $i < count($terms); $i++)
-	{
-		if ($i > 0) $query .= " OR";
-		$query .= " title LIKE '%" . mysql_real_escape_string($terms[$i]) . "%' OR text LIKE '%" . mysql_real_escape_string($terms[$i]) . "%'";
-		if (substr($terms[$i], -1) == 's' and strlen($terms[$i]) > 3) $query .= " OR title LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%' OR text LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%'";
-	}
-	$query .= ") ";
-
-	/*TYPE*/
-	if ($type == 1) $query = $query . " AND type='0' ";
-	else if ($type == 2) $query = $query . " AND type='1' ";
-
-	/*PRICE*/
-	$maxmin = explode("-", $price);
-	if ($maxmin[0] != "") $query = $query . " AND price>=" . $maxmin[0];
-	if ($maxmin[1] != "") $query = $query . " AND price<=" . $maxmin[1];
-
-	/*DATE*/
-	$currentTime = time();
-	$dayago = $currentTime - 86400;
-	$yesterday = $currentTime - 259200;
-	$weekago = $currentTime - 604800;
-	$monthago = $currentTime - 2592000;
-	if ($date == '0') $query .= " AND date > $dayago";
-	else if ($date == '1') $query .= " AND date > $yesterday";
-	else if ($date == '2') $query .= " AND date > $weekago";
-	else if ($date == '3') $query .= " AND date > $monthago";
-	else if ($date == '4') $query .= " AND date > 0";
-		
-	/*CATEGORY*/
-	$categories = explode("-", $category);
-	if (count($categories) > 1) {
-		$query = $query . " AND (";
-		for ($i = 0; $i < count($categories) - 1; $i++) {
-			$query = $query . "category='" . mysql_real_escape_string($categories[$i]) . "'";
-			if ($i != count($categories) - 2) $query = $query . " OR ";
-		}
-		$query = $query . ")";
-	}
-		
-	/*LOCATION*/
-	$query .= " AND location='".mysql_real_escape_string($location)."'";
-
-	/*IMAGES*/
-	if ($images == 1) $query .= " AND image!=''";
-
-	/*ORDER*/
-	if (substr($order, 0, 1) == "1")
-	{
-		$direction = "DESC";
-		$order = substr($order, 1);
-	}
-	else $direction = "ASC";
-	if ($order == "date" && $direction == "ASC") $query .= " ORDER BY ".$order." DESC";
-	else if ($order == "date" && $direction == "DESC") $query .= " ORDER BY ".$order." ASC";
-	else $query .= " ORDER BY ".$order." ".$direction;	
-
-	return $query;
-}
 ?>

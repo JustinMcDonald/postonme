@@ -94,6 +94,7 @@
 					echo "<input type='button' id='modifybtn".$ad['adid']."' title='Enter editing mode to modify this post.' value='Modify Post' class='submitbtn cursorhand themeborder themecolor' onclick='editMode(" . $ad['adid'] . ");'>";
 					echo "<input type='button' id='cancelbtn".$ad['adid']."' style='display:none' title='Close editing mode without saving changes.' value='Cancel' class='submitbtn cursorhand themeborder themecolor' onclick='exitEditMode(" . $ad['adid'] . ");'>";
 					echo "<input type='button' id='savebtn".$ad['adid']."' style='display:none' title='Save your changes.' value='Save Changes' class='submitbtn cursorhand themeborder themecolor' onclick='saveChanges(" . $ad['adid'] . ");'>";
+					echo "<fb:like href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' font='verdana' action='recommend' style='float:left;'></fb:like>";
 				echo "</div>";
 			
 			echo "</div>";

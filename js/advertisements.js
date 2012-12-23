@@ -90,7 +90,7 @@ function nextLimit(limit)
 	}
 	var nextlimit = limit + 40;
 	url = url.replace(/&limit=.*/, "&limit="+nextlimit);
-	location = "./findAdvertisements.php?" + url;
+	location = "./view.php?" + url;
 }
 
 function previousLimit(limit)
@@ -106,5 +106,5 @@ function previousLimit(limit)
 	}
 	var nextlimit = limit - 40;
 	url = url.replace(/&limit=.*/, "&limit="+nextlimit);
-	location = "./findAdvertisements.php?" + url;
+	location = "./view.php?" + url;
 }
