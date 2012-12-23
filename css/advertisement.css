@@ -199,3 +199,41 @@ display:table;
 min-width:61px;
 display:table-cell;
 }
+
+#fbRecommendFresh
+{
+position:fixed;
+top:0;
+left:0;
+opacity:0;
+border:2px solid black;
+padding:12px 20px;
+color:yellow;
+background-color:#00A4DE;
+font-size:1.2em;
+font-weight:600;
+}
+
+#fbRecommendFresh > div
+{
+position:absolute;
+left:200px;
+bottom:-18px;
+}
+
+#fbRecommendFresh > img
+{
+position:absolute;
+top:-6px;
+right:-6px;
+cursor:pointer;
+}
+
+.arrow-down
+{
+width: 0; 
+height: 0; 
+border-left: 15px solid transparent;
+border-right: 15px solid transparent;
+border-top: 16px solid #5DA3DD;
+}

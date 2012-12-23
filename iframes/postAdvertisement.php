@@ -240,9 +240,8 @@ if(isset($_POST["categorytext"]))
 						$adid = mysql_insert_id();
 						include('../email/emailAdOptions.php');
 						
-						if ($online) echo "<script>alert('Your advertisement has been successfully posted!'); window.top.location.href = 'http://www.postonme.com/account.php'</script>";
-						else if ($madeaccount) echo "<script>alert('Your advertisement has been successfully posted!'); window.top.location.href = 'http://www.postonme.com/'</script>";
-						else echo "<script>alert('Your Advertisement has been successfully posted. Next time register an account to recieve messages with LiveChat!'); window.top.location.href = 'http://www.postonme.com/'</script>";						
+						if ($online || $madeaccount) echo "<script>alert('Your advertisement has been successfully posted!'); window.top.location.href = 'http://www.postonme.com/view?id=".$adid."&limit=1&fresh=1'</script>";
+						else echo "<script>alert('Your Advertisement has been successfully posted. Next time register an account to recieve messages with LiveChat!'); window.top.location.href = 'http://www.postonme.com/view?id=".$adid."&limit=1&fresh=1'</script>";						
 					}
 					else
 					{
