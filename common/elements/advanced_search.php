@@ -126,19 +126,19 @@
 	</div>
     <div>
         <fieldset>
-            <legend style='padding-bottom:5px;'>Price Range</legend>
+            <legend>Price Range</legend>
             <table>
-                <tr>
-                    <td>
-                        <input type="text" id="slider-value" style='border:0;' />
-                    </td>
-                </tr>
-                <tr>
-                    <div id="slider-range" style="width: 100px;"></div>
-                </tr>
-                <tr>
-                    <td><input type='checkbox' id='highroller'/>I'm Feeling Wealthy</td>
-                </tr>
+			<tr>
+			    <td>
+			        <input type="text" id="slider-value" value="$0-$500" />
+			    </td>
+			</tr>
+			<tr>
+			    <div id="slider-range"></div>
+			</tr>
+			<tr>
+			    <td><input type='checkbox' id='highroller' />I'm Feeling Wealthy</td>
+			</tr>        
             </table>
         </fieldset>        
     </div>
