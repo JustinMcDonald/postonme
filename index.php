@@ -4,7 +4,7 @@ include('/home/postonme/hidden_scripts/session.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="description" content="Campus Classifieds"/>
@@ -33,8 +33,8 @@ include('/home/postonme/hidden_scripts/session.php');
 	<link rel="stylesheet" type="text/css" href="css/newsbox.css"/>
 	<link rel="stylesheet" type="text/css" href="css/customalert.css"/>
 	<link rel="stylesheet" type="text/css" href="css/accountops.css"/>
-
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>
 	<script type="text/javascript" src="/js/chat.js"></script>
 	<script type="text/javascript" src="/js/exp.js"></script>
@@ -54,7 +54,7 @@ include('/home/postonme/hidden_scripts/session.php');
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=451061051608923";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=361597738233";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 

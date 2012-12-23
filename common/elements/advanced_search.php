@@ -52,30 +52,33 @@
 			<legend>Options</legend>
 			<table>
 				<tr>
-					<td><input id='200' type='checkbox' name='buying' value='1'/></td>
+					<td><input id='200' type='checkbox' name='buying' value='1'/>
 					<td><label for='200'>I'm Buying it</label></td>
 				</tr>
 				<tr>
-					<td><input id='201' type='checkbox' name='selling' value='2'/></td>
+					<td><input id='201' type='checkbox' name='selling' value='2'/>
 					<td><label for='201'>I'm Selling it</label></td>
 				</tr>
 				<tr>
-					<td><input id='202' type='checkbox' name='online'/></td>
+					<td><input id='202' type='checkbox' name='online'/><label for='202'>
 					<td><label for='202'>Online Only</label></td>
 				</tr>
 				<tr>
-					<td><input id='203' type='checkbox' name='images'/></td>
+					<td><input id='203' type='checkbox' name='images'/><label for='203'>
 					<td><label for='203'>Images Only</label></td>
-				</tr>
+				</tr>				
 			</table>
 		</fieldset>
 	</div>
-	<div> <!--price-->
+	<!--<div> 
 		<fieldset>
 			<legend>Price</legend>
 			<table id='price'>
 				<tr>
 					<td>Minimum:</td>
+				</tr>
+				<tr>
+					<td><div class='slider' id='rangemin'></div></td>
 				</tr>
 				<tr>
 					<td><div id='outputmin'>$0</div></td>
@@ -93,7 +96,7 @@
 				</tr>
 			</table>
 		</fieldset>
-	</div>
+	</div>-->
 	<div> <!--date-->
 		<fieldset>
 			<legend>Date Posted</legend>
@@ -121,4 +124,22 @@
 			</table>
 		</fieldset>
 	</div>
+    <div>
+        <fieldset>
+            <legend style='padding-bottom:5px;'>Price Range</legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" id="slider-value" style='border:0;' />
+                    </td>
+                </tr>
+                <tr>
+                    <div id="slider-range" style="width: 100px;"></div>
+                </tr>
+                <tr>
+                    <td><input type='checkbox' id='highroller'/>I'm Feeling Wealthy</td>
+                </tr>
+            </table>
+        </fieldset>        
+    </div>
 </div>
