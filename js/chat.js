@@ -707,7 +707,8 @@ function signUp() {
 			{
 				case "1":
 					$('#signupform').hide();
-					$('#signupinformation').show();
+					//$('#signupinformation').show();
+					alert("Your account has been created! An email has been sent to the address you provided with instructions to activate your account.");
 					break;
 				case "6":
 					indicateError('signupusername');
