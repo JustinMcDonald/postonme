@@ -14,7 +14,7 @@ $(document).ready(function()
 	{
 		//openWindow('searchbar');
 		$('#frontbanner').fadeOut();
-		$('#browsecategories').css('display', 'block').css('opacity', '0').css('top', '0').animate({ opacity: 1, top:'+=80'}, 1200);
+		$('#browsecategories').css('display', 'block').css('opacity', '0').css('top', '0').animate({ opacity: 1, top: 80}, 1200);
 	});
 	
 	$('#frontpost').bind('click', function()
