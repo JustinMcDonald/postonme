@@ -413,3 +413,40 @@ margin-left:-393px;
 top:0;
 cursor:pointer;
 }
+
+#browsecategories
+{
+display:none;
+position:absolute;
+top:80px;
+left:50%;
+width:786px;
+margin-left:-393px;
+color:white;
+}
+
+#browsecategories > div
+{
+font-size:2em;
+margin-bottom:20px;
+}
+
+#browsecategories > table
+{
+text-align:left;
+font-size:1.2em;
+width:100%;
+}
+
+#browsecategories td
+{
+width:33%;
+padding-top:5px;
+padding-left:20px;
+}
+
+#browsecategories td:hover
+{
+color:yellow;
+cursor:pointer;
+}

@@ -226,10 +226,13 @@ function collapseAdvancedPanel()
 function expandSocialPanel()
 {
 	$('#navbar').unbind('click');
+	
 	$('#navbar').bind('click', function()
 	{
 		collapseSocialPanel();
 	});
+	
+	//Clear the old timer
 	if (window.socialtimer) clearInterval(window.socialtimer);
 	var elem = document.getElementById("navbar"),
 	height = 50,
@@ -307,7 +310,12 @@ function showSocialField()
 {
 	$('#fbfield').show();
 	$('#expfield').show();
-
+	
+	//Reactivate the facebook like butotn
+	/*var like_box = $('#fbField .fb-like-inactive');
+	like_box.removeClass('fb-like-inactive');
+	like_box.addClass('fb-like');*/
+	FB.XFBML.parse(document.getElementById('fbfield'));
 }
 
 function changeLocation(location)

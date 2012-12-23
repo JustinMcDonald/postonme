@@ -15,7 +15,7 @@ $message = "
 		<p><b>Welcome to PostOnMe!</b></p>
 		<p>You're PostOnMe account '" . $newuser . "' is ready to rock!
 		</br>To activate it, just click the link below:</p>
-		<a href='".$href."'>"$href"</a>
+		<a href='".$href."'>".$href."</a>
 		<p>If you have any questions, feel free to contact us at <a href='mailto:support@postonme.com'>support@postonme.com</a>.</p>
 		</br>
 		</br>

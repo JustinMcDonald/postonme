@@ -103,6 +103,7 @@ include('/home/postonme/hidden_scripts/session.php');
 include("common/newsbox.php");
 include("common/chatbox.php");
 include("common/accountpanels.php");
+include("common/browse_categories.php");
 include("common/navbar.php");
 include("common/footer.php");
 include("common/screenlock.php");

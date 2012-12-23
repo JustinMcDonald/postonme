@@ -12,9 +12,9 @@ $(document).ready(function()
 	
 	$('#frontsearch').bind('click', function(event)
 	{
-		/*event.stopPropagation();
-		$('#advsearch').trigger('click');*/
-		openWindow('searchbar');
+		//openWindow('searchbar');
+		$('#frontbanner').fadeOut();
+		$('#browsecategories').css('display', 'block').css('opacity', '0').css('top', '0').animate({ opacity: 1, top:'+=80'}, 1200);
 	});
 	
 	$('#frontpost').bind('click', function()
@@ -48,6 +48,14 @@ $(document).ready(function()
 	});
 	
 	disableDraggingFor(document.getElementById('frontbanner'));
+	
+	$('#browsecategories label').each(function()
+	{
+		$(this).bind('click', function()
+		{
+			window.location = 'http://www.postonme.com/view.php?order=date&category='+$(this).text()+'-&location=Western%20University&online=0&images=0&limit=40';
+		});
+	});
 });
 
 function showSignupColumn()
@@ -64,7 +72,7 @@ function showEditColumn()
 
 function showSignupPanel()
 {
-	showGlassPanel("signupcontainer");
+	showGlassPanel("signupbox");
 	$('#frontsignup').unbind('click');
 	$('#frontsignup').bind('click', function()
 	{
@@ -74,7 +82,7 @@ function showSignupPanel()
 
 function hideSignupPanel()
 {
-	hideGlassPanel("signupcontainer");
+	hideGlassPanel("signupbox");
 	$('#frontsignup').unbind('click');
 	$('#frontsignup').bind('click', function()
 	{
