@@ -147,9 +147,32 @@ function setSlider() {
     var values = [0, 5, 10, 15, 20, 30, 40, 50, 60, 75, 100, 125, 150, 175, 200, 250, 300, 400, 500, 750, 1000, 1500];
 
     var slider = $("#slider-range");
-
+    
+    $('#highroller').on('change', function() {
+        if (this.checked) {
+            $("#slider-value").val("$100-$5000");
+            values.push(2000, 3000, 4000, 5000, 6000, 7500, 10000);
+            slider.slider({
+                range: true,
+                min: 100,
+                max: 10000,
+                values: [100, 5000]
+            });
+        }
+        else {
+            $("#slider-value").val("$0-$500");
+            values.splice(22, 7);
+            slider.slider({
+                range: true,
+                min: 0,
+                max: 1000,
+                values: [0, 500]
+            });
+        }
+    });
+        
+      
     slider.slider({
-        orientation: 'horizontal',
         animation: "fast",
         range: true,
         min: 0,
@@ -165,12 +188,14 @@ function setSlider() {
                 if (this.checked) {
                     values.push(2000, 3000, 4000, 5000, 6000, 7500, 10000);
                     slider.slider("option", "max", 10000);
-                    slider.slider("option", "values", [100, 10000]);
+                    slider.slider("option", "values", [100, 5000]);
+                    $("#slider-value").val("$100-$5000");
                 }
                 else {
                     values.splice(22, 7);
                     slider.slider("option", "max", 1000);
-                    slider.slider("option", "values", [0, 1000]);
+                    slider.slider("option", "values", [0, 500]);
+                    $("#slider-value").val("$0-$500");
                 }
             });
 
@@ -181,12 +206,28 @@ function setSlider() {
             else {
                 slider.slider('values', 1, value);
             }
-            
-            
             $("#slider-value").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
         }
-
     });
+
+        $('#highroller').click(function() {
+                if (this.checked) {
+                    $("#slider-value").val("$100-$5000");
+                    slider.slider({
+                        min: 100,
+                        max: 10000,
+                        values: [100, 5000]
+                    });
+                }
+        else {
+            $("#slider-value").val("$0-$500");
+            slider.slider({
+                        min: 0,
+                        max: 1000,
+                        values: [0, 500]
+                    });
+        }
+    });                
 
     function findNearest(includeLeft, includeRight, value) {
         var nearest = null;

@@ -412,3 +412,29 @@ margin-left:10px;
 {
 color:yellow;
 }
+
+
+/********************
+
+      ui-Slider
+
+*********************/
+/* The handles */
+.ui-slider-horizontal .ui-state-default {
+    background: white no-repeat scroll 50% 50%;
+}
+
+/* The Slider */
+#slider-range {
+    border-radius: 25px;
+    width: 100px;
+    margin: 5px 0 5px 5px;
+}
+
+#slider-value {
+    border:0;
+	background-color:transparent;
+	color: white;
+	font-weight: bold;
+	width: 125px;
+}
