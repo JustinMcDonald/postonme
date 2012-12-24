@@ -145,6 +145,9 @@ overflow:auto;
 {
 margin-top:20px;
 text-align:justify;
+background: url(../img/chat_info.png) no-repeat;
+width: 174px;
+height: 68px;
 }
 
 #signupinformation

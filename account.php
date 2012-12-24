@@ -30,7 +30,7 @@ include("scripts/activateAccount.php");
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <div class='contentcontainer' style='width:62%;padding-left:10px;padding-right:10px;'>
-	<h2>Review, Modify, Delete or Bump your Advertisements!</h2>
+	<h2 style="margin-bottom: 20px;">Review, Modify, Delete or Bump your Advertisements!</h2>
 	<div id='accountAdvertisementFrame'>
 		<?php include("./scripts/findAccountAdvertisements.php"); ?>
 	</div>

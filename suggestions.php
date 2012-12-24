@@ -87,10 +87,10 @@ include('/home/postonme/hidden_scripts/session.php');
 
 <div class="contentcontainer">
 	<h2>Suggestion Box</h2>
-	<p>If you have a suggestion for improving PostOnMe, please send a message to us and we would be delighted to hear from you. 
+	<p style="padding: 20px 0;">If you have a suggestion for improving PostOnMe, please send a message to us and we would be delighted to hear from you. 
 	We will always read and evaluate the input that we receive from our users.</p>
 	<div style="text-align:center">
-		<textarea class='messagefield' name='messagetext' id="messagetext" onfocus="if(this.value==this.defaultValue) this.value='';">Write your suggestion here..</textarea><br>
+		<textarea name='messagetext' id="messagetext" onfocus="if(this.value==this.defaultValue) this.value='';">Write your suggestion here..</textarea><br>
 		<input title="Submit this Suggestion" type='submit' value='Send Suggestion' class='submitbtn cursorhand themeborder themecolor' onclick="submitSuggestion(); return true;">
 	</div>
 </div>

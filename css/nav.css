@@ -137,6 +137,9 @@ margin-left:-429px;
 {
 display:inline-block;
 height:100%;
+border: 2px inset #5cbcea;
+padding: 5px;
+margin-top: 5px;
 }
 
 fieldset {
