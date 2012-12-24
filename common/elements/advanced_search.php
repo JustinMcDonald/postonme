@@ -70,33 +70,6 @@
 			</table>
 		</fieldset>
 	</div>
-	<!--<div> 
-		<fieldset>
-			<legend>Price</legend>
-			<table id='price'>
-				<tr>
-					<td>Minimum:</td>
-				</tr>
-				<tr>
-					<td><div class='slider' id='rangemin'></div></td>
-				</tr>
-				<tr>
-					<td><div id='outputmin'>$0</div></td>
-					<td><input type='range' id='rangemin' value='0' min='0' max='19' step='1'></td>
-				</tr>
-				<tr>
-					<td>Maximum:</td>
-				</tr>
-				<tr>
-					<td><div id='outputmax'>$10000</div></td>
-					<td><input type='range' id='rangemax' value='1000' min='0' max='19' step='1'></td>
-				</tr>
-				<tr>
-					<td colspan='2'><input type='checkbox' id='highroller'/>I'm Feeling Wealthy</td>
-				</tr>
-			</table>
-		</fieldset>
-	</div>-->
 	<div> <!--date-->
 		<fieldset>
 			<legend>Date Posted</legend>
@@ -130,7 +103,7 @@
             <table>
 			<tr>
 			    <td>
-			        <input type="text" id="slider-value" value="$0-$500" />
+			        <input type="text" id="slider-value" value="$0-$250" />
 			    </td>
 			</tr>
 			<tr>
