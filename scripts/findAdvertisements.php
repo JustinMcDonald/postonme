@@ -25,7 +25,7 @@ $onlineonly = false;
 if ($searchonline == 1) $onlineonly = true;
 
 //LIMIT MARKER
-$highlimit = $_GET['limit'];
+$highlimit = ($_GET['limit'] == "") ? 1 : $_GET['limit'];
 $lowlimit = $highlimit - 40;
 
 $count = 0;
@@ -121,11 +121,11 @@ if ($ads)
 							}
 						}
 						echo "<div class='contactbutton themecolor cursorhand themeborder' title='Email this person' onclick='window.top.showEmailAlert(" . $ad['adid'] . ");'>Email this Person</div>";
-						echo "<div id='fbfield".$ad['adid']."'><fb:like href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' font='verdana' action='recommend' style='float:left;'></fb:like></div>";
+						echo "<div id='fbfield".$ad['adid']."'><fb:like id='fblikebutton".$ad['adid']."' href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' font='verdana' action='recommend' style='float:left;'></fb:like></div>";
 						if ($_GET['fresh'] != "")
 						{
 							echo "<div id='fbRecommendFresh'>Many of your friends will be interested in your post, let them know!<div class='arrow-down'></div><img src='./img/closebtn.png' width='12px' height='12px'/></div>";
-							echo "<script>var offset = $('#fbfield".$ad['adid']."').offset(); $('#fbRecommendFresh').css('left', offset.left - 200).css('top', offset.top - 60); $('#fbRecommendFresh > img').bind('click', function(){ $('#fbRecommendFresh').hide(); }); setTimeout(function(){ $('#fbRecommendFresh').animate({ opacity:1, left:'+=10'}, 750)}, 1000);</script>";
+							echo "<script>var offset = $('#fblikebutton".$ad['adid']."').offset(); $('#fbRecommendFresh').css('left', offset.left - 200).css('top', offset.top - 60); $('#fbRecommendFresh > img').bind('click', function(){ $('#fbRecommendFresh').hide(); }); setTimeout(function(){ $('#fbRecommendFresh').animate({ opacity:1, left:'+=10'}, 750)}, 1000);</script>";
 						}
 						echo "<div class='adflag cursorhand' onclick='flagAdvertisement(" . $ad['adid'] . ");'>Flag Ad</div>";
 					echo "</div>";
