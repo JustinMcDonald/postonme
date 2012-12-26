@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, sub, sup, tt, var, u, i, center,
-dl, dt, dd, ol,
+dl, dt, dd, ol, 
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure, 
@@ -13,6 +13,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	outline: 0;
+	font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -26,7 +27,7 @@ width:100%;
 height:100%;
 overflow: auto;
 background: url(../img/bg_icon.png) no-repeat fixed center;
-font:1em Verdana;
+font-size:1em;
 }
 
 body{
@@ -37,15 +38,15 @@ height:100%;
 }
 
 h1{
-font:2.25em Verdana;
+font-size:2.25em;
 }
 
 h2{
-font:1.75em Verdana;
+font-size:1.75em;
 }
 
 h3{
-font:1.125em Verdana;
+font-size:1.125em;
 }
 
 a{
@@ -82,7 +83,6 @@ background-image: -webkit-linear-gradient(top left, #00BCFF 0%, #00435C 100%);
 
 /* W3C Markup, IE10 Release Preview */ 
 background-image: linear-gradient(to bottom right, #00BCFF 0%, #00435C 100%);
-
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BCFF', endColorstr='#00435C');
 }
 
@@ -94,6 +94,7 @@ width:auto;
 }
 
 .contentcontainer{
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 margin-top:85px;
 border:1px inset #A8D2FF;
 overflow:hidden;
@@ -145,7 +146,7 @@ margin-top:-4px;
 }
 
 .bigbutton{
-font:2.25em Verdana;
+font-size:2.25em;
 font-weight:600;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
@@ -180,7 +181,7 @@ bottom:0;
 }
 
 .textarea{
-font:1em Verdana;
+font-size:1em;
 }
 
 .inlineblock{
@@ -192,7 +193,7 @@ float:left;
 }
 
 #radiobtns{
-font:1.125em Verdana;
+font-size:1.125em;
 }
 
 #postbtn{
@@ -210,7 +211,7 @@ bottom:15px;
 
 #location{
 left:220px;
-font:1.25em Verdana;
+font-size:1.25em;
 font-weight:bold;
 }
 
@@ -221,7 +222,7 @@ cursor: hand;
 
 .themetext{
 color:#BA1E1E;
-font:1.25em Verdana;
+font-size:1.25em;
 }
 
 .wireframe{
@@ -279,7 +280,7 @@ display:block;
 
 #info
 {
-font:0.9em Verdana;
+font-size:0.9em;
 text-align:center;
 font-weight:600;
 margin-right:auto;
@@ -297,6 +298,7 @@ user-select: none;
 
 #messagetext
 {
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 color:#C9C9C9;
 width:97%;
 height:100px;
@@ -385,7 +387,7 @@ background-color:#005A7B;
 #searchbar
 {
 color:#626262;
-font:1.5em Verdana;
+font-size:1.5em;
 font-weight:600;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;

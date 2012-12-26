@@ -2,6 +2,7 @@
 {
 width:100%;
 height:auto;
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 }
 
 .adbody
@@ -186,7 +187,8 @@ min-width:97%;
 -ms-user-select: none;
 user-select: none;
 padding:10px 5px 0 15px;
-font:0.95em Verdana;
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
+font-size:0.95em;
 font-weight:600;
 height:25px;
 text-align:left;
@@ -210,6 +212,7 @@ border:2px solid black;
 padding:12px 20px;
 color:yellow;
 background-color:#00A4DE;
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 font-size:1.2em;
 font-weight:600;
 }

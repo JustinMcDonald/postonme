@@ -107,7 +107,7 @@
 			    </td>
 			</tr>
 			<tr>
-			    <div id="slider-range"></div>
+			    <td><div id="slider-range"></div></td>
 			</tr>
 			<tr>
 			    <td><input type='checkbox' id='highroller' />I'm Feeling Wealthy</td>

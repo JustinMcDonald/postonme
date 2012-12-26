@@ -5,7 +5,8 @@ height:30px;
 bottom:0;
 border-top:1px solid #c9c9c9;
 background:#E3F4FF;
-font:0.6em verdana;
+font-size:0.6em;
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 float:right;
 }
 

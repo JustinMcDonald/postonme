@@ -4,7 +4,7 @@
 		<?php include("./common/elements/advanced_search.php"); ?>
 		<div id='fbfield'>
 			<!--<div class='fb-like' data-href='http://www.facebook.com/pages/PostOnMe/406180249454738?ref=ts&amp;fref=ts' data-send='true' data-layout='button_count' data-width='150' data-show-faces='false'></div>-->
-			<fb:like href="http://www.postonme.com" send="false" layout="button_count" width="200" show_faces="false" font="verdana"></fb:like>
+			<fb:like href="http://www.postonme.com" send="false" layout="button_count" width="200" show_faces="false"></fb:like>
 		</div>
 		<div class='container' style='min-width:810px'>
 			<div id='welcomemessage'></div>

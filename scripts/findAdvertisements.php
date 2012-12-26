@@ -121,7 +121,7 @@ if ($ads)
 							}
 						}
 						echo "<div class='contactbutton themecolor cursorhand themeborder' title='Email this person' onclick='window.top.showEmailAlert(" . $ad['adid'] . ");'>Email this Person</div>";
-						echo "<div id='fbfield".$ad['adid']."'><fb:like id='fblikebutton".$ad['adid']."' href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' font='verdana' action='recommend' style='float:left;'></fb:like></div>";
+						echo "<div id='fbfield".$ad['adid']."'><fb:like id='fblikebutton".$ad['adid']."' href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' action='recommend' style='float:left;'></fb:like></div>";
 						if ($_GET['fresh'] != "")
 						{
 							echo "<div id='fbRecommendFresh'>Many of your friends will be interested in your post, let them know!<div class='arrow-down'></div><img src='./img/closebtn.png' width='12px' height='12px'/></div>";

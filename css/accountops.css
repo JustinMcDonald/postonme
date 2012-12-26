@@ -3,6 +3,10 @@
 height:200px;
 }
 
+#forgotbox p {
+padding:5px;
+}
+
 #resetpassbox
 {
 height:200px;
@@ -42,7 +46,7 @@ text-align:justify;
 #signupcontainer ul
 {
 -webkit-padding-start:20px;
-font:10px Verdana;
+font-size:10px;
 }
 
 #signuptitle{
@@ -51,6 +55,7 @@ padding:5px 0 3px 0;
 
 .glasspanel
 {
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 visibility:hidden;
 position:fixed;
 left:-210px;
@@ -62,5 +67,5 @@ background-color:rgba(0,187,254,0.97);*/
 background-color:#B0EAFF;
 text-align:left;
 display:block;
-font:0.75em verdana;
+font-size:0.75em;
 }

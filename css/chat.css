@@ -1,12 +1,13 @@
 #chatbox
 {
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 position:fixed;
 width:200px;
 height:672px;
 left:0;
 top:0;
-font:0.75em verdana;
-padding:5px 5px 5px 5px;
+font-size:0.75em;
+padding:5px
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F00BBFE,endColorstr=#7F00BBFE);
 background-color:rgba(0,187,254,0.5);
 /*background-color:#00BBFE;*/
@@ -37,13 +38,14 @@ word-wrap:break-word;
 }
 
 .chattext{
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 width:190px;
 height:88%;
 margin:5px 2px 0 2px;
 word-wrap:break-word;
 resize:none;
 overflow:auto;
-font:0.8em verdana;
+font-size:0.8em;
 padding-left:5px;
 /*border-radius:5px;
 border:1px solid #98DFF5;
@@ -143,9 +145,9 @@ overflow:auto;
 
 #chatinformation
 {
-margin-top:20px;
+margin:10px;
 text-align:justify;
-background: url(../img/chat_info.png) no-repeat;
+/*background: url(../img/chat_info.png) no-repeat;*/
 width: 174px;
 height: 68px;
 }

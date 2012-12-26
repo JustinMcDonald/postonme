@@ -68,10 +68,14 @@ color:#4A85D9;
 text-align:left;
 }
 
+#responseform {
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
+
+}
 #responseform input[type=text]
 {
 width:100%;
-font:0.8em Verdana;
+font-size:0.8em;
 color:#c9c9c9;
 margin-bottom:20px;
 }
@@ -84,7 +88,7 @@ height:80px;
 vertical-align:text-top;
 resize:none;
 margin-bottom:1px;
-font:0.8em Verdana;
+font-size:0.8em;
 color:#c9c9c9;
 padding:0 2px 0 0;
 }
