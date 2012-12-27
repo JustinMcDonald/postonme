@@ -15,7 +15,8 @@ while (!$unique)
 	if (!(mysql_num_rows($result) > 0))
 	{
 		$guestname = "Guest" . $num;
-		$query = "INSERT INTO account (username, online, tmponline, email) VALUES ('$guestname', false, true, '$guestname')"; 
+		$time = time();
+		$query = "INSERT INTO account (username, online, tmponline, email, date_created, date_accessed) VALUES ('$guestname', false, true, '$guestname', $time, $time)"; 
 		//$query = "INSERT INTO account (username, online, tmponline, email, chatIP) VALUES ('$guestname', false, true, '$guestname', $_SERVER['REMOTE_ADDR'])"; 
 		if(!mysql_query($query))
 		{

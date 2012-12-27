@@ -28,8 +28,8 @@ if  ($validation == 1)
 	$_SESSION['username'] = $properusername;
 	$_SESSION['password'] = $encrypt;
 	$_SESSION['online'] = true;
-
-	$response = mysql_query("UPDATE account SET online=true WHERE username='".mysql_real_escape_string($user)."'");
+	$time = time();
+	$response = mysql_query("UPDATE account SET online=true, date_accessed=$time WHERE username='".mysql_real_escape_string($user)."'");
 	//$response = mysql_query("UPDATE account SET online=true, chatIP=$_SERVER['REMOTE_ADDR'] WHERE username='".mysql_real_escape_string($user)."'");
 	if ($response)
 	{

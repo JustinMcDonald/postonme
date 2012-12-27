@@ -16,7 +16,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 $encrypt = md5($newpass);
 
 $query = "SELECT username FROM account WHERE username='".mysql_real_escape_string($newuser)."'";  
-$result = mysql_query($query);  
+$result = mysql_query($query);
 
 if (!(mysql_num_rows($result) > 0))
 {
@@ -34,8 +34,10 @@ if (!(mysql_num_rows($result) > 0))
 		if (mysql_num_rows($result) > 0 || $reference == '')
 		{*/
 			$verification_code = generateRandomString(32);
+			
+			$time = time();
 			//$query = "INSERT INTO account (username, password, email, verificationcode, reference) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\", \"$reference\")";
-			$query = "INSERT INTO account (username, password, email, verificationcode) VALUES ('".mysql_real_escape_string($newuser)."', '".mysql_real_escape_string($encrypt)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($verification_code)."')";
+			$query = "INSERT INTO account (username, password, email, verificationcode, date_created) VALUES ('".mysql_real_escape_string($newuser)."', '".mysql_real_escape_string($encrypt)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($verification_code)."', $time)";
 			//$query = "INSERT INTO account (username, password, email, verificationcode, chatIP) VALUES ('".mysql_real_escape_string($newuser)."', '".mysql_real_escape_string($encrypt)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($verification_code)."', $_SERVER['REMOTE_ADDR'])";
 			if (mysql_query($query))
 			{
