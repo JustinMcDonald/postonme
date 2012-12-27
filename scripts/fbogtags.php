@@ -98,6 +98,9 @@ function assembleQuery($search='',$type='',$price='0-10000',$date='',$category='
 	/*IMAGES*/
 	if ($images == 1) $query .= " AND image!=''";
 
+	//AD MUST BE VISIBLE
+	$query .= " AND visible=1";
+	
 	/*ORDER*/
 	if (substr($order, 0, 1) == "1")
 	{

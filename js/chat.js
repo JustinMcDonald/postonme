@@ -12,109 +12,23 @@ $(document).ready(function() {
 			$("#showchatbutton").css('visibility', 'hidden');
 		}
 	});
+	
+	$('#chatheader > img').each(function()
+	{
+	$(this).hover(function()
+		{
+			this.src = "./img/chat_icons_hover.png";
+		}, function()
+		{
+			this.src = "./img/chat_icons.png";
+		});
+	});
 });
 	
 function initChat()
 {
 	loadMessages();
-	startChatChecks();
-}
-
-function chatLogout() 
-{
-	$.ajax({
-		url: "./scripts/chatLogout.php",
-		type: "post",
-		success: function(response, textStatus, jqXHR)
-		{
-			switch(response)
-			{
-				case "1":
-					//location.reload(true);
-					location.href = 'http://www.postonme.com';
-					break;
-				default:
-					alert("Something went wrong, please try again later.");
-					break;
-			}
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			alert("Something went wrong. Please try again later.");
-		}
-	});
-}
-
-function chatLogin()
-{
-	var form = window.top.document.getElementById('chatsigninform');
-	removeFormErrors(form);
-	var username = form.elements['signinusername'].value;
-	var password = form.elements['signinpassword'].value;
-	if (username == "")
-	{
-		indicateError('signinusername');
-		alert("Please provide your username.");
-		return;
-	}
-	if (password == "")
-	{
-		indicateError('signinpassword');
-		alert("Please provide your password.");
-		return;
-	}
-	
-	if (window.chatinterval) window.clearInterval(window.chatinterval);
-	
-	var dataString = "user="+username+"&pass="+password;
-	
-	$.ajax({
-		type: "POST",
-		url: "./scripts/chatLogin.php",
-		data: dataString,
-		success: function(response, textStatus, jqXHR)
-		{
-			try
-			{
-				var json = JSON.parse(response);
-				switch(json[0])
-				{
-					case 1:
-						showWelcomeMessage(json[1]);
-						styleSocialColor(json[2]);
-						showAccountOps();
-						if ( typeof showEditColumn == 'function' ) showEditColumn();
-						loadMessages();
-						hideGlassPanel('loginbox');
-						break;
-					case 2:
-						alert("You must activate your account before logging in. Look for your account verification code in your email.");
-						break;
-					case 3:
-						indicateError('signinusername');
-						indicateError('signinpassword');
-						alert("Password mismatch. Please retype your username and/or password.");
-						break;
-					default:
-						alert("Something went wrong, please try again later.");
-						location.reload(true);
-						break;
-				}
-			}
-			catch(e)
-			{
-				alert("Something went wrong, please try again later");
-				location.reload(true);
-			}
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			alert("dSomething went wrong. Please try again later.");
-			location.reload(true);
-		},
-		complete: function(jqXHR, textStatus)
-		{
-			startChatChecks();
-		}
-	});
+	//startChatChecks();
 }
 
 /*	createConversation()
@@ -159,7 +73,7 @@ function createConversation(adid, online)
 	});
 }
 
-function loadMessages()
+function loadMessages(cid)
 {
 	if (window.chatinterval) window.clearInterval(window.chatinterval);
 	$.ajax({
@@ -173,28 +87,40 @@ function loadMessages()
 				window.top.location.reload(true);
 				return;
 			}
-			var data = $.parseJSON(response);
-			$.each(data, function(index, value) { 
-				var cid = value[0];
-				var title = value[1];
-				var name = value[2];
-				var messages = value[3];
-				createLiveChat(cid, title, name, true);
-				$.each(messages, function(index, value) { 
-					var writtenby = value[0];
-					var message = value[1];
-					if (writtenby == "POSTONME") 
-					{
-						addToChatText(cid, "<div style='padding:2px 0;'>"+message+"</div>\n");
-						$('#messageoutbox'+cid).attr('disabled', 'disabled');
-					}
-					else (writtenby == name) ? addToChatText(cid, "<div class='yourtext'>" + writtenby + ": " + message + "</div>\n")  : addToChatText(cid, "<div class='mytext'>You: " + message + "</div>\n");
+			try
+			{
+				var data = $.parseJSON(response);
+				$.each(data, function(index, value) { 
+					var cid = value[0];
+					var title = value[1];
+					var name = value[2];
+					var messages = value[3];
+					createLiveChat(cid, title, name, true);
+					$.each(messages, function(index, value) { 
+						var writtenby = value[0];
+						var message = value[1];
+						if (writtenby == "POSTONME") 
+						{
+							addToChatText(cid, "<div style='padding:2px 0;'>"+message+"</div>\n");
+							$('#messageoutbox'+cid).attr('disabled', 'disabled');
+						}
+						else (writtenby == name) ? addToChatText(cid, "<div class='yourtext'>" + writtenby + ": " + message + "</div>\n")  : addToChatText(cid, "<div class='mytext'>You: " + message + "</div>\n");
+					});
+					readyLiveMessage(cid);
+					var chatbtn = $('#showchatbutton');
+					if (chatbtn.css('visibility') == 'visible') chatbtn[0].onclick();
+					startChatChecks();
 				});
-				readyLiveMessage(cid);
-				var chatbtn = $('#showchatbutton');
-				if (chatbtn.css('visibility') == 'visible') chatbtn[0].onclick();
-				startChatChecks();
-			});
+				if (data.length == 0) $('#chatinformation').text("To start a conversation, find a post you're interested in and click the \"Message this Person\" button");
+			}
+			catch(err)
+			{
+				alert("Something went wrong, please try again later.");
+			}
+		},
+		complete: function()
+		{
+			if (typeof cid != "undefined") readyLiveMessage(cid);
 		}
 	});
 }
@@ -263,30 +189,37 @@ function checkForNewConversations(cids)
 				window.top.location.reload(true);
 				return;
 			}
-			var data = $.parseJSON(response);
-			$.each(data, function(index, value) { 
-				var cid = value[0];
-				var title = value[1];
-				var name = value[2];
-				var messages = value[3];
-				if (document.getElementById('chattitle'+cid) == null) 
-				{
-					createLiveChat(cid, title, name, true);
-					$.each(messages, function(index, value) { 
-						var writtenby = value[0];
-						var message = value[1];
-						if (writtenby == "POSTONME") 
-						{
-							addToChatText(cid, "<div style='padding:2px 0;'>"+message+"</div>\n");
-							$('#messageoutbox'+cid).attr('disabled', 'disabled');
-						}
-						else addToChatText(cid, "<div class='yourtext'>" + writtenby + ": " + message + "</div>\n");
-					});
-					readyLiveMessage(cid);
-					var chatbtn = $('#showchatbutton');
-					if (chatbtn.css('visibility') == 'visible') chatbtn[0].onclick();
-				}
-			});
+			try
+			{
+				var data = $.parseJSON(response);
+				$.each(data, function(index, value) { 
+					var cid = value[0];
+					var title = value[1];
+					var name = value[2];
+					var messages = value[3];
+					if (document.getElementById('chattitle'+cid) == null) 
+					{
+						createLiveChat(cid, title, name, true);
+						$.each(messages, function(index, value) { 
+							var writtenby = value[0];
+							var message = value[1];
+							if (writtenby == "POSTONME") 
+							{
+								addToChatText(cid, "<div style='padding:2px 0;'>"+message+"</div>\n");
+								$('#messageoutbox'+cid).attr('disabled', 'disabled');
+							}
+							else addToChatText(cid, "<div class='yourtext'>" + writtenby + ": " + message + "</div>\n");
+						});
+						readyLiveMessage(cid);
+						var chatbtn = $('#showchatbutton');
+						if (chatbtn.css('visibility') == 'visible') chatbtn[0].onclick();
+					}
+				});
+			}
+			catch(err)
+			{
+				alert("Something went wrong, please try again later.");
+			}
 		}
 	});
 }
@@ -360,24 +293,26 @@ function createLiveChat(cid, title, name, online)
 {
 	$('#chatinformation').hide();
 	addChatTitle(cid, title+" ("+name+")");
-	addChatText(cid, "<div style='padding:2px 0;'>Welcome to LiveChat!</div>\n", null);
-	if (!online) addToChatText(cid, "<div style='padding:2px 0;'>This person is offline. They will see your messages next time they log in.</div>\n");
+	addChatText(cid, "<div style='padding:2px 0; color:black;'>Welcome to LiveChat!</div>\n", null);
+	if (!online) addToChatText(cid, "<div style='padding:2px 0;color:black;'>This person is offline. They will see your messages next time they log in.</div>\n");
 	addChatInput(cid);
-	cleanTextSizes();
 }
 
 function readyLiveMessage(cid)
 {
+	//Open conversations tab
+	if (!$('#currentmessagestab').is(':visible')) openCurrentMessagesTab();
+
 	var text = window.top.document.getElementById('chattext' + cid);
 	if (text == null) return false;
 	
 	childNodeArray = window.top.document.getElementById('chattitlecontainer').childNodes;
 	for (var i = 0; i < childNodeArray.length; i++) 
 	{
-		childNodeArray[i].style.border = "inset #A8D2FF 1px";
-		childNodeArray[i].style.opacity = 0.3;
-		childNodeArray[i].style.filter = 'alpha(opacity=30)';
-
+		//childNodeArray[i].style.border = "inset #A8D2FF 1px";
+		//childNodeArray[i].style.opacity = 0.3;
+		//childNodeArray[i].style.filter = 'alpha(opacity=30)';
+		childNodeArray[i].firstChild.style.fontWeight = '400';
 	}
 	
 	var childNodeArray = window.top.document.getElementById('chattextcontainer').childNodes;
@@ -388,9 +323,10 @@ function readyLiveMessage(cid)
 	
 	text.style.display = "block";
 	var e = window.top.document.getElementById('chattitle' + cid)
-	e.style.opacity = 0.6;
-	e.style.filter = 'alpha(opacity=60)';
-	e.style.border = "solid #18417A 1px";
+	//e.style.opacity = 0.6;
+	//e.style.filter = 'alpha(opacity=60)';
+	//e.style.border = "solid #18417A 1px";
+	e.firstChild.style.fontWeight = '600';
 	var outbox = window.top.document.getElementById('messageoutbox' + cid)
 	outbox.style.display = "block";
 	outbox.focus();
@@ -413,11 +349,17 @@ function addChatTitle(cid, label)
 	newNode.innerHTML = "<div id='chattitletext"+cid+"' class='chattitletext'>" + label + "</div><div id='closebtn"+cid+"' class='closebtn' onclick='closeChat(\""+cid+"\"); return true;'><image src='img/closebtn.png' width='12px' height='12px' alt='' /></div>";
 	ni.appendChild(newNode);*/
 	
-	$('#chattitlecontainer').append("<div id='chattitle"+cid+"' class='themeborder chattitle cursorhand' onclick='readyLiveMessage(\""+cid+"\"); return true;'>"
+	$('#chattitlecontainer').append("<div id='chattitle"+cid+"' class='chattitle cursorhand' onclick='readyLiveMessage(\""+cid+"\"); return true;'>"
 	+"<div id='chattitletext"+cid+"' class='chattitletext'>" + label + "</div>"
 	+"<div id='closebtn"+cid+"' class='closebtn' onclick='closeChat(\""+cid+"\"); return true;'>"
 	+"<image src='img/closebtn.png' width='12px' height='12px' alt='' /></div>"
 	+"</div>");
+	
+	var t = parseInt($('#chattitle'+cid).css('height'), 10);
+	var e = $('#chatbox');
+	var h = parseInt(e.css('height'), 10);
+	var maxh = $(window).height();
+	if (h < maxh - 110) e.css('height', h+t+"px");
 }
 
 function addChatText(cid, message, name)
@@ -489,21 +431,11 @@ function addToChatText(cid, message)
 	textbox.scrollTop = 99999;
 }
 
-function cleanTextSizes() {
-	/*var childNodeArray = window.top.document.getElementById('chattextcontainer').childNodes;
-	var newH = window.top.document.getElementById('chatbox').clientHeight;
-	newH -= 200;
-	newH -= window.top.document.getElementById('chatsignincontainer').clientHeight;
-	newH -= window.top.document.getElementById('chattitlecontainer').clientHeight;
-	for (var j = 0; j < childNodeArray.length; j++) childNodeArray[j].style.height = newH + "px";*/
-	return true;
-}
-
 function closeChat(cid)
 {
-	var answer = confirm("Are you sure you want to close this conversation?\n\nAll messages will be deleted and this person will not be able to reply.");
-	if (answer == true)
-	{
+	//var answer = confirm("Are you sure you want to close this conversation?\n\nAll messages will be deleted and this person will not be able to reply.");
+	//if (answer == true)
+	//{
 		if (window.chatinterval) window.clearInterval(window.chatinterval);
 		$('#chattext'+cid).remove();
 		$('#chattitle'+cid).remove();
@@ -515,7 +447,11 @@ function closeChat(cid)
 			$('#chatinformation').show();
 			$('#chatinfofill').show();
 		}
-		cleanTextSizes();
+		
+		var e = $('#chatbox');
+		var h = parseInt(e.css('height'), 10);
+		h -= 25;
+		if (h >= 400) e.css('height', h+"px");
 		
 		var dataString = "cid="+cid;
 		
@@ -531,7 +467,7 @@ function closeChat(cid)
 				alert("kSomething went wrong. Please try again later.");
 			}
 		});
-	}
+	//}
 }
 
 function sendLiveMessage(cid)
@@ -566,14 +502,15 @@ function sendLiveMessage(cid)
 function hideChat(){
 	setCookie('chat',false,365);
 	var elem = document.getElementById("chatbox"),
-	left = 0,
+	bottom = 0,
 	timer;
 	
 	timer = setInterval(function() {
-		elem.style.left = ( left -= 42 ) + "px";
-		if ( left <= -210 ) {
+		elem.style.bottom = ( bottom -= 40 ) + "px";
+		if ( bottom <= -400 ) {
 			clearInterval(timer);
 			elem.style.display = "none";
+			$('#outboxcontainer').hide();
 			document.getElementById("showchatbutton").style.visibility = "visible";
 		}
 	}, 10);
@@ -583,7 +520,7 @@ function showChat()
 {
 	setCookie('chat',true,365);
 	var elem = document.getElementById("chatbox"),
-	left = -210,
+	bottom = -400,
 	timer;
 	
 	document.getElementById("showchatbutton").style.visibility = "hidden";
@@ -591,323 +528,89 @@ function showChat()
 			
 	timer = setInterval(function()
 	{
-		elem.style.left = ( left += 42 ) + "px";
-		if ( left >= 0 )
+		elem.style.bottom = ( bottom += 40 ) + "px";
+		if ( bottom >= 0 )
 		{
 			clearInterval(timer);
+			$('#outboxcontainer').show();
 			document.getElementById('signinusername').focus();
 		}
 	}, 10);
 }
 
-function toggleGlassPanel(id)
+function openPastMessagesTab()
 {
-	($('#'+id).css('visibility') == 'visible') ? hideGlassPanel(id) : showGlassPanel(id);
-}
-
-function showGlassPanel(id)
-{
-	var elem = document.getElementById(id),
-	left = -210,
-	timer;
+	if (window.chatinterval) window.clearInterval(window.chatinterval);
+	$('#currentmessagestab').hide();
+	$('#outboxcontainer').hide();
+	$('#chatheader > div').text('Past Messages');
+	$('#chatheader > img:nth-child(2)').attr('onclick', 'openCurrentMessagesTab(); return true');
+	$('#pastmessagestab').show();
 	
-	elem.style.visibility = "visible";
-			
-	timer = setInterval(function() {
-		elem.style.left = ( left += 14 ) + "px";
-		if ( left >= 0 ) {
-			var input = elem.getElementsByTagName('input')[0];
-			if (input != null) input.focus();
-			clearInterval(timer);
-		}
-	}, 5);
-}
-
-function hideGlassPanel(id)
-{
-	var elem = document.getElementById(id),
-	left = 0,
-	timer;
-	
-	timer = setInterval(function() {
-		elem.style.left = ( left -= 14 ) + "px";
-		if ( left <= -210 ) {
-			clearInterval(timer);
-			elem.style.visibility = "hidden";
-		}
-	}, 5);
-}
-
-function showWelcomeMessage(username){
-	window.top.document.getElementById('welcomemessage').innerHTML = "Hi there <a href='account.php' target='_top' id='accountname' title='Your Account'>" + username + "</a>!";
-}
-
-function signUp() {
-	var form = window.top.document.getElementById('signupform');
-	removeFormErrors(form);
-	var username = form.elements['signupusername'].value;
-	var password1 = form.elements['signuppassword1'].value;
-	var password2 = form.elements['signuppassword2'].value;
-	var email = form.elements['signupemail'].value;
-	//var reference = form.elements['signupreference'].value;
-	
-	if (username == "") {
-		indicateError('signupusername');
-		alert("Please provide a username.");
-		return;
-	}
-	if (password1 == "") {
-		indicateError('signuppassword1');
-		alert("Please provide a password.");
-		return;
-	}
-	if (password2 == "") {
-		indicateError('signuppassword2');
-		alert("Please retype your password.");
-		return;
-	}
-	if (password1 != password2) {
-		indicateError('signuppassword2');
-		indicateError('signuppassword1');
-		alert("Your passwords do not match.");
-		return;
-	}
-	if (username.substring(0, 5) == "Guest") {
-		indicateError('signupusername');
-		alert("Your username cannot begin with 'Guest'.");
-		return;
-	}
-	if (username.length > 15) {
-		indicateError('signupusername');
-		alert("Your username must be 15 characters or less.");
-		return;
-	}
-	if (password1.length < 5 || password1.length > 15) {
-		indicateError('signuppassword2');
-		indicateError('signuppassword1');
-		alert("Your password must be between 5 and 15 characters.");
-		return;
-	}
-	if (email == ""){
-		indicateError('signupemail');
-		alert("Please provide an email address");
-		return;
-	}
-	
-	//var dataString = "user="+username+"&pass="+password1+"&email="+email+"&refer="+reference;
-	var dataString = "user="+username+"&pass="+password1+"&email="+email;
-	
+	var dataString = 'all=true';
 	$.ajax({
-		type: "POST",
-		url: "./scripts/createAccount.php",
+		url: "./scripts/loadMessages.php",
+		type: "post",
 		data: dataString,
-		success: function(data, textStatus, jqXHR)
+		success: function(response, textStatus, jqXHR)
 		{
-			switch(data.substring(0,1))
+			if (response == null) 
 			{
-				case "1":
-					$('#signupform').hide();
-					//$('#signupinformation').show();
-					alert("Your account has been created! An email has been sent to the address you provided with instructions to activate your account.");
-					break;
-				case "6":
-					indicateError('signupusername');
-					alert("That username is already taken.");
-					break;
-				case "7":
-					indicateError('signupemail');
-					alert("Please provide a valide email address.");
-					break;
-				case "8":
-					indicateError('signupemail');
-					alert("That email has already been used to create an account.");
-					break;
-				case "9":
-					indicateError('signupreference');
-					alert("The referenced username does not exist.");
-					break;
-				default:
-					alert("Something went wrong. Please try again later.");
-					break;
+				alert("Your session has expired.");
+				window.top.location.reload(true);
+				return;
 			}
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			alert("Something went wrong. Please try again later.");
+			try
+			{
+				var data = $.parseJSON(response);
+				$.each(data, function(index, value)
+				{
+					var cid = value[0];
+					var title = value[1];
+					var name = value[2];
+					if (title == "") title = "Unknown Title";
+					if (name == "") title = "Unknown Name";
+					addPastChatTitle(cid, title+" ("+name+")");
+				});
+				if (data.length == 0) $('#pastmessagescontainer').append("<div>You have 0 messages.</div>");
+			}
+			catch(err)
+			{
+				alert("Something went wrong, please try again later.");
+			}
 		}
 	});
 }
 
-function forgotPassword()
-{
-	var form = window.top.document.getElementById('forgotform');
-	removeFormErrors(form);
-	var email = form.elements['forgotemail'].value;
-	if (email == "")
-	{
-		indicateError('forgotemail');
-		alert("Please provide an email address");
-		return;
-	}
-	
-	var dataString = "email="+email;
-	
-	$.ajax({
-		type: "POST",
-		url: "./email/forgotPassword.php",
-		data: dataString,
-		success: function(data, textStatus, jqXHR)
-		{
-			switch (data)
-			{
-				case "7":
-					indicateError('forgotemail');
-					alert("Please provide a valid email address.");
-					break;
-				default:
-					hideGlassPanel('forgotbox');
-					alert(data);
-					break;
-			}
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			alert("Something went wrong, please try again later.");
-		}
-	});
+function addPastChatTitle(cid, label)
+{	
+	$('#pastmessagescontainer').append("<div id='pastchattitle"+cid+"' class='chattitle cursorhand' onclick='activateMessage(\""+cid+"\"); return true;'>"
+	+"<div id='pastchattitletext"+cid+"' class='chattitletext'>" + label + "</div>"
+	/*+"<div id='closebtn"+cid+"' class='closebtn' onclick='closeChat(\""+cid+"\"); return true;'>"
+	+"<image src='img/closebtn.png' width='12px' height='12px' alt='' /></div>"*/
+	+"</div>");
 }
 
-function resetPassword(user, code)
+function openCurrentMessagesTab()
 {
-	var form = window.top.document.getElementById('resetpassform');
-	removeFormErrors(form);
-	var pass1 = form.elements['resetpassword1'].value;
-	var pass2 = form.elements['resetpassword2'].value;
-	
-	if (pass1 == ""){
-		indicateError('resetpassword1');
-		alert("Please provide a password.");
-		return;
-	}
-	if (pass2 == ""){
-		indicateError('resetpassword2');
-		alert("Please retype your password.");
-		return;
-	}
-	if (pass1 != pass2){
-		indicateError('resetpassword2');
-		indicateError('resetpassword1');
-		alert("Your passwords do not match.");
-		return;
-	}
-	
-	var dataString = "user="+user+"&code="+code+"&pass="+pass1;
-	
-	$.ajax({
-		type: "POST",
-		url: "./scripts/resetPassword.php",
-		data: dataString,
-		success: function(data, textStatus, jqXHR)
-		{
-			$('#resetpassbox').hide();
-			alert(data);
-			window.location = "http://www.postonme.com/";
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			alert("Something went wrong, please try again later.");
-		}
-	});
+	$('#chatheader > div').text('Messages');
+	$('#pastmessagestab').hide();
+	$('#pastmessagescontainer').html('');
+	$('#currentmessagestab').show();
+	$('#outboxcontainer').show();
+	$('#chatheader > img:nth-child(2)').attr('onclick', 'openPastMessagesTab(); return true');
 }
 
-function changeEmail()
+function activateMessage(cid)
 {
-	var e = $('#changeemailbox');
-	removeFormErrors(e);
-	var pass = $('#changeemailpassword').val();
-	var newemail = $('#changeemailemail').val();
-	
-	if (pass == "")
-	{
-		indicateError('changeemailpassword');
-		alert("Please provide a password.");
-		return;
-	}
-	if (newemail == "")
-	{
-		indicateError('changeemailemail');
-		alert("Please provide an email.");
-		return;
-	}
-	
-	var dataString = "pass="+pass+"&newemail="+newemail;
-	
+	var dataString = "cid="+cid;
 	$.ajax({
-		type: "POST",
-		url: "./scripts/changeEmail.php",
+		url: "./scripts/activateMessage.php",
+		type: "post",
 		data: dataString,
-		success: function(data, textStatus, jqXHR)
+		success: function(response, textStatus, jqXHR)
 		{
-			if (data != '1') alert(data);
-			else
-			{
-				$('#changeemailbox').hide();
-				alert("Your email has been updated successfully.");
-				window.location.reload(true);
-			}
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			alert("Something went wrong, please try again later.");
+			loadMessages();
 		}
-	});
-}
-
-function changePassword()
-{
-	var e = $('#changepasswordbox');
-	removeFormErrors(e);
-	var pass = $('#changepasswordcurrent').val();
-	var newpass1 = $('#changepasswordnew').val();
-	var newpass2 = $('#changepasswordnew2').val();
-	
-	if (pass == ""){
-		indicateError('changepasswordcurrent');
-		alert("Please provide your current password.");
-		return;
-	}
-	if (newpass1 == ""){
-		indicateError('changepasswordnew');
-		alert("Please provide a new password.");
-		return;
-	}
-	if (newpass2 == ""){
-		indicateError('changepasswordnew2');
-		alert("Please retype your new password.");
-		return;
-	}
-	if (newpass1 != newpass2){
-		indicateError('changepasswordnew2');
-		indicateError('changepasswordnew');
-		alert("Your passwords do not match.");
-		return;
-	}
-	
-	var dataString = "pass="+pass+"&newpass="+newpass1;
-	
-	$.ajax({
-		type: "POST",
-		url: "./scripts/changePassword.php",
-		data: dataString,
-		success: function(data, textStatus, jqXHR)
-		{
-			if (data != '1') alert(data);
-			else
-			{
-				$('#changepasswordbox').hide();
-				alert("Your password has been updated successfully.");
-				window.location.reload(true);
-			}
-		},
-		error: function (xhr, ajaxOptions, thrownError) 
-		{
-			alert("Something went wrong, please try again later.");
-		},
 	});
 }

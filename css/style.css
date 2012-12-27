@@ -413,6 +413,7 @@ cursor:pointer;
 
 #browsecategories
 {
+font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 display:none;
 position:absolute;
 top:80px;

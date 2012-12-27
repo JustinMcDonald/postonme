@@ -1,4 +1,5 @@
 <div id='bottombanner'>
+	<div id='outboxcontainer'></div>
 	<ul>
 		<!-- <li><img src="../img/blue_icon.png" /></li> -->	
 		<li><a href='contact.php'>Contact Us</a></li>

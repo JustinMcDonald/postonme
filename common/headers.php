@@ -14,6 +14,7 @@
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="/js/functions.js"></script>
+<script type="text/javascript" src="/js/account_ops.js"></script>
 <script type="text/javascript" src="/js/chat.js"></script>
 <script type="text/javascript" src="/js/exp.js"></script>
 <script type="text/javascript" src="/js/news.js"></script>

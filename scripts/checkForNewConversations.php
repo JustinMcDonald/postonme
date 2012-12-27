@@ -7,9 +7,9 @@ $cids = explode(',', $data);
 $constraints = "";
 for ($i = 0; $i < count($cids) - 1; $i++)
 {
-	$constraints .= " AND id!=".mysql_real_escape_string($cids[$i])."'";
+	$constraints .= " AND id!='".mysql_real_escape_string($cids[$i])."'";
 }
-		
+
 $user = $_SESSION['username'];
 $pass = $_SESSION['password'];
 

@@ -20,7 +20,7 @@
 		
 		$count = 0;
 	
-		$query = "SELECT * FROM advertisement WHERE username='".mysql_real_escape_string($user)."' ORDER BY date DESC";
+		$query = "SELECT * FROM advertisement WHERE username='".mysql_real_escape_string($user)."' AND visible=1 ORDER BY date DESC";
 		
 		$ads = mysql_query($query);
 
