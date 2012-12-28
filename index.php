@@ -8,10 +8,10 @@ include('/home/postonme/hidden_scripts/session.php');
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="description" content="Campus Classifieds"/>
-	<meta name="keywords" content="Classifieds,Campus,Buy,Sell,Trade,Post,Advertisement,Chat"/>
+	<meta name="keywords" content="Classifieds,Campus,Buy,Sell,Trade,Post,Advertisement,Chat,University,Textbooks,Used"/>
 	<meta name="author" content="Justin McDonald"/>
 	
-	<title>Post On Me! - Campus Classifieds</title>
+	<title>Post On Me! - University Campus Classifieds</title>
 	
 	<meta property="og:title" content="PostOnMe - Campus Classifieds"/> 
 	<meta property="og:type" content="university"/> 
@@ -57,6 +57,14 @@ include('/home/postonme/hidden_scripts/session.php');
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=361597738233";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<h1 style="position:fixed; left:-900px;">Post on Me! - Campus Classifieds</h1>
+<h2 style="position:fixed; left:-900px;">Creating new opportunities to exchage & to chat directly with buyers or sellers.</h2>
+<h3 style="position:fixed; left:-900px;">Post an advertisement for everyone to see.</h3>
+<h3 style="position:fixed; left:-900px;">Adveritse your used goods faster and more conveniently.</h3> 
+<h3 style="position:fixed; left:-900px;">Look at what other poeple are offering!</h3>
+<h4 style="position:fixed; left:-900px;">Acquire or barter textbooks, Collectibles, merchandise, and much more.</h4>
+<h4 style="position:fixed; left:-900px;">Join the growing community today!</h4> 
 
 <table id="frontpage">
 	<tr>
