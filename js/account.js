@@ -56,17 +56,18 @@ function bumpPost(adid){
 	//}
 }
 
-function editMode(adid){
+function editMode(adid)
+{
+	$('.adbody').each(function()
+	{
+		this.setAttribute('onclick', null);
+	});
+	
 	var adbody = $('#adbody'+adid);
 	window.color = adbody.css('background-color');
 	adbody.css('background-color', '#AEF5AF');
 	adbody.css('cursor', 'auto');	
 	$('#detail'+adid).css('background-color', '#AEF5AF');
-	
-	$('.adbody').each(function()
-	{
-		this.setAttribute('onclick', null);
-	});
 	
 	$('#adviews'+adid).hide();
 	
@@ -116,12 +117,6 @@ function exitEditMode(adid){
 	adbody.css('cursor', 'pointer');	
 	$('#detail'+adid).css('background-color', 'transparent');
 	
-	$('.adbody').each(function()
-	{
-		var id = this.getAttribute('id').substring(6);
-		this.setAttribute('onclick', 'expand(' + id + ');');
-	});
-	
 	$('#adviews'+adid).show();
 	
 	$('#adcategory'+adid).replaceWith("<div id='adcategory"+adid+"' class='adcategory'>"+window.categoryval+"</div>");
@@ -135,6 +130,12 @@ function exitEditMode(adid){
 	$('#modifybtn'+adid).show();
 	$('#cancelbtn'+adid).hide();
 	$('#savebtn'+adid).hide();
+	
+	$('.adbody').each(function()
+	{
+		var id = this.getAttribute('id').substring(6);
+		this.setAttribute('onclick', 'expand(' + id + ');');
+	});
 }
 
 function saveChanges(adid){
