@@ -160,7 +160,7 @@ include('/home/postonme/hidden_scripts/session.php');
 		</div>
 		
 		<div class="postentity">
-			<div class="postdescription">.</div>
+			<div class="postdescription" style="color:white;">.</div>
 			<div class="postform">
 				By submitting your advertisement you are agreeing to our <a href="terms.php" target="_blank" title='Terms of Use'>Terms of Use</a> and <a href="privacy.php" target="_blank" title='Privacy Policy'>Privacy Policy</a>.
 			</div>

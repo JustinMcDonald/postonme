@@ -14,7 +14,6 @@ $(document).ready(function() {
 	}).tooltip();
 	
 	$('#searchgo img').bind('click', function(){
-		$('#loadingGIF').show();
 		openWindow('navsearchbar');
 	});
 	

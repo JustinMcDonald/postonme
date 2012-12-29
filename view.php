@@ -51,8 +51,6 @@ include("common/screenlock.php");
 	<div><img src="" alt="" id="galleryimg" class="themeborder"/></div>
 </div>
 
-<div id='loadingGIF'></div>
-
 <?php include("scripts/checkIfOnline.php"); ?>
 
 </body>

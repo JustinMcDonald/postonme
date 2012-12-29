@@ -119,8 +119,5 @@ include("common/screenlock.php");
 include("scripts/checkIfOnline.php");
 ?>
 
-<div id='loadingGIF'></div>
-<!-- img src='img/load_postonme.gif' alt='' id='loadingGIF' / -->
-
 </body>
 </html>

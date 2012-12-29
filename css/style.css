@@ -419,8 +419,10 @@ background: url(../img/load_postonme.gif);
 width: 195px;
 height: 205px;
 position: fixed;
-left:550px;
-top:250px;
+left:50%;
+top:50%;
+margin-left:98px;
+margin-top:103px;
 z-index:1001;
 }
 

@@ -32,7 +32,6 @@ function flagAdvertisement(id) {
 }
 
 function addView(id) {
-	$('#loadingGIF').hide();
 	$.ajax({
 		url : "../scripts/addView.php?id="+id,
 		type: "get",
