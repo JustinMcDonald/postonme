@@ -9,6 +9,9 @@ $message = $_POST['message'];
 $written_by = $_SESSION['username'];
 $current_time = time();
 
+//TODO check that both accounts exist
+//check if it is a Guest account, that that account is online
+
 if (!mysql_query("INSERT INTO messages (conv_id, date, written_by, message, read_message) VALUES ('".mysql_real_escape_string($conv_id)."', $current_time, '".mysql_real_escape_string($written_by)."', '".mysql_real_escape_string($message)."', false)")) echo SUCCESS;
 else echo GENERAL_FAIL;
 ?>

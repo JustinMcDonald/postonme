@@ -115,7 +115,7 @@ if ($ads)
 								echo "<div class='detailonlinemessage'>This person is online! </div>";
 								echo "<div id='chat" . $ad['adid'] . "' class='contactbutton themecolor cursorhand themeborder' title='Start a conversation with this person with LiveChat.' onClick='window.top.createConversation(" . $ad['adid'] . ", true); return true;'>Message this Person</div>";
 							}
-							else 
+							else if (substr($ad['username'], 0, 5) != "Guest")
 							{
 								echo "<div id='chat" . $ad['adid'] . "' class='contactbutton themecolor cursorhand themeborder' title='Start a conversation with this person with LiveChat.' onClick='window.top.createConversation(" . $ad['adid'] . ", false); return true;'>Message this Person</div>";
 							}
