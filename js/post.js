@@ -39,4 +39,7 @@ $(document).ready(function()
 			this.style.color='#C9C9C9';
 		}
 	});
+	
+	$('#navpost, #accountname').tooltip();
+
 });

@@ -66,6 +66,7 @@ include('/home/postonme/hidden_scripts/session.php');
 <h4 style="position:fixed; left:-900px;">Acquire or barter textbooks, Collectibles, merchandise, and much more.</h4>
 <h4 style="position:fixed; left:-900px;">Join the growing community today!</h4> 
 
+
 <table id="frontpage">
 	<tr>
 		<td id='frontfill1'><div></div></td>
@@ -105,7 +106,7 @@ include('/home/postonme/hidden_scripts/session.php');
 	</tr>
 </table>
 
-<img src='img/front_banner.png' alt='' width='786px' height='400px' id='frontbanner'/>
+<img src='img/front_banner.png' alt='' id='frontbanner'/>
 
 <?php 
 include("common/newsbox.php");
@@ -117,6 +118,9 @@ include("common/footer.php");
 include("common/screenlock.php");
 include("scripts/checkIfOnline.php");
 ?>
+
+<div id='loadingGIF'></div>
+<!-- img src='img/load_postonme.gif' alt='' id='loadingGIF' / -->
 
 </body>
 </html>

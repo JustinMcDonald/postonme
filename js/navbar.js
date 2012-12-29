@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$('#loadingGIF').hide();
 	
 	$('#advsearch').bind('click', function(){
 		expandAdvancedHandler()
@@ -10,9 +11,10 @@ $(document).ready(function() {
 	}, function()
 	{
 		this.src = "./img/advanced_search.png";
-	});
+	}).tooltip();
 	
 	$('#searchgo img').bind('click', function(){
+		$('#loadingGIF').show();
 		openWindow('navsearchbar');
 	});
 	
@@ -22,7 +24,7 @@ $(document).ready(function() {
 	}, function()
 	{
 		this.src = "./img/search_go.png";
-	});
+	}).tooltip();
 	
 	$('#advpanel').click(function () {
 		$('#navsearchbar').focus();
@@ -104,10 +106,10 @@ $(document).ready(function() {
 });
 
 
-function setSlider() {
-    var values = [0, 5, 10, 15, 20, 30, 40, 50, 60, 75, 100, 125, 150, 175, 200, 250, 300, 400, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 7500, 10000];
-
-    var slider = $("#slider-range");
+function setSlider() 
+{
+    var values = [0, 5, 10, 15, 20, 30, 40, 50, 60, 75, 100, 125, 150, 175, 200, 250, 300, 400, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 7500, 10000],
+    	slider = $("#slider-range");
     
     $('#highroller').on('change', function() {
         if (this.checked) {
@@ -215,8 +217,7 @@ function openWindow(searchbar) {
 	if ($('#200').is(':checked')) type += $('#200').val();
 	if ($('#201').is(':checked')) type += $('#201').val();
 	
-	var price = $('#slider-value').val().replace('$',''); 
-	price = price.replace('-$','-');
+	var price = $('#slider-value').val().replace('$','').replace('-$','-');
 	
 	var date = $('#date input[type=radio]:checked').val();
 	if (!(date >= 0)) date = "";

@@ -1,5 +1,7 @@
 $(document).ready(function()
 {
+	$('#loadingGIF').hide();
+	
 	$('#searchbar').bind('click', function(event)
 	{
 		stopEvent(event);

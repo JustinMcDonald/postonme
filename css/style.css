@@ -404,11 +404,24 @@ text-decoration:underline;
 
 #frontbanner
 {
+width: 786px;
+height: 400px;
 position:absolute;
 left:50%;
 margin-left:-393px;
 top:0;
 cursor:pointer;
+}
+
+#loadingGIF 
+{
+background: url(../img/load_postonme.gif);
+width: 195px;
+height: 205px;
+position: fixed;
+left:550px;
+top:250px;
+z-index:1001;
 }
 
 #browsecategories

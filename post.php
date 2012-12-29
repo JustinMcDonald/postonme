@@ -153,15 +153,15 @@ include('/home/postonme/hidden_scripts/session.php');
 		</div>-->
 		
 		<div class="postentity">
-			<div class="postdescription" style="font:0.75em verdana">Required<span>*</span></div>
+			<div class="postdescription">Required<span>*</span></div>
 			<div class="postform">
 				<input type="submit" name="submitad" value="Submit Advertisement" id="submitad" class="themecolor cursorhand themeborder" title='Submit this Advertisement'>
 			</div>
 		</div>
 		
 		<div class="postentity">
-			<div class="postdescription" style="color:white;">.</div>
-			<div class="postform" style="font:0.75em verdana;">
+			<div class="postdescription">.</div>
+			<div class="postform">
 				By submitting your advertisement you are agreeing to our <a href="terms.php" target="_blank" title='Terms of Use'>Terms of Use</a> and <a href="privacy.php" target="_blank" title='Privacy Policy'>Privacy Policy</a>.
 			</div>
 		</div>
