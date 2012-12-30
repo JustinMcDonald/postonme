@@ -40,6 +40,6 @@ $(document).ready(function()
 		}
 	});
 	
-	$('#navpost, #accountname').tooltip();
+	$('#navpost #accountname').tooltip();
 
 });

@@ -1,6 +1,4 @@
-$(document).ready(function() {
-	$('#loadingGIF').hide();
-	
+$(document).ready(function() {	
 	$('#advsearch').bind('click', function(){
 		expandAdvancedHandler()
 	});
@@ -85,7 +83,7 @@ $(document).ready(function() {
 	$('#locations').bind('click', function()
 	{
 		$('#locations ul').toggle();
-	});
+	}).tooltip();
 	
 	$('#accountsettings').bind('click', function()
 	{
@@ -99,7 +97,8 @@ $(document).ready(function() {
 		stopEvent(event);
 	});
 	
-	
+	$("#accountname, #footer").tooltip();
+
 	setSlider();	
 	
 });

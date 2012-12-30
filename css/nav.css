@@ -74,7 +74,7 @@ line-height:13px;
 /* For Firefox */
 @-moz-document url-prefix() { 
   #navsearchbar {
-     height:23px;
+     height:21px;
   }
 }
 
