@@ -97,7 +97,7 @@ $(document).ready(function() {
 		stopEvent(event);
 	});
 	
-	$("#accountname, #footer").tooltip();
+	$("#accountname, #footer, #navpost, #advertisementFrame").tooltip();
 
 	setSlider();	
 	

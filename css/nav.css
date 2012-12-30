@@ -421,10 +421,10 @@ color:yellow;
 
 /********************
 
-      ui-Slider
+      jQuery-ui
 
 *********************/
-/* The handles */
+/* The Slider handles */
 .ui-slider-horizontal .ui-state-default {
     background: white no-repeat scroll 50% 50%;
 }
@@ -441,4 +441,11 @@ color:yellow;
 	color: white;
 	font-weight: bold;
 	width: 125px;
+}
+
+/* the tooltip */
+.ui-tooltip  {
+	font-size:7pt;
+	padding:2px;
+	margin:0;
 }
