@@ -1,7 +1,9 @@
-<div id='navbar' class='navbar navbar-fixed-top themegradient'>
-	<div style='width:100%;height:100%;'>
-		<?php //include('./common/elements/level_bar.php'); ?>
-		<?php include("./common/elements/advanced_search.php"); ?>
+<div id='navbar' class='themecolor'>
+	<div>
+		<?php 
+			//include('./common/elements/level_bar.php');
+			include("./common/elements/advanced_search.php");
+		?>
 		<div id='fbfield'>
 			<!--<div class='fb-like' data-href='http://www.facebook.com/pages/PostOnMe/406180249454738?ref=ts&amp;fref=ts' data-send='true' data-layout='button_count' data-width='150' data-show-faces='false'></div>-->
 			<fb:like href="http://www.postonme.com" send="false" layout="button_count" width="200" show_faces="false"></fb:like>
@@ -28,7 +30,9 @@
 				</li>
 			</ul>
 		</div>
-		<?php include("./common/elements/guest_operations.php"); ?>
-		<?php include("./common/elements/account_operations.php"); ?>
+		<?php
+			include("./common/elements/guest_operations.php");
+			include("./common/elements/account_operations.php");
+		?>
 	</div>
 </div>
