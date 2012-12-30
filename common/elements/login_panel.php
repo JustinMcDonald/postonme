@@ -5,7 +5,8 @@
 			<div>Username:</div>
 			<input type='text' name='signinusername' id='signinusername' class='themeborder' maxlength=15/>
 			<div>Password:</div>
-			<input type='password' name='signinpassword' id='signinpassword' class='themeborder' maxlength=15/>				
+			<input type='password' name='signinpassword' id='signinpassword' class='themeborder' maxlength=15/>		
+			</br>
 			<input type='submit' name='signinsubmit' value='Log In' class='themeborder cursorhand themecolor chatbutton' title='Sign in with the credentials above.'/>
 		</form>
 	</div>

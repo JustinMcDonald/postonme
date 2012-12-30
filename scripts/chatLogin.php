@@ -31,6 +31,10 @@ if  ($validation == 1)
 	$time = time();
 	$response = mysql_query("UPDATE account SET online=true, date_accessed=$time WHERE username='".mysql_real_escape_string($user)."'");
 	//$response = mysql_query("UPDATE account SET online=true, chatIP=$_SERVER['REMOTE_ADDR'] WHERE username='".mysql_real_escape_string($user)."'");
+	
+	$ip = $_SERVER['REMOTE_ADDR'];
+	mysql_query("INSERT INTO access_ips (userIP, user, access_date) VALUES ('$ip', '".mysql_real_escape_string($user)."', $time)");
+	
 	if ($response)
 	{
 		$response = mysql_query("SELECT exp FROM account WHERE username='".mysql_real_escape_string($user)."'");

@@ -11,7 +11,18 @@ footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	/*border: 0;*/
+	outline: 0;
+	font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+textarea, input {
+	margin: 0;
+	padding: 2px;
+	border: 1px solid #BDBDBD;
 	outline: 0;
 	font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
 	font-size: 100%;

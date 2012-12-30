@@ -22,8 +22,13 @@ if ($verify)
 
 	if ($code == $accountcode && !$accountactive)
 	{
-		if (mysql_query("UPDATE account SET active=true, online=true WHERE username='".mysql_real_escape_string($activateuser)."'"))
+		$time = time();
+		if (mysql_query("UPDATE account SET active=true, online=true, date_accessed=$time WHERE username='".mysql_real_escape_string($activateuser)."'"))
 		{
+				
+			$ip = $_SERVER['REMOTE_ADDR'];
+			mysql_query("INSERT INTO access_ips (userIP, user, access_date) VALUES ('$ip', '".mysql_real_escape_string($user)."', $time)");
+			
 			$_SESSION['username'] = $activateuser;
 			$_SESSION['password'] = $accountpass;
 			$_SESSION['online'] = true;

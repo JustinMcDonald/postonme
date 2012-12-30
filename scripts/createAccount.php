@@ -39,6 +39,10 @@ if (!(mysql_num_rows($result) > 0))
 			//$query = "INSERT INTO account (username, password, email, verificationcode, reference) VALUES (\"$newuser\", \"$encrypt\", \"$email\", \"$verification_code\", \"$reference\")";
 			$query = "INSERT INTO account (username, password, email, verificationcode, date_created) VALUES ('".mysql_real_escape_string($newuser)."', '".mysql_real_escape_string($encrypt)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($verification_code)."', $time)";
 			//$query = "INSERT INTO account (username, password, email, verificationcode, chatIP) VALUES ('".mysql_real_escape_string($newuser)."', '".mysql_real_escape_string($encrypt)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($verification_code)."', $_SERVER['REMOTE_ADDR'])";
+					
+			$ip = $_SERVER['REMOTE_ADDR'];
+			mysql_query("INSERT INTO access_ips (userIP, user, access_date) VALUES ('$ip', '".mysql_real_escape_string($user)."', $time)");
+
 			if (mysql_query($query))
 			{
 				include('/home/postonme/public_html/email/emailVerification.php');

@@ -23,27 +23,9 @@ include('/home/postonme/hidden_scripts/session.php');
 	<!--<meta property="fb:app_id" content="406180249454738"/>-->
 	
 	<link rel="image_src" href="http://www.postonme.com/img/icon.png" />
-	
-<<<<<<< HEAD
-	<link rel="shortcut icon" href="img/logoicon.ico"/>
-	
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<link rel="stylesheet" type="text/css" href="css/nav.css"/>
-	<link rel="stylesheet" type="text/css" href="css/footer.css"/>
-	<link rel="stylesheet" type="text/css" href="css/chat.css"/>
-	<link rel="stylesheet" type="text/css" href="css/newsbox.css"/>
-	<link rel="stylesheet" type="text/css" href="css/customalert.css"/>
-	<link rel="stylesheet" type="text/css" href="css/accountops.css"/>
-	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/functions.js"></script>
-	<script type="text/javascript" src="/js/chat.js"></script>
-	<script type="text/javascript" src="/js/exp.js"></script>
-	<script type="text/javascript" src="/js/news.js"></script>
-	<script type="text/javascript" src="/js/navbar.js"></script>
-=======
+
 	<?php include("./common/headers.php"); ?>
->>>>>>> a0fc9387c0afca5028d99289971c45b91bd0f326
+	
 	<script type="text/javascript" src="/js/index.js"></script>
 	
 </head>
