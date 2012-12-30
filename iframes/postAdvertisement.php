@@ -228,12 +228,12 @@ if(isset($_POST["categorytext"]))
 						$email = $account['email'];
 					}
 										
-					$currentTime = time();
+					$time = time();
 					
 					$owner_code = generateRandomString(32);
 					
-					if ($uploaded) $sql = "INSERT INTO advertisement (title, date, category, location, type, price, text, contact, username, image, image_thumb, online, owner_code) VALUES ('$title', '$currentTime', '$category', '$location', '$type', '$price', '$detail', '$email', '$user', '$actual_image_name"."."."$ext', '$actual_image_name"."_thumb."."$ext', $online, '$owner_code')";
-					else $sql = "INSERT INTO advertisement (title, date, category, location, type, price, text, contact, username, online, owner_code) VALUES ('".mysql_real_escape_string($title)."', '".mysql_real_escape_string($currentTime)."', '".mysql_real_escape_string($category)."', '".mysql_real_escape_string($location)."', '".mysql_real_escape_string($type)."', '".mysql_real_escape_string($price)."', '".mysql_real_escape_string($detail)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($user)."', $online, '".mysql_real_escape_string($owner_code)."')";
+					if ($uploaded) $sql = "INSERT INTO advertisement (title, date, category, location, type, price, text, contact, username, image, image_thumb, online, owner_code) VALUES ('$title', '$time', '$category', '$location', '$type', '$price', '$detail', '$email', '$user', '$actual_image_name"."."."$ext', '$actual_image_name"."_thumb."."$ext', $online, '$owner_code')";
+					else $sql = "INSERT INTO advertisement (title, date, category, location, type, price, text, contact, username, online, owner_code) VALUES ('".mysql_real_escape_string($title)."', '".mysql_real_escape_string($time)."', '".mysql_real_escape_string($category)."', '".mysql_real_escape_string($location)."', '".mysql_real_escape_string($type)."', '".mysql_real_escape_string($price)."', '".mysql_real_escape_string($detail)."', '".mysql_real_escape_string($email)."', '".mysql_real_escape_string($user)."', $online, '$owner_code')";
 					
 					if (mysql_query($sql))
 					{
@@ -247,6 +247,7 @@ if(isset($_POST["categorytext"]))
 					{
 						echo "<script>alert('Your advertisement cannot be posted at this time, please try again later.');</script>"; 
 						error_log(mysql_error(), 0);
+						error_log($sql, 0);
 					}
 				} 
 				else echo "<script>window.top.indicateError('postemail'); alert('Please provide a valid email address.');</script>";
