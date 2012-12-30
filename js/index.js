@@ -49,8 +49,6 @@ $(document).ready(function()
 	
 	disableDraggingFor(document.getElementById('frontbanner'));
 	
-<<<<<<< HEAD
-=======
 	$('#browsecategories label').each(function()
 	{
 		$(this).bind('click', function()
@@ -58,7 +56,6 @@ $(document).ready(function()
 			window.location = 'http://www.postonme.com/view.php?order=date&category='+$(this).text()+'-&location=Western%20University&online=0&images=0&limit=40';
 		});
 	});
->>>>>>> 510fb0bf804dd822496cd70a3a57f33c04b8d685
 });
 
 function showSignupColumn()

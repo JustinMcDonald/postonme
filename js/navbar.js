@@ -243,14 +243,15 @@ function openWindow(searchbar) {
 
 function expandAdvancedPanel()
 {
-	$('#navbar').unbind('click');
-	$('#navbar').bind('click', function(event)
+	var nav = $('#navbar');
+	nav.unbind('click').bind('click', function(event)
 	{
 		stopEvent(event);
 	});
 	hideSocialField();
+	var h = nav.height();
 	var elem = document.getElementById("navbar"),
-	height = 80,
+	height = h,
 	timer;
 	
 	timer = setInterval(function()
@@ -267,8 +268,9 @@ function expandAdvancedPanel()
 
 function collapseAdvancedPanel()
 {
+	var h = $('#navbar').height();
 	var elem = document.getElementById("navbar"),
-	height = 200,
+	height = h,
 	timer;
 	
 	timer = setInterval(function()
@@ -276,8 +278,7 @@ function collapseAdvancedPanel()
 		elem.style.height = ( height -= 15 ) + "px";
 		if ( height <= 80 )
 		{
-			$('#navbar').unbind('click');
-			$('#navbar').bind('click', function()
+			$('#navbar').unbind('click').bind('click', function()
 			{
 				collapseSocialPanel();
 			});
@@ -289,17 +290,17 @@ function collapseAdvancedPanel()
 
 function expandSocialPanel()
 {
-	$('#navbar').unbind('click');
-	
-	$('#navbar').bind('click', function()
+	var nav = $('#navbar');
+	nav.unbind('click').bind('click', function()
 	{
 		collapseSocialPanel();
 	});
 	
+	var h = nav.height();
 	//Clear the old timer
 	if (window.socialtimer) clearInterval(window.socialtimer);
 	var elem = document.getElementById("navbar"),
-	height = 50,
+	height = h,
 	socialtimer;
 	
 	window.socialtimer = setInterval(function()
@@ -315,15 +316,17 @@ function expandSocialPanel()
 
 function collapseSocialPanel()
 {
-	$('#navbar').unbind('click');
-	$('#navbar').bind('click', function()
+	var nav = $('#navbar');
+	nav.unbind('click').bind('click', function()
 	{
 		expandSocialPanel();
 	});
+	var h = nav.height();
+	
 	if (window.socialtimer) clearInterval(window.socialtimer);
 	hideSocialField();
 	var elem = document.getElementById("navbar"),
-	height = 80,
+	height = h,
 	socialtimer;
 	
 	window.socialtimer = setInterval(function()
@@ -347,14 +350,14 @@ function expandAdvancedHandler() {
 	$(document).bind('click', function(){
 		collapseAdvancedHandler()
 	});
-	$('#iframeView').contents().bind('click', function(){
+	/*$('#iframeView').contents().bind('click', function(){
 		collapseAdvancedHandler()
-	});
+	});*/
 }
 
 function collapseAdvancedHandler() {
 	$(document).unbind('click');
-	$('#iframeView').contents().unbind('click');
+	//$('#iframeView').contents().unbind('click');
 	var e = $('#advsearch');
 	e.unbind('click');
 	$('#advpanel').hide();
