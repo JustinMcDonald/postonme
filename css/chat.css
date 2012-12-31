@@ -6,7 +6,7 @@ width:200px;
 height:400px;
 left:10px;
 bottom:0;
-font-size:0.8em;
+font-size:0.85em;
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F00BBFE,endColorstr=#7F00BBFE);
 background-color:rgba(0,187,254,0.5);
 text-align:left;
@@ -33,12 +33,13 @@ word-wrap:break-word;
 height:auto;
 position:relative;
 border-bottom:1px solid #25C4FD;
+font-size:0.9em;
 }
 
 .chattext
 {
 font-family: 'Quattrocento Sans', 'Cabin', sans-serif;
-width:100%;
+width:95%;
 height:360px;
 margin:5px 5px;
 word-wrap:break-word;
@@ -54,8 +55,11 @@ display:block;
 width:196px;
 padding:2px 2px;
 left:10px;
-bottom:5px;
+bottom:10px;
 color:#ADADAD;
+height:15px;
+line-height:15px;
+font-size:1.2em;
 }
 
 .chatbutton
@@ -192,11 +196,21 @@ clip:rect(0px,18px,18px,0px);
 clip:rect(0px,36px,18px,18px);
 }
 
+#pastmessagestab
+{
+position:absolute;
+left:0;
+right:0;
+top:24px;
+bottom:30px;
+}
+
 #pastmessagescontainer
 {
 width:100%;
 overflow:auto;
 height:100%;
+overflow-x:hidden;
 }
 
 #pastmessagescontainer > div
