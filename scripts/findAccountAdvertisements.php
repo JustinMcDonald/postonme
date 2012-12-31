@@ -89,12 +89,12 @@
 				echo "</div>";
 				
 				echo "<div>";
-					echo "<input type='button' title='Bump this post to the top of searches by refreshing the post date.' value='Bump Post' class='submitbtn cursorhand themeborder themecolor' onclick='bumpPost(" . $ad['adid'] . ");'>";
-					echo "<input type='button' title='Delete this post.' value='Delete Post' class='submitbtn cursorhand themeborder themecolor' onclick='deletePost(" . $ad['adid'] . ");'>";
-					echo "<input type='button' id='modifybtn".$ad['adid']."' title='Enter editing mode to modify this post.' value='Modify Post' class='submitbtn cursorhand themeborder themecolor' onclick='editMode(" . $ad['adid'] . ");'>";
-					echo "<input type='button' id='cancelbtn".$ad['adid']."' style='display:none' title='Close editing mode without saving changes.' value='Cancel' class='submitbtn cursorhand themeborder themecolor' onclick='exitEditMode(" . $ad['adid'] . ");'>";
-					echo "<input type='button' id='savebtn".$ad['adid']."' style='display:none' title='Save your changes.' value='Save Changes' class='submitbtn cursorhand themeborder themecolor' onclick='saveChanges(" . $ad['adid'] . ");'>";
-					echo "<fb:like href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' font='verdana' action='recommend' style='float:left;'></fb:like>";
+					echo "<input type='button' title='Bump this post to the top of searches by refreshing the post date.' value='Bump Post' class='submitbtn cursorhand themeborder themecolor' onclick='bumpPost(" . $ad['adid'] . ");' />";
+					echo "<input type='button' title='Delete this post.' value='Delete Post' class='submitbtn cursorhand themeborder themecolor' onclick='deletePost(" . $ad['adid'] . ");' />";
+					echo "<input type='button' id='modifybtn".$ad['adid']."' title='Enter editing mode to modify this post.' value='Modify Post' class='submitbtn cursorhand themeborder themecolor' onclick='editMode(" . $ad['adid'] . ");' />";
+					echo "<input type='button' id='cancelbtn".$ad['adid']."' style='display:none' title='Close editing mode without saving changes.' value='Cancel' class='submitbtn cursorhand themeborder themecolor' onclick='exitEditMode(" . $ad['adid'] . ");' />";
+					echo "<input type='button' id='savebtn".$ad['adid']."' style='display:none' title='Save your changes.' value='Save Changes' class='submitbtn cursorhand themeborder themecolor' onclick='saveChanges(" . $ad['adid'] . ");' />";
+					echo "<div id='fbfield".$ad['adid']."' style='float:left;'><fb:like href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' font='verdana' action='recommend' style='float:left;'></fb:like></div>";
 				echo "</div>";
 			
 			echo "</div>";

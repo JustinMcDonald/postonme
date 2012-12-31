@@ -3,6 +3,13 @@ window.myValue;
 function expand(id){
 	var n = document.getElementById('detail'+id);
 	n.style.display = n.style.display == "none" || n.style.display == "" ? "table" : "none";
+	
+	//Reactivate the facebook like butotn
+	/*var like_box = $('#detail'+id+' .fb-like-inactive');
+	like_box.removeClass('fb-like-inactive');
+	like_box.addClass('fb-like');*/
+	FB.XFBML.parse($('#fbfield'+id)[0]);
+	
 	if (window.myValue != id){ 
 		if (window.myValue != null){
 			var l = document.getElementById('detail'+window.myValue);

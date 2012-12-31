@@ -339,9 +339,13 @@ color:yellow;
 
 #accountops
 {
--webkit-padding-start:0px;
+/*-webkit-padding-start:0;
 -webkit-margin-before:0;
--webkit-margin-after:0;
+-webkit-margin-after:0;*/
+margin-before:0;
+margin-after:0;
+padding-start:0;
+margin:0;
 display:none;
 position:absolute;
 right:15px;
@@ -409,9 +413,13 @@ cursor:pointer;
 
 #guestops
 {
--webkit-padding-start:0px;
+/*-webkit-padding-start:0px;
 -webkit-margin-before:0;
--webkit-margin-after:0;
+-webkit-margin-after:0;*/
+margin-before:0;
+margin-after:0;
+padding-start:0;
+margin:0;
 position:absolute;
 right:15px;
 top:20px;
