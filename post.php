@@ -26,6 +26,8 @@ include('/home/postonme/hidden_scripts/session.php');
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<?php include('common/nav_filler.php'); ?>
+
 <p class="hidden" id="alert"></p>
 
 <iframe id="iframeAlert" name="iframeAlert" src="./iframes/postAdvertisement.php?first=true" allowtransparency="true" frameBorder="0"></iframe>

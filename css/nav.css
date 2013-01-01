@@ -138,7 +138,7 @@ border-left:0;
 {
 font-size:0.8em;
 position:absolute;
-top:48px;
+bottom:30px;
 left:50%;
 margin-left:-400px;
 height:127px;
@@ -184,7 +184,7 @@ color:white;
 #fbfield
 {
 position:absolute;
-top:50px;
+bottom:10px;
 left:50%;
 margin-left:-63px;
 }
@@ -260,6 +260,7 @@ line-height:45px;
 -webkit-padding-start: 0;
 margin:3px 10px 0 10px;
 height:51px;
+text-align:center;
 }
 
 #locations a
@@ -336,9 +337,9 @@ color:yellow;
 
 #accountops
 {
-/*-webkit-padding-start:0;
+-webkit-padding-start:0;
 -webkit-margin-before:0;
--webkit-margin-after:0;*/
+-webkit-margin-after:0;
 margin-before:0;
 margin-after:0;
 padding-start:0;
@@ -349,6 +350,7 @@ right:15px;
 top:20px;
 font-size:0.75em;
 color:#FBFBFB;
+text-align:center;
 }
 
 #accountops li
@@ -410,9 +412,9 @@ cursor:pointer;
 
 #guestops
 {
-/*-webkit-padding-start:0px;
+-webkit-padding-start:0px;
 -webkit-margin-before:0;
--webkit-margin-after:0;*/
+-webkit-margin-after:0;
 margin-before:0;
 margin-after:0;
 padding-start:0;
@@ -469,4 +471,20 @@ cursor:pointer;
 	font-size:7pt;
 	padding:2px;
 	margin:0;
+}
+
+.nav-filler > div
+{
+display:inline-block;
+height:50px;
+}
+
+.nav-filler > div:nth-child(1)
+{
+width:910px;
+}
+
+.nav-filler > div:nth-child(2)
+{
+width:161px;
 }

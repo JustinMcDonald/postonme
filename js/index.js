@@ -13,8 +13,9 @@ $(document).ready(function()
 	$('#frontsearch').bind('click', function(event)
 	{
 		//openWindow('searchbar');
-		$('#frontbanner').fadeOut();
-		$('#browsecategories').css('display', 'block').css('opacity', '0').css('top', '0').animate({ opacity: 1, top: 80}, 1200);
+		$('#frontbanner').fadeOut('fast', function() {
+			$('#browsecategories').css('display', 'block').css('opacity', '0').css('bottom', '80px').animate({ opacity: 1, bottom: -15}, 1200);
+		});
 	});
 	
 	$('#frontpost').bind('click', function()

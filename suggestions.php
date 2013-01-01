@@ -83,6 +83,8 @@ include('/home/postonme/hidden_scripts/session.php');
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<?php include('common/nav_filler.php'); ?>
+
 <p class="hidden open" id="alert"></p>
 
 <div class="contentcontainer">

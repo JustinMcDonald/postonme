@@ -21,6 +21,8 @@ include('/home/postonme/hidden_scripts/session.php');
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<?php include('common/nav_filler.php'); ?>
+
 <div class="contentcontainer">
 <h2>Help</h2>
 <p>Have a question about the website? Please <a href='contact.php'>send us an email</a> and we would be delighted to help you out.</p>

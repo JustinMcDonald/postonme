@@ -21,6 +21,8 @@ include('/home/postonme/hidden_scripts/session.php');
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<?php include('common/nav_filler.php'); ?>
+
 <div class="contentcontainer">
 	<h2>Contact Us</h2>
 	<p>Feel free to contact us at the appropriate address below. We will try our best to get back to you within 24 hours.</p>

@@ -29,6 +29,8 @@ include('/home/postonme/hidden_scripts/session.php');
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<?php include('common/nav_filler.php'); ?>
+
 <div id='advertisementFrameContainer'>
 	<div id='advertisementFrame'>
 		<?php

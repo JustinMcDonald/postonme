@@ -203,8 +203,6 @@ function setSlider()
     }
 }
 
-
-
 function openWindow(searchbar) {
 	var searchval = document.getElementById(searchbar).value;
 	if (searchval == "Search") searchval = "";
@@ -247,16 +245,19 @@ function expandAdvancedPanel()
 	{
 		stopEvent(event);
 	});
+	var inc = ($('#fbfield').is(':visible')) ? 120 : 150;
 	hideSocialField();
 	var h = nav.height();
+	
 	var elem = document.getElementById("navbar"),
 	height = h,
+	maxheight = h+inc,
 	timer;
 	
 	timer = setInterval(function()
 	{
 		elem.style.height = ( height += 15 ) + "px";
-		if ( height >= 200 )
+		if ( height >= maxheight )
 		{
 			$('#advpanel').show();
 			//if ($('#hidechatbutton').is(':visible')) $('#hidechatbutton').trigger('click');
@@ -270,18 +271,19 @@ function collapseAdvancedPanel()
 	var h = $('#navbar').height();
 	var elem = document.getElementById("navbar"),
 	height = h,
+	minheight = h-150,
 	timer;
 	
 	timer = setInterval(function()
 	{
 		elem.style.height = ( height -= 15 ) + "px";
-		if ( height <= 80 )
+		if ( height <= minheight )
 		{
 			$('#navbar').unbind('click').bind('click', function()
 			{
-				collapseSocialPanel();
+				expandSocialPanel();
 			});
-			showSocialField();
+			//showSocialField();
 			clearInterval(timer);
 		}
 	}, 5);
@@ -300,12 +302,13 @@ function expandSocialPanel()
 	if (window.socialtimer) clearInterval(window.socialtimer);
 	var elem = document.getElementById("navbar"),
 	height = h,
+	maxheight = h+30,
 	socialtimer;
 	
 	window.socialtimer = setInterval(function()
 	{
 		elem.style.height = ( height += 3 ) + "px";
-		if ( height >= 80)
+		if ( height >= maxheight)
 		{
 			showSocialField();
 			clearInterval(window.socialtimer);
@@ -326,13 +329,15 @@ function collapseSocialPanel()
 	hideSocialField();
 	var elem = document.getElementById("navbar"),
 	height = h,
+	minheight = h-30,
 	socialtimer;
 	
 	window.socialtimer = setInterval(function()
 	{
 		elem.style.height = ( height -= 3 ) + "px";
-		if ( height <= 50 )
+		if ( height <= minheight )
 		{
+			$('#navbar').css('height', 'auto');
 			clearInterval(window.socialtimer);
 		}
 	}, 7);

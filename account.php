@@ -29,6 +29,8 @@ include("scripts/activateAccount.php");
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<?php include('common/nav_filler.php'); ?>
+
 <div class='contentcontainer' style='width:62%;padding-left:10px;padding-right:10px;'>
 	<h2 style="margin-bottom: 20px;">Review, Modify, Delete or Bump your Advertisements!</h2>
 	<div id='accountAdvertisementFrame'>
