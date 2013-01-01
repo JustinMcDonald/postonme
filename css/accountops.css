@@ -69,3 +69,8 @@ text-align:left;
 display:block;
 font-size:0.75em;
 }
+
+.glasspanel input[type=password]
+{
+letter-spacing:2px;
+}

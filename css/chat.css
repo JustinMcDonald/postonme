@@ -188,12 +188,12 @@ right:2px;
 
 #chatheader > img:nth-child(2)
 {
-clip:rect(0px,18px,18px,0px);
+clip:rect(0px 18px 18px 0px);
 }
 
 #chatheader > img:nth-child(3)
 {
-clip:rect(0px,36px,18px,18px);
+clip:rect(0px 36px 18px 18px);
 }
 
 #pastmessagestab

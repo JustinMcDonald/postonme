@@ -1,4 +1,4 @@
-<div id='advpanel'>
+<div id='advpanel' style='display:none'>
 	<div> <!--CATEGORIES-->
 		<fieldset>
 			<legend>Categories</legend>
