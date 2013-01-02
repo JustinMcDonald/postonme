@@ -61,7 +61,7 @@ if ($ads)
 			{
 				$count++;
 				
-				echo "<div id='adbody" . $ad['adid'] . "' class='adbody cursorhand' title='Click to Expand' onclick='expand(" . $ad['adid'] . ");'>";
+				echo "<div id='adbody" . $ad['adid'] . "' class='adbody cursorhand' onclick='expand(" . $ad['adid'] . ");'>";
 				
 				if ($online) echo "<div class='adstatuscontainer'><img src='../img/online_status.png' alt='' width='16px' height='16px' title='Online'/></div>"; 
 				else echo "<div class='adstatuscontainer'><img src='../img/offline_status.png' alt='' width='16px' height='16px' title='Offline'/></div>";

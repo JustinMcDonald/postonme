@@ -35,7 +35,7 @@
 			else echo "<div id='body" . $ad['adid'] . "' class='adbody sellingbg cursorhand' onClick='expand(" . $ad['adid'] . ");'>";
 			*/
 			
-			echo "<div id='adbody" . $ad['adid'] . "' class='adbody cursorhand' title='Click to Expand' onclick='expand(" . $ad['adid'] . ");' style='width:100%')>";
+			echo "<div id='adbody" . $ad['adid'] . "' class='adbody cursorhand' onclick='expand(" . $ad['adid'] . ");' style='width:100%')>";
 			
 			echo "<div style='display:table-cell;vertical-align:middle;'><div class='onlinebtn themeborder'></div></div>"; 
 			

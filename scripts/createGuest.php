@@ -20,7 +20,7 @@ while (!$unique)
 		//$query = "INSERT INTO account (username, online, tmponline, email, chatIP) VALUES ('$guestname', false, true, '$guestname', $_SERVER['REMOTE_ADDR'])"; 
 			
 		$ip = $_SERVER['REMOTE_ADDR'];
-		mysql_query("INSERT INTO access_ips (userIP, user, access_date) VALUES ('$ip', '".mysql_real_escape_string($user)."', $time)");
+		mysql_query("INSERT INTO access_ips (userIP, user, access_date) VALUES ('$ip', '".mysql_real_escape_string($guestname)."', $time)");
 		
 		if(!mysql_query($query))
 		{
