@@ -1,7 +1,6 @@
 <?php
 include('/home/postonme/hidden_scripts/definitions.php');
 include('/home/postonme/hidden_scripts/session.php');
-include("scripts/activateAccount.php");
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML Strict//EN"><META http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -41,6 +40,7 @@ include("scripts/activateAccount.php");
 <div class="filler"></div>
 	
 <?php
+include("scripts/activateAccount.php");
 include("common/newsbox.php");
 include("common/chatbox.php");
 include("common/accountpanels.php");
