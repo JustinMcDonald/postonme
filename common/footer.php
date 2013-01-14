@@ -9,6 +9,6 @@
 		<li><a href='suggestions.php' title='Any Suggestions?'>Suggestion Box</a></li>
 		<li><a href='terms.php' title='Terms of Use'>Terms Of Use</a></li>
 		<li><a href='privacy.php' title='Privacy Policy'>Privacy Policy</a></li>
-		<li id="copy">&copy 2012 <a href='http://www.justingenuity.com/' style='color:#c4c4c4'>POSTONME</a></li>
+		<li id="copy">&copy; 2012 <a href='http://www.justingenuity.com/' style='color:#c4c4c4'>POSTONME</a></li>
 	</ul>
 </div>

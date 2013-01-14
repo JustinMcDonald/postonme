@@ -1,3 +1,14 @@
+$(document).ready(function()
+{
+	$('#signupusername').attr('autocomplete', 'off');
+	$('#signuppassword1').attr('autocomplete', 'off');
+	$('#signuppassword2').attr('autocomplete', 'off');
+	$('#signupemail').attr('autocomplete', 'off');
+	//$('#signupreference').attr('autocomplete', 'off');
+	$('#suterms').attr('target', '_blank');
+	$('#suprivacy').attr('target', '_blank');
+});
+
 function chatLogout() 
 {
 	$.ajax({
@@ -65,7 +76,33 @@ function chatLogin()
 						hideGlassPanel('loginbox');
 						break;
 					case 2:
-						alert("You must activate your account before logging in. Look for your account verification code in your email.");
+						var answer = confirm("You must activate your account before logging in. Look for your account verification code in your email and check your junk folder just in case our email got trapped!\n"+
+						"Do you want to resend the email?");
+						if (answer)
+						{
+							$.ajax({
+								type: "POST",
+								url: "./scripts/resendActivationEmail.php",
+								data: "user="+username,
+								success: function(response, textStatus, jqXHR)
+								{
+									switch(response)
+									{
+										case '1':
+											alert("Email sent! Remember to check your Junk mail in case the email is trapped by your spam filter.");
+											break;
+										default:
+											alert("Something went wrong, please try again later.");
+											location.reload(true);
+											break;
+									}
+								},
+								error: function (xhr, ajaxOptions, thrownError) {
+									alert("dSomething went wrong. Please try again later.");
+									location.reload(true);
+								}
+							});
+						}
 						break;
 					case 3:
 						indicateError('signinusername');

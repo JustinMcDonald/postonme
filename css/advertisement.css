@@ -31,7 +31,7 @@ min-width:651px;
 height:auto;
 padding:10px 10px;
 text-align:left;
-padding-bottom:10px;
+padding-bottom:40px;
 }
 
 .adstatuscontainer
@@ -119,7 +119,7 @@ word-wrap:break-word;
 text-align:justify;
 padding-right:5px;
 margin-right:10px;
-margin-bottom:5px;
+margin-bottom:20px;
 }
 
 .adflag{
@@ -129,6 +129,13 @@ text-align:left;
 font-size:0.75em;
 margin-top:13px;
 margin-right:10px;
+}
+
+.adflag > a
+{
+color:black;
+margin-right:5px;
+margin-left:5px;
 }
 
 .onlinebtn

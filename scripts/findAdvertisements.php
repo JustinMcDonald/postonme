@@ -8,14 +8,14 @@
 	<div class="addate cursorhand" id="fielddate" onclick="orderResults('date', 'down');" title='Order by Date'>Post Date<?php if ($orderfield == 'date') echo "<img src='../img/order_".$direction.".png' alt='' width='10px' height='10px' id='selectcategorydown'>"; ?></div>
 </div>
 
-<div id="fb-root"></div>
+<!--<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=361597738233";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));</script>-->
 
 <?php
 
@@ -112,7 +112,7 @@ if ($ads)
 						{
 							if ($online) 
 							{
-								echo "<div class='detailonlinemessage'>This person is online! </div>";
+								//echo "<div class='detailonlinemessage'>This person is online! </div>";
 								echo "<div id='chat" . $ad['adid'] . "' class='contactbutton themecolor cursorhand themeborder' title='Start a conversation with this person with LiveChat.' onClick='window.top.createConversation(" . $ad['adid'] . ", true); return true;'>Message this Person</div>";
 							}
 							else if (substr($ad['username'], 0, 5) != "Guest")
@@ -127,7 +127,7 @@ if ($ads)
 							echo "<div id='fbRecommendFresh'>Many of your friends will be interested in your post, let them know!<div class='arrow-down'></div><img src='./img/closebtn.png' width='12px' height='12px'/></div>";
 							echo "<script>var offset = $('#fblikebutton".$ad['adid']."').offset(); $('#fbRecommendFresh').css('left', offset.left - 200).css('top', offset.top - 60); $('#fbRecommendFresh > img').bind('click', function(){ $('#fbRecommendFresh').hide(); }); setTimeout(function(){ $('#fbRecommendFresh').animate({ opacity:1, left:'+=10'}, 750)}, 1000);</script>";
 						}
-						echo "<div class='adflag cursorhand' onclick='flagAdvertisement(" . $ad['adid'] . ");'>Flag Ad</div>";
+						echo "<div class='adflag cursorhand'><a href='http://www.postonme.com/view.php?id=" . $ad['adid'] . "'>Go To Post</a>|<a onclick='flagAdvertisement(" . $ad['adid'] . ");'>Flag Ad</a></div>";
 					echo "</div>";
 				
 				echo "</div>";

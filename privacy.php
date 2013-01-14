@@ -2,14 +2,17 @@
 include('/home/postonme/hidden_scripts/definitions.php');
 include('/home/postonme/hidden_scripts/session.php');
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML Strict//EN"><META http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<html xmlns="http://www.w3.org/1999/xhtml" slick-uniqueid="1" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Privacy Policy | University Campus Classifieds</title>
 
 	<?php include("./common/headers.php"); ?>
 	
-	<script>
+	<script type="text/javascript">
 		function submitSuggestion() {
 			var message = document.getElementById('messagetext').value;
 			
@@ -18,7 +21,7 @@ include('/home/postonme/hidden_scripts/session.php');
 			else xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");// code for IE6, IE5
 			
 			xmlhttp.onreadystatechange=function() {
-				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200) {
 					var e = document.getElementById("alert");
 					e.innerHTML=xmlhttp.responseText;
 					e.classList.toggle('hidden');
@@ -35,11 +38,11 @@ include('/home/postonme/hidden_scripts/session.php');
 <body onload="initChat(); return false;">
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script type="text/javascript">(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=451061051608923";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=451061051608923";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -60,7 +63,7 @@ include('/home/postonme/hidden_scripts/session.php');
 	<li>We don't engage in cross-marketing or link-referral programs with other sites.</li>
 	<li>We don't employ tracking devices for marketing purposes ("cookies", "web beacons," single-pixel gifs).</li>
 	<li>We don't send you unsolicited communications for marketing purposes.</li>
-	<li>We offer email anonymization and relay, to reduce 3rd party harvesting & spam.</li>
+	<li>We offer email anonymization and relay, to reduce 3rd party harvesting &amp; spam.</li>
 	<li>Account information is password-protected. Keep your password safe.</li>
 	<li>Forums use basic webserver authentication. Close your browser to log out.</li>
 	<li>PostOnMe does not knowingly collect any information from persons under the age of 13. If PostOnMe learns that a posting is by a person under the age of 13, PostOnMe will remove that post.</li>

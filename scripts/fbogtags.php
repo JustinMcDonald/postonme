@@ -55,8 +55,8 @@ function assembleQuery($search='',$type='',$price='0-10000',$date='',$category='
 	for ($i = 0; $i < count($terms); $i++)
 	{
 		if ($i > 0) $query .= " OR";
-		$query .= " title LIKE '%" . mysql_real_escape_string($terms[$i]) . "%' OR text LIKE '%" . mysql_real_escape_string($terms[$i]) . "%'";
-		if (substr($terms[$i], -1) == 's' and strlen($terms[$i]) > 3) $query .= " OR title LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%' OR text LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%'";
+		$query .= " title LIKE '%" . mysql_real_escape_string($terms[$i]) . "%' OR text LIKE '%" . mysql_real_escape_string($terms[$i]) . "%' OR category LIKE '%" . mysql_real_escape_string($terms[$i]) . "%'";
+		if (substr($terms[$i], -1) == 's' and strlen($terms[$i]) > 3) $query .= " OR title LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%' OR text LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%' OR category LIKE '%" . mysql_real_escape_string(substr($terms[$i], 0, -1)) . "%'";
 	}
 	$query .= ") ";
 

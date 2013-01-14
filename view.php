@@ -2,10 +2,13 @@
 include('/home/postonme/hidden_scripts/definitions.php');
 include('/home/postonme/hidden_scripts/session.php');
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML Strict//EN"><META http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<html xmlns="http://www.w3.org/1999/xhtml" slick-uniqueid="1" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>PostOnMe | University Campus Classifieds</title>
 
 	<?php include("./common/headers.php"); ?>
 	
@@ -21,11 +24,11 @@ include('/home/postonme/hidden_scripts/session.php');
 <body onload="initChat(); initOrder(); return false;">
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script type='text/javascript'>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=451061051608923";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=451061051608923";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 

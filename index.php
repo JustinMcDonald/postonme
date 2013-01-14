@@ -2,25 +2,17 @@
 include('/home/postonme/hidden_scripts/definitions.php');
 include('/home/postonme/hidden_scripts/session.php');
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>PostOnMe | University Campus Classifieds</title>
+	
 	<meta name="description" content="Campus Classifieds"/>
-	<meta name="keywords" content="Classifieds,Campus,Buy,Sell,Trade,Post,Advertisement,Chat,University,Textbooks,Used"/>
+	<meta name="keywords" content="Classifieds,Campus,Buy,Sell,Trade,Post,Advertisement,Chat,University,Textbooks,Used,College,Books,Furniture,Electronics,Bikes,Listing"/>
 	<meta name="author" content="Justin McDonald"/>
-	
-	<title>Post On Me! - University Campus Classifieds</title>
-	
-	<meta property="og:title" content="PostOnMe - Campus Classifieds"/> 
-	<meta property="og:type" content="university"/> 
-	<meta property="og:image" content="http://www.postonme.com/img/icon.png"/> 
-	<meta property="og:url" content="www.postonme.com"/> 
-	<meta property="og:site_name" content="Campus Classifieds"/>
-	<meta property="og:description" content="The fastest, smoothest and cleanest campus classifieds on the internet."/>
-	<meta property="fb:admins" content="justin.g.mcdonald"/>
-	<!--<meta property="fb:app_id" content="406180249454738"/>-->
 	
 	<link rel="image_src" href="http://www.postonme.com/img/icon.png" />
 
@@ -31,17 +23,30 @@ include('/home/postonme/hidden_scripts/session.php');
 </head>
 <body onload="initChat(); return false;">
 
+<div xmlns:og="http://ogp.me/ns#" style="display:none;"> 
+<![CDATA[ <!--OpenGraph section--> 
+	<meta property="og:title" content="PostOnMe - Campus Classifieds"/> 
+	<meta property="og:type" content="university"/> 
+	<meta property="og:image" content="http://www.postonme.com/img/icon.png"/> 
+	<meta property="og:url" content="www.postonme.com"/> 
+	<meta property="og:site_name" content="Campus Classifieds"/>
+	<meta property="og:description" content="The fastest, smoothest and cleanest campus classifieds on the internet."/>
+	<meta property="fb:admins" content="justin.g.mcdonald"/>
+	<meta property="fb:app_id" content="406180249454738"/>
+]]>
+</div> 
+
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=361597738233";
-  fjs.parentNode.insertBefore(js, fjs);
+<script type="text/javascript">(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=451061051608923";
+	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<h1 style="position:fixed; left:-900px;">Post on Me! - Campus Classifieds</h1>
-<h2 style="position:fixed; left:-900px;">Creating new opportunities to exchage & to chat directly with buyers or sellers.</h2>
+<h1 style="position:fixed; left:-900px;">post on me campus classifieds western uwo</h1>
+<h2 style="position:fixed; left:-900px;">Creating new opportunities to exchage &amp; to chat directly with buyers or sellers.</h2>
 <h3 style="position:fixed; left:-900px;">Post an advertisement for everyone to see.</h3>
 <h3 style="position:fixed; left:-900px;">Adveritse your used goods faster and more conveniently.</h3> 
 <h3 style="position:fixed; left:-900px;">Look at what other poeple are offering!</h3>
@@ -71,7 +76,7 @@ include('/home/postonme/hidden_scripts/session.php');
 			<img src='img/search_title.png' alt='' width='103px' height='35px' style='display:inline-block;padding-bottom:35px;'/>
 			<div style='height:10px;'></div>
 			<form action="" method="post" id="searchform" onsubmit="openWindow('searchbar'); return false;">
-				<input type="text" name="searchtext" value='' id="searchbar">
+				<div><input type="text" name="searchtext" value='' id="searchbar"/></div>
 			</form>
 			<div style='height:34px;'></div>
 			<img src='img/search_description.png' alt='' width='200px' height='50px'/>

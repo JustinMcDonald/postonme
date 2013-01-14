@@ -1,4 +1,9 @@
 $(document).ready(function() {	
+
+	document.getElementById('fbfield').innerHTML = '<fb:like href="http://www.postonme.com" send="false" layout="button_count" width="200" show_faces="false"></fb:like';
+	$('#navpost').attr('target', '_top');
+	$('#brand').attr('target', '_top');
+	
 	$('#advsearch').bind('click', function(){
 		expandAdvancedHandler()
 	});

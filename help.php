@@ -2,10 +2,13 @@
 include('/home/postonme/hidden_scripts/definitions.php');
 include('/home/postonme/hidden_scripts/session.php');
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML Strict//EN"><META http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<html xmlns="http://www.w3.org/1999/xhtml" slick-uniqueid="1" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>PostOnMe | University Campus Classifieds</title>
 
 	<?php include("./common/headers.php"); ?>
 	
@@ -13,11 +16,11 @@ include('/home/postonme/hidden_scripts/session.php');
 <body onload="initChat(); return false;">
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script type='text/javascript'>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=451061051608923";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=451061051608923";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -34,7 +37,7 @@ Users who violate the <a href='terms.php'>Term of Use</a> of PostOnMe may have t
 <p>PostOnMe has compiled a best practices guide to encourage safer behavior.</p>
 <p>Remember that vigilance and caution are your best defense against unscrupulous posters. 
 If a deal seems too good to be true, it probably is.</p>
-</br>
+<div><br/></div>
 <p><b>Best practices with accounts and personal information</b></p>
 <ul>
 	<li>PostOnMe will never ask for your password or account information. 
@@ -55,7 +58,7 @@ If a deal seems too good to be true, it probably is.</p>
 	<li>Record details about the sale item (price, etc.) and the contact information of the buyer/seller in case there are any problems.</li>
 	<li>Arrange buyer-seller meetings in public spaces during daylight hours, or go with a friend.</li>
 </ul>
-</br>
+<div><br/></div>
 <p><b>Frequently Asked Questions</b></p>
 <ul>
 	<li>Coming soon..</li>

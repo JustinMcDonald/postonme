@@ -95,6 +95,7 @@
 					echo "<input type='button' id='cancelbtn".$ad['adid']."' style='display:none' title='Close editing mode without saving changes.' value='Cancel' class='submitbtn cursorhand themeborder themecolor' onclick='exitEditMode(" . $ad['adid'] . ");' />";
 					echo "<input type='button' id='savebtn".$ad['adid']."' style='display:none' title='Save your changes.' value='Save Changes' class='submitbtn cursorhand themeborder themecolor' onclick='saveChanges(" . $ad['adid'] . ");' />";
 					echo "<div id='fbfield".$ad['adid']."' style='float:left;'><fb:like href='http://www.postonme.com/view.php?id=".$ad['adid']."&amp;limit=1' send='true' width='350' show_faces='false' font='verdana' action='recommend' style='float:left;'></fb:like></div>";
+					echo "<div class='adflag cursorhand'><a href='http://www.postonme.com/view.php?id=" . $ad['adid'] . "'>Go To Post</a></div>";
 				echo "</div>";
 			
 			echo "</div>";
@@ -102,7 +103,7 @@
 		
 		if ($count == 0)
 		{
-			echo "<div class='themetext'>You haven't <a href='../post.php' target='_top'>posted</a> anything yet!</div>";
+			echo "<div class='themetext'>You haven't <a href='../post.php'>posted</a> anything yet!</div>";
 		}
 		else
 		{

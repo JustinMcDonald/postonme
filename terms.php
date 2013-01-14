@@ -2,14 +2,17 @@
 include('/home/postonme/hidden_scripts/definitions.php');
 include('/home/postonme/hidden_scripts/session.php');
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML Strict//EN"><META http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<html xmlns="http://www.w3.org/1999/xhtml" slick-uniqueid="1">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>PostOnMe | University Campus Classifieds</title>
 
 	<?php include("./common/headers.php"); ?>
 	
-	<script>
+	<script type='text/javascript'>
 		function submitSuggestion() {
 			var message = document.getElementById('messagetext').value;
 			
@@ -18,7 +21,7 @@ include('/home/postonme/hidden_scripts/session.php');
 			else xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");// code for IE6, IE5
 			
 			xmlhttp.onreadystatechange=function() {
-				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200) {
 					var e = document.getElementById("alert");
 					e.innerHTML=xmlhttp.responseText;
 					e.classList.toggle('hidden');
@@ -35,11 +38,11 @@ include('/home/postonme/hidden_scripts/session.php');
 <body onload="initChat(); return false;">
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script type='text/javascript'>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=451061051608923";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=451061051608923";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -49,7 +52,7 @@ include('/home/postonme/hidden_scripts/session.php');
 
 <h2>PostOnMe Terms of Use</h2>
 
-<p><b>1. General Information</b></h2>
+<p><b>1. General Information</b></p>
 <p>PostOnMe provides services through its website including but not limited to classified advertising and email forwarding. 
 By accessing or using PostOnMe, you are a "user" and you accept and agree to the Terms of Use below as a legal contract between you and PostOnMe. </p>
 <p>The Terms of Use include and incorporate additional guidelines applicable to particular categories or services available on PostOnMe as set forth to users upon access to such categories or services. 
@@ -58,7 +61,7 @@ PostOnMe may post changes to the Terms of Use at any time, and any such changes 
 <p>You are also required to comply with, and to ensure compliance with, all laws, ordinances and regulations applicable to your activities on PostOnMe.</p>
 <p>The Terms of Use grant you a limited, revocable, nonexclusive license to access PostOnMe and use PostOnMe, in whole or in part, including but not limited to PostOnMe intellectual property therein, solely in compliance with the Terms of Use.</p>
 
-<p><b>2. Moderation</b></h2>
+<p><b>2. Moderation</b></p>
 <p>PostOnMe has the right, but not the obligation, to regulate content posted to, stored on or transmitted via PostOnMe by any user; to regulate content (including but not limited to any authorized or unauthorized access to or use of PostOnMe) by any user (or any other third party in any manner); and to enforce the Terms of Use, for any reason and in any manner or by any means that PostOnMe, in PostOnMe its sole discretion, deems necessary or appropriate.</p>
 <p>PostOnMe may, in its sole discretion and without notice, start, stop or modify any regulation or enforcement measures at any time. PostOnMe action or inaction to regulate content or conduct or to enforce against any potential violation of the Terms of Use by any user (or any other third party) does not waive PostOnMe's right to implement or not implement regulation or enforcement measures with respect to any subsequent or similar content, conduct or potential Terms of Use violation.</p>
 <p>You also understand and agree that any action or inaction by PostOnMe to prevent, restrict, redress or regulate content, or to implement other enforcement measures against any content, conduct or potential Terms of Use violation is undertaken voluntarily and in good faith, and you expressly agree that PostOnMe shall not be liable to you or anyone else for any action or inaction to prevent, restrict, redress, or regulate content, or to implement other enforcement measures against any content, conduct or potential violation of the Terms of Use.</p>
@@ -67,7 +70,7 @@ PostOnMe may post changes to the Terms of Use at any time, and any such changes 
 Specifically, you agree that PostOnMe shall in no circumstance be liable as a result of any representation that PostOnMe would or would not restrict or redress any content, conduct or potential or purported Terms of Use violation.</p>
 <p>PostOnMe also has the right in its sole discretion to limit, modify, interrupt, suspend or discontinue all or any portions of PostOnMe at any time without notice. PostOnMe shall not be liable for any such limitations, modifications, interruptions, suspensions or discontinuance, or any purported losses, harm or damages arising from or related thereto.</p>
 
-<p><b>3. Content</b></h2>
+<p><b>3. Content</b></p>
 <p>PostOnMe does not control, is not responsible for and makes no representations or warranties with respect to any user content. You are solely responsible for your access to, use of and/or reliance on any user content. 
 You must conduct any necessary, appropriate, prudent or judicious investigation, inquiry, research and due diligence with respect to any user content.</p>
 <p>You are also responsible for any content that you post or transmit and, if you create an account, you are responsible for all content posted or transmitted through or by use of your account.</p>
@@ -92,13 +95,13 @@ You must conduct any necessary, appropriate, prudent or judicious investigation,
 	<li>Your violation of the Terms of Use</li>
 </ul>
 
-<p><b>4. Conduct </b></h2>
+<p><b>4. Conduct </b></p>
 <p>PostOnMe does not control, is not responsible for and makes no representations or warranties with respect to any user or user conduct. You are solely responsible for your interaction with or reliance on any user or user conduct. You must perform any necessary, appropriate, prudent or judicious investigation, inquiry, research and due diligence with respect to any user or user conduct.</p>
 <p>You are also responsible for your own conduct and activities on, through or related to PostOnMe, and, if you create an account on PostOnMe, you are responsible for all conduct or activities on, through or by use of your account.</p>
 <p>You agree to indemnify and hold PostOnMe harmless from and against any third-party claim, cause of action, demand or damages related to or arising out of your own conduct or activities on, through or related to PostOnMe, and related to or arising out of any conduct or activities on, through or by use of your PostOnMe account, if any. 
 This indemnification obligation includes payment of any attorneys' fees and costs incurred by PostOnMe.</p>
 
-<p><b>5. Postings</b></h2>
+<p><b>5. Postings</b></p>
 <p>PostOnMe is intended and designed as a local service. 
 The same or substantially similar content may not be posted in more than one PostOnMe category. 
 A user may post content only in the single PostOnMe category to which it is most relevant, and must not post content to inappropriate categories. 
@@ -112,7 +115,7 @@ It is also expressly prohibited for any user to develop, offer, market, sell, di
 Any user who develops, offers, markets, sells, distributes or provides an automated means to perform any step of the posting process (in whole or in part) shall be responsible and liable to PostOnMe for each instance of access to PostOnMe (by any user or other third party) using that automated means.</p>
 <p>Affiliate marketing is expressly prohibited on PostOnMe. Users may not post content or communicate with any PostOnMe user for purposes of affiliate marketing or in connection with any affiliate marketing system, scheme or program in any manner or under any circumstance.</p>
 
-<p><b>6. Accounts</b></h2>
+<p><b>6. Accounts</b></p>
 <p>A user may maintain and use no more than one account to post content. A user specifically may not create or use additional accounts for the purpose of circumventing technological restrictions (security measures) in the posting process or otherwise for posting content in violation of the Terms of Use.</p>
 <p>A user may create an account only on him/her own behalf. 
 A user must not permit, enable, induce or encourage others to create accounts for him/her. 
@@ -124,12 +127,12 @@ A user must create his/her account personally and manually and may not create ac
 Without limitation, this includes the obligation that the user personally and manually solves any CAPTCHA challenge in the account creation process. 
 The circumvention of any technological restriction or security measure in the account creation or process is also expressly prohibited.</p>
 
-<p><b>7. Flagging</b></h2>
+<p><b>7. Flagging</b></p>
 <p>A user shall not "flag" (or otherwise seek removal of) content on PostOnMe without a personal, good-faith belief that the content violates the Terms of Use. A user may flag content only on his/her own behalf. A user must not permit, enable, induce or encourage others to flag content for them. A user must not flag content for others. A user may flag a specific item of content only once. A user flagging content must do so manually and may not employ any automated means.</p>
 <p>A user may flag a specific item of content only once.</p>
 <p>A user flagging content must do so manually and may not employ any automated means, products (including, without limitation, software programs) or services to flag content. A user must not circumvent any technological restrictions (security measures) in the flagging process. Without limitation, this prohibition includes a ban on the use of multiple IP addresses for flagging (by use of proxy servers or any means whatsoever).</p>
 
-<p><b>8. Unauthorized Access and Activities</b></h2>
+<p><b>8. Unauthorized Access and Activities</b></p>
 <p>This section 8 applies to all uses and users of PostOnMe. PostOnMe has sole and absolute discretion to authorize or deny any exception or exceptions to the terms in this section 8.</p>
 <p>To maintain the integrity and functionality of PostOnMe for its users, access to PostOnMe and/or activities related to PostOnMe that are harmful to, inconsistent with or disruptive of PostOnMe and/or its users' beneficial use and enjoyment of PostOnMe are expressly unauthorized and prohibited. For example, without limitation:</p>
 <ul>
@@ -142,11 +145,11 @@ The circumvention of any technological restriction or security measure in the ac
 	<li>Any attempt (whether or not successful) to engage in, or to enable, induce, encourage, cause or assist anyone else to engage in, any of the above unauthorized and prohibited access and activities is also expressly prohibited and is a violation of the Terms of Use.</li>
 </ul>
 
-<p><b>9. User Communications, Transactions, Interactions, Disputes and Relations</b></h2>
+<p><b>9. User Communications, Transactions, Interactions, Disputes and Relations</b></p>
 <p>PostOnMe are not parties to, have no involvement or interest in, make no representations or warranties as to, and have no responsibility or liability with respect to any communications, transactions, interactions, disputes or any relations whatsoever between you and any other user, person or organization ("your interactions with others"). You must conduct any necessary, appropriate, prudent or judicious investigation, inquiry, research or due diligence with respect to your interactions with others.</p>
 <p>You agree to indemnify and hold PostOnMe harmless from and against any third-party claim, cause of action, demand or damages related to or arising out of your interactions with others. This indemnification obligation includes payment of any attorneys' fees and costs incurred by PostOnMe.</p>
 
-<p><b>10. Disclaimers</b></h2>
+<p><b>10. Disclaimers</b></p>
 <p>Your access to, use of and reliance on PostOnMe and content accessed through PostOnMe is entirely at your own risk. PostOnMe (Including, without limitation, the websites, programs, services, forums and content accessed through the websites, programs, services and forums) is provided on an "As Is" or "As Available" basis without any warranties of any kind.</p>
 <p>All express and implied warranties (Including, without limitation, warranties of merchantability, fitness for a particular purpose, and non-infringement of proprietary rights) are expressly disclaimed.</p>
 <p>Without limiting the foregoing, PostOnMe also disclaims all warranties for or with respect to:</p>
@@ -156,21 +159,21 @@ The circumvention of any technological restriction or security measure in the ac
 	<li>Any transactions or potential transactions, goods or services promised or exchanged, information or advice offered or exchanged, or other content, interactions, representations or communications through, related to or as a result of use of PostOnMe or content accessed through PostOnMe (Including, without limitation, accessed through any links on PostOnMe or in content)</li>
 </ul>
 
-<p><b>11. Notification of Claims of Infringement</b></h2>
+<p><b>11. Notification of Claims of Infringement</b></p>
 <p>If you believe that your work has been copied in a way that constitutes copyright infringement or that your intellectual property rights (including trademark rights) have been otherwise violated, please email us at support@postonme.com.</p>
 
-<p><b>12. Limitations of Liability</b></h2>
+<p><b>12. Limitations of Liability</b></p>
 <p>PostOnMe shall under no circumstances be liable for any access to, use of or reliance on PostOnMe by you or anyone else, or for any transactions, communications, interactions, disputes or relations between you and any other person or organization arising out of or related to PostOnMe or content accessed through PostOnMe, including but not limited to liability for injunctive relief as well as any harm, injury, loss or damages of any kind incurred by you or anyone else (Including, without limitation, direct, indirect, incidental, special, consequential, statutory, exemplary or punitive damages, even if PostOnMe has been advised of the possibility of such damages). 
 This limitation of liability applies regardless of, but is not restricted to, whether the alleged liability, harm, injury, loss or damages arose from authorized or unauthorized access to or use of PostOnMe or content accessed through PostOnMe; any inability to access or use PostOnMe or content accessed through PostOnMe; or any removal, deletion, limitation, modification, interruption, suspension, discontinuance or termination of PostOnMe or content accessed through PostOnMe.</p>
 <p>These limitations shall also apply with respect to damages resulting from any transactions or potential transactions, goods or services promised or exchanged, information or advice offered or exchanged, or other content, interactions, representations, communications or relations through, related to or as a result of PostOnMe or content accessed through PostOnMe (Including, without limitation, any links on PostOnMe and links in content accessed through PostOnMe).</p>
 <p>You hereby release PostOnMe from all claims, demands and damages of every kind and nature, known and unknown, direct and indirect, suspected and unsuspected, disclosed and undisclosed, arising out of or in any way related to PostOnMe or content accessed through PostOnMe, or any interactions with others arising out of or related to PostOnMe or content accessed through PostOnMe.</p>
 <p>These limitations shall apply to the fullest extent permitted by law.</p>
 
-<p><b>13. Damages</b></h2>
+<p><b>13. Damages</b></p>
 <p>You agree to pay to PostOnMe the total amount of all actual damages (including but not limited to direct, indirect, consequential and incidental damages) caused by any violation of the Terms of Use for which you bear responsibility; EXCEPT you acknowledge that, for certain Terms of Use violations, actual damages would be extremely difficult or impossible to quantify. </p>
 <p>Furthermore you agree that the amounts of liquidated damages described therein are reasonable estimates of PostOnMe damages for such violations, and that liquidated damages for violations of the Terms of Use are and will be cumulative.</p>
 
-<p><b>14. Privacy</b></h2>
+<p><b>14. Privacy</b></p>
 <p>PostOnMe has established a <a href="privacy.php">Privacy Policy</a> covering the collection, use, and disclosure of user information.</p>
 
 </div>

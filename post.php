@@ -2,27 +2,30 @@
 include('/home/postonme/hidden_scripts/definitions.php');
 include('/home/postonme/hidden_scripts/session.php');
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML Strict//EN"><META http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<html xmlns="http://www.w3.org/1999/xhtml" slick-uniqueid="1" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>PostOnMe | University Campus Classifieds</title>
 
 	<?php include("./common/headers.php"); ?>
 	
 	<link rel="stylesheet" type="text/css" href="css/post.css"/>
 
 	<script type="text/javascript" src="js/jQuery/jquery.form.js"></script>
-	<script src="/js/post.js"></script>
+	<script type='text/javascript' src="/js/post.js"></script>
 	
 </head>
 <body onload="initChat(); return false;">
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script type='text/javascript'>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=451061051608923";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=451061051608923";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -32,7 +35,7 @@ include('/home/postonme/hidden_scripts/session.php');
 
 <iframe id="iframeAlert" name="iframeAlert" src="./iframes/postAdvertisement.php?first=true" allowtransparency="true" frameBorder="0"></iframe>
 
-<form action="./iframes/postAdvertisement.php" method=post id="adform" enctype="multipart/form-data" target="iframeAlert">
+<form action="./iframes/postAdvertisement.php" method='post' id="adform" enctype="multipart/form-data" target="iframeAlert">
 	<div class="contentcontainer" style="text-align:center">
 		
 		<div class="postentity">
@@ -46,32 +49,39 @@ include('/home/postonme/hidden_scripts/session.php');
 			</div>
 		</div>-->
 		
-		<div class="postentity" id="signupspot" style='display: <?php if (!isset($_SESSION['online'])) echo 'block'; else if ($_SESSION['online'] == 1) echo 'none'; else echo 'block'; ?> '>
-			<div class="postdescription">LiveChat<br><div>The fastest way online to buy & sell your stuff!</div></div>
-			<div class="postform">
-				<div class="newline">
-					<div class="subfieldtitles">Username:</div>
-					<input id="postchatname" type="text" name="chatname" class="textarea livechatfield" title="1-15 characters (a-z, 0-9)" maxlength="15" autocomplete='off'></text>
-				</div>
-				<div class="newline">
-					<div class="subfieldtitles">Password:</div>
-					<input id="postchatpass" type="password" name="chatpass" class="textarea livechatfield"  title="5-15 characters" maxlength="15" autocomplete='off'></text>
-				</div>
-				<div class="newline">
-					<div class="subfieldtitles">Retype Password:</div>
-					<input id="postchatpass2" type="password" name="chatpass2" class="textarea livechatfield"  title="5-15 characters" maxlength="15" autocomplete='off'></text>
-				</div>
-				<!--<div class="newline">
-					<div class="subfieldtitles">Referred By: <span style="font-size:0.8em">(optional)</span></div>
-					<input id="postreference" type="text" name="postreference" class="textarea livechatfield"  title="1-15 characters" maxlength="15" autocomplete='off'></text>
-				</div>-->
-			</div>
-		</div>
+		<?php 
+			/*$show = false;
+			if (!isset($_SESSION['online'])) $show = true; 
+			else if ($_SESSION['online'] != 1) $show = true;
+			
+			if ($show) 
+			echo "<div class='postentity' id='signupspot'>".
+				"<div class='postdescription'>LiveChat<br/><div>-OPTIONAL-<br/>The fastest way online to buy &amp; sell your stuff.</div></div>".
+				"<div class='postform'>".
+					"<div class='newline'>".
+						"<div class='subfieldtitles'>Username:</div>".
+						"<input id='postchatname' type='text' name='chatname' class='textarea livechatfield' title='1-15 characters (a-z, 0-9)' maxlength='15' />".
+					"</div>".
+					"<div class='newline'>".
+						"<div class='subfieldtitles'>Password:</div>".
+						"<input id='postchatpass' type='password' name='chatpass' class='textarea livechatfield'  title='5-15 characters' maxlength='15' />".
+					"</div>".
+					"<div class='newline'>".
+						"<div class='subfieldtitles'>Retype Password:</div>".
+						"<input id='postchatpass2' type='password' name='chatpass2' class='textarea livechatfield'  title='5-15 characters' maxlength='15' />".
+					"</div>".
+					"<!--<div class='newline'>".
+						"<div class='subfieldtitles'>Referred By: <span style='font-size:0.8em'>(optional)</span></div>".
+						"<input id='postreference' type='text' name='postreference' class='textarea livechatfield'  title='1-15 characters' maxlength='15' autocomplete='off'>".
+					"</div>-->".
+				"</div>".
+			"</div>";*/
+		?>
 		
 		<div class="postentity">
 			<div class="postdescription">Location<span>*</span></div>
 			<div class="postform">
-				<select name="postlocation" class="textarea" selected="" id='locationoptions'>
+				<select name="postlocation" class="textarea" id='locationoptions'>
 					<option>Georgian College</option>
 					<option>Western University</option>
 				</select>
@@ -81,7 +91,7 @@ include('/home/postonme/hidden_scripts/session.php');
 		<div class="postentity">
 			<div class="postdescription">Category<span>*</span></div>
 			<div class="postform">
-				<select name="categorytext" class="textarea" selected="">
+				<select name="categorytext" class="textarea">
 					<option>Art, Crafts</option>
 					<option>Appliances</option>
 					<option>Bikes</option>
@@ -104,38 +114,38 @@ include('/home/postonme/hidden_scripts/session.php');
 		<div class="postentity">
 			<div class="postdescription">Type<span>*</span></div>
 			<div class="postform">
-				<input id="100" type="radio" name="adtype" value=0 checked>
-				<label for="100">I am Selling</label>
-				<input id="101" type="radio" name="adtype" value=1>
-				<label for="101">I am Buying</label>
+				<input id="p100" type="radio" name="adtype" value='0' checked="checked" />
+				<label for="p100">I am Selling</label>
+				<input id="p101" type="radio" name="adtype" value='1'/>
+				<label for="p101">I am Buying</label>
 			</div>
 		</div>
 		
 		<div class="postentity">
 			<div class="postdescription">Title<span>*</span></div>
 			<div class="postform">
-				<input id="posttitle" type="text" name="titletext" class="textarea" value="5-75 characters"  maxlength="75" title='Use Keywords. This is how people will find your advertisement.'></text><br>
+				<input id="posttitle" type="text" name="titletext" class="textarea" value="5-75 characters"  maxlength="75" title='Use Keywords. This is how people will find your advertisement.'/><div><br/></div>
 			</div>
 		</div>			
 		
 		<div class="postentity">
 			<div class="postdescription">Price ($)<span>*</span></div>
 			<div class="postform">
-				<input id="postprice" type="text" name="pricetext" class="textarea" value="numbers (0-9)" maxlength="4"></text><br>
+				<input id="postprice" type="text" name="pricetext" class="textarea" value="numbers (0-9)" maxlength="4"/><div><br/></div>
 			</div>
 		</div>
 		
 		<div class="postentity">
 			<div class="postdescription">Detail<span>*</span></div>
 			<div class="postform">
-				<textarea id="postdetail" class='textarea messagefield' name='detailtext' id='detailtext' maxlength="500">Write some details..</textarea>
+				<textarea id="postdetail" class='textarea messagefield' name='detailtext' cols='' rows=''>Write some details..</textarea>
 			</div>
 		</div>
 		
 		<div class="postentity" id='emailfield'>
 			<div class="postdescription">Email<span>*</span></div>
 			<div class="postform">
-				<input id="postemail" type="text" name="emailtext" id="emailtext" class="textarea" value="valid email address" title="This is how people will contact you. Don't worry, it's hidden."></text><br>
+				<input id="postemail" type="text" name="emailtext" class="textarea" value="valid email address" title="This is how people will contact you. Don't worry, it's hidden."/><div><br/></div>
 			</div>
 		</div>
 		
@@ -157,14 +167,14 @@ include('/home/postonme/hidden_scripts/session.php');
 		<div class="postentity">
 			<div class="postdescription">Required<span>*</span></div>
 			<div class="postform">
-				<input type="submit" name="submitad" value="Submit Advertisement" id="submitad" class="themecolor cursorhand themeborder" title='Submit this Advertisement'>
+				<input type="submit" name="submitad" value="Submit Advertisement" id="submitad" class="themecolor cursorhand themeborder" title='Submit this Advertisement' />
 			</div>
 		</div>
 		
 		<div class="postentity">
 			<div class="postdescription" style="color:white;">.</div>
 			<div class="postform">
-				By submitting your advertisement you are agreeing to our <a href="terms.php" target="_blank" title='Terms of Use'>Terms of Use</a> and <a href="privacy.php" target="_blank" title='Privacy Policy'>Privacy Policy</a>.
+				By submitting your advertisement you are agreeing to our <a id='pterms' href="terms.php" title='Terms of Use'>Terms of Use</a> and <a id='pprivacy' href="privacy.php" title='Privacy Policy'>Privacy Policy</a>.
 			</div>
 		</div>
 	</div>

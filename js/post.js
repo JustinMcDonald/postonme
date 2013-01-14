@@ -1,5 +1,13 @@
 $(document).ready(function()
 {
+	$('#postchatname').attr('autocomplete', 'off');
+	$('#postchatpass').attr('autocomplete', 'off');
+	$('#postchatpass2').attr('autocomplete', 'off');
+	//$('#postchatreference').attr('autocomplete', 'off');
+	$('#postdetail').attr('maxlength', '500');
+	$('#pterms').attr('target', '_blank');
+	$('#pprivacy').attr('target', '_blank');
+
 	var currentlocation = $('#currentlocation').text();
 	$('#locationoptions option').each(function(){
 		if (this.value == currentlocation) $('#locationoptions').val(currentlocation);
