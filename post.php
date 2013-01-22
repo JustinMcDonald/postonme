@@ -131,7 +131,7 @@ include('/home/postonme/hidden_scripts/session.php');
 		<div class="postentity">
 			<div class="postdescription">Price ($)<span>*</span></div>
 			<div class="postform">
-				<input id="postprice" type="text" name="pricetext" class="textarea" value="numbers (0-9)" maxlength="4"/><div><br/></div>
+				<input id="postprice" type="text" name="pricetext" class="textarea" value="numbers (0-9)" maxlength="4"/><input type="checkbox" name="pricenegotiable" id='pricenegotiable' value="1">Negotiable<div><br/></div>
 			</div>
 		</div>
 		

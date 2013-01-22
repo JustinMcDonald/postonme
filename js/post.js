@@ -8,6 +8,13 @@ $(document).ready(function()
 	$('#pterms').attr('target', '_blank');
 	$('#pprivacy').attr('target', '_blank');
 
+	$('#pricenegotiable').bind('click', function()
+	{
+		var price = $('#postprice');
+		if (price.attr('disabled')) price.removeAttr('disabled');
+		else price.attr('disabled', 'disabled');
+	});
+	
 	var currentlocation = $('#currentlocation').text();
 	$('#locationoptions option').each(function(){
 		if (this.value == currentlocation) $('#locationoptions').val(currentlocation);
