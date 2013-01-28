@@ -14,6 +14,7 @@ $type = $_POST["adtype"];
 $category = $_POST["categorytext"];
 $title = $_POST["titletext"];
 $price = $_POST["pricetext"];
+$pricenegotiable = $_POST['pricenegotiable'];
 $detail = $_POST["detailtext"];
 $email = $_POST["emailtext"];
 $newuser = $_POST["chatname"];
@@ -32,8 +33,12 @@ if(isset($_POST["categorytext"]))
 	if((strlen($title) >= 5) and (strlen($title)<= 75) and ($title != "5-75 characters"))
 	{
 		$goodprice=true;
-		for ($i = 0; $i < strlen($price); $i++){
-			if (!(in_array($price[$i], $valid_price_chars))) $goodprice=false;
+		if ($pricenegotiable) $price = 0;
+		else
+		{
+			for ($i = 0; $i < strlen($price); $i++){
+				if (!(in_array($price[$i], $valid_price_chars))) $goodprice=false;
+			}
 		}
 		if((strlen($price) > 0) and $goodprice)
 		{

@@ -17,7 +17,7 @@ $message = "
 		<p>It will expire in 30 days.</p>
 		<p>Visit your <a href='www.postonme.com/account'>account page</a> to modify or bump your post.</p>
 		<p>You may delete your advertisement by clicking the link below:</p>
-		<a href='www.postonme.com/account.php?adid=" . $adid . "&delete=1&code=" . $owner_code . "'>www.postonme.com/account</a>
+		<a href='www.postonme.com/account.php?adid=" . $adid . "&delete=1&code=" . $owner_code . "'>www.postonme.com/account.php?adid=" . $adid . "&delete=1&code=" . $owner_code . "</a>
 		<p>If you have any questions, feel free to contact us at <a href='mailto:support@postonme.com'>support@postonme.com</a>.</p>
 		</br>
 		</br>
@@ -35,7 +35,7 @@ $message = "
 		<p><b>Woohoo! You're PostOnMe advertisement '" . $title . "' has been successfully posted.</b></p>
 		<p>It will expire in 30 days.</p>
 		<p>To delete it, just click the link below:</p>
-		<a href='www.postonme.com/account.php?adid=" . $adid . "&delete=1&code=" . $owner_code . "'>www.postonme.com/account</a>
+		<a href='www.postonme.com/account.php?adid=" . $adid . "&delete=1&code=" . $owner_code . "'>www.postonme.com/account.php?adid=" . $adid . "&delete=1&code=" . $owner_code . "</a>
 		<p>If you have any questions, feel free to contact us at <a href='mailto:support@postonme.com'>support@postonme.com</a>.</p>
 		</br>
 		</br>

@@ -58,6 +58,7 @@
 			echo "</div>";
 			*/
 			
+			if ($ad['price'] == 0) echo "<div id='adprice".$ad['adid']."'class='adprice'>Negotiable</div>";
 			echo "<div id='adprice".$ad['adid']."'class='adprice'>$" . $ad['price'] . "</div>";
 			
 			echo "<div class='addate'>";

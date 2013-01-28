@@ -34,12 +34,16 @@ $ad = mysql_fetch_array($result);
 
 $receiver = $ad['contact'];
 $name = explode("@", $sender);
-$subject = ucfirst($name[0]) . " is Interested in Your Advertisement \"" . ucfirst($ad['title']) . "\" PostOnMe!";
+$subject = ucfirst($name[0]) . " is Interested in Your Advertisement \"" . ucfirst($ad['title']) . "\" on PostOnMe!";
 
 $body = "
 	<html>
 	<head><title>PostOnMe Reply</title></head>
-	<body>" . $message . "</body>
+	<body>
+		<div>".ucfirst($name[0])." said:</div>
+		<div style='width:100%;border:1px solid black;margin-top:5px;padding:5px 10px;'><b>\t" . $message . "</b></div>
+		<div style='margin-top:20px;'>To respond to ".ucfirst($name[0])." just reply to this email.</div>
+	</body>
 	</html>";
 
 if (mail($receiver, $subject, $body, $headers)) echo SUCCESS;

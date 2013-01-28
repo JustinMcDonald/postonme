@@ -139,6 +139,13 @@ function toggleGlassPanel(id)
 
 function showGlassPanel(id)
 {
+	if ($('#changepasswordbox').css('visibility') == 'visible') hideGlassPanel('changepasswordbox');
+	if ($('#changeemailbox').css('visibility') == 'visible') hideGlassPanel('changeemailbox');
+	if ($('#forgotbox').css('visibility') == 'visible') hideGlassPanel('forgotbox');
+	if ($('#loginbox').css('visibility') == 'visible') hideGlassPanel('loginbox');
+	if ($('#signupbox').css('visibility') == 'visible') hideGlassPanel('signupbox');
+	if ($('#settingsbox').css('visibility') == 'visible') hideGlassPanel('settingsbox');
+	
 	var elem = document.getElementById(id),
 	left = -210,
 	timer;

@@ -81,7 +81,8 @@ if ($ads)
 				
 				echo "<div class='adviews'>" . $ad['views'] . " views</div>";
 				
-				echo "<div class='adprice'>$" . $ad['price'] . "</div>";
+				if ($ad['price'] == 0) echo "<div class='adprice'>Negotiable</div>";
+				else echo "<div class='adprice'>$" . $ad['price'] . "</div>";
 				
 				echo "<div class='addate'>";
 				
