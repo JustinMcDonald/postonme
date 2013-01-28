@@ -11,8 +11,11 @@ include('/home/postonme/hidden_scripts/session.php');
 	<title>PostOnMe | University Campus Classifieds</title>
 	
 	<meta name="description" content="Campus Classifieds"/>
-	<meta name="keywords" content="Classifieds,Campus,Buy,Sell,Trade,Post,Advertisement,Chat,University,Textbooks,Used,College,Books,Furniture,Electronics,Bikes,Listing"/>
+	<meta name="keywords" content="Classifieds, Campus, Buy, Sell, Trade, Post, Advertisement, Chat, University, Textbooks, buy textbooks,uwo textbooks, uwo used textbooks, used textbooks western, buy used textbooks western, sell used textbooks, sell textbooks, buy textbooks, sell my stuff, sell online, Used,College,Books,Furniture,Electronics,Bikes,Listing"/>
 	<meta name="author" content="Justin McDonald"/>
+    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="Index, all">
+    <meta name="audience" content="all">
 	
 	<link rel="image_src" href="http://www.postonme.com/img/icon.png" />
 
@@ -45,7 +48,9 @@ include('/home/postonme/hidden_scripts/session.php');
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<h1 style="position:fixed; left:-900px;">post on me campus classifieds western uwo</h1>
+<h1 style="position:fixed; left:-900px;">PostonMe Campus Classifieds</h1>
+<h2 style="position:fixed; left:-900px;">Providing personal ad space for Students by Students!</h2>
+<h2 style="position:fixed; left:-900px;">Post buy or sell textbooks, books, instruments, computers, tickets, and more.</h2>
 <h2 style="position:fixed; left:-900px;">Creating new opportunities to exchage &amp; to chat directly with buyers or sellers.</h2>
 <h3 style="position:fixed; left:-900px;">Post an advertisement for everyone to see.</h3>
 <h3 style="position:fixed; left:-900px;">Adveritse your used goods faster and more conveniently.</h3> 
