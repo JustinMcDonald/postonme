@@ -5,8 +5,9 @@
 #Large binary files
 *.psd
 
-#Project files
+#Local Project files
 *.project
+local/
 
 #Local configuration
 memcache/
