@@ -1,4 +1,18 @@
 #################
+## PostOnMe
+#################
+
+#Large binary files
+*.psd
+
+#Project files
+*.project
+
+#Local configuration
+memcache/
+
+
+#################
 ## Eclipse
 #################
 
