@@ -16,13 +16,10 @@ include('/home/postonme/hidden_scripts/session.php');
     <meta name="robots" content="index,follow" />
     <meta name="robots" content="Index, all">
     <meta name="audience" content="all">
-	
-	<link rel="image_src" href="http://www.postonme.com/img/icon.png" />
 
+	<link rel="image_src" href="http://www.postonme.com/img/icon.png" />
 	<?php include("./common/headers.php"); ?>
-	
-	<script type="text/javascript" src="/js/index.js"></script>
-	
+	<script type="text/javascript" src="/js/index.js"></script>	
 </head>
 <body onload="initChat(); return false;">
 
