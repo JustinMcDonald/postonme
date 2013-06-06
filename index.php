@@ -1,8 +1,7 @@
 <?php
-include('/home/postonme/hidden_scripts/definitions.php');
-include('/home/postonme/hidden_scripts/session.php');
+	include('/home/postonme/hidden_scripts/definitions.php');
+	include('/home/postonme/hidden_scripts/session.php');
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="en-US" lang="en-US" xmlns:og="http://ogp.me/ns#">
@@ -102,13 +101,13 @@ include('/home/postonme/hidden_scripts/session.php');
 <div id='frontbanner'><img src='img/front_banner.png' width='786px' height='400px' alt=''/></div>
 
 <?php 
-include("common/newsbox.php");
-include("common/chatbox.php");
-include("common/accountpanels.php");
-include("common/navbar.php");
-include("common/footer.php");
-include("common/screenlock.php");
-include("scripts/checkIfOnline.php");
+	include("common/newsbox.php");
+	include("common/chatbox.php");
+	include("common/accountpanels.php");
+	include("common/navbar.php");
+	include("common/footer.php");
+	include("common/screenlock.php");
+	include("scripts/checkIfOnline.php");
 ?>
 
 </body>
